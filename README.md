@@ -1,2 +1,2 @@
-# SWiG
-System Wizard Guidebook
+# Page
+
