@@ -1,3 +1,6 @@
 # Table of contents
 
-* [Page](README.md)
+## 🧙♂ Welcome!
+
+* [System Wizard Guidebook (SWiG)](README.md)
+* [License](welcome/license.md)
