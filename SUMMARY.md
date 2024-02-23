@@ -21,6 +21,7 @@
   * [Filesystem](linux/system-ops/filesystem/README.md)
     * [Traverse & Enumerate](linux/system-ops/filesystem/traverse-and-enumerate.md)
     * [Drives & Partitions](linux/system-ops/filesystem/drives-and-partitions.md)
+    * [Shares](linux/system-ops/filesystem/shares.md)
     * [Packages](linux/system-ops/filesystem/packages.md)
     * [Connected Devices](linux/system-ops/filesystem/connected-devices.md)
     * [Kernel Modules (Drivers)](linux/system-ops/filesystem/kernel-modules-drivers.md)
