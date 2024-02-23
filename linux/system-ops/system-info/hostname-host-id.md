@@ -2,7 +2,7 @@
 
 ## Commands
 
-<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>cat /proc/sys/kernel/hostname</code></td><td>Hostname directly from the kernel's hostname file.</td></tr><tr><td><code>hostname</code></td><td>Displays the hostname.</td></tr><tr><td><code>uname -n</code></td><td>Displays just the hostname.</td></tr><tr><td><code>hostnamectl</code></td><td>*systemd systems - Most comprehensive hostname info</td></tr><tr><td><code>cat /etc/hostname</code></td><td>Displays the hostname stored in the /etc/hostname file.</td></tr><tr><td><code>hostid</code></td><td>Prints the numeric identifier for the current host.</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>cat /proc/sys/kernel/hostname</code></td><td>Hostname directly from the kernel's hostname file.</td></tr><tr><td><mark style="color:yellow;"><code>hostname</code></td><td>Displays the hostname.</td></tr><tr><td><mark style="color:yellow;"><code>uname -n</code></td><td>Displays just the hostname.</td></tr><tr><td><mark style="color:yellow;"><code>hostnamectl</code></td><td>*systemd systems - Most comprehensive hostname info</td></tr><tr><td><mark style="color:yellow;"><code>cat /etc/hostname</code></td><td>Displays the hostname stored in the /etc/hostname file.</td></tr><tr><td><mark style="color:yellow;"><code>hostid</code></td><td>Prints the numeric identifier for the current host.</td></tr></tbody></table>
 
 
 
