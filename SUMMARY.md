@@ -25,3 +25,6 @@
     * [Packages](linux/system-ops/filesystem/packages.md)
     * [Connected Devices](linux/system-ops/filesystem/connected-devices.md)
     * [Kernel Modules (Drivers)](linux/system-ops/filesystem/kernel-modules-drivers.md)
+  * [Users & Groups](linux/system-ops/users-and-groups/README.md)
+    * [Enumerate](linux/system-ops/users-and-groups/enumerate.md)
+    * [Modify](linux/system-ops/users-and-groups/modify.md)
