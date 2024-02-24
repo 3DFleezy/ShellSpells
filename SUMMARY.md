@@ -50,3 +50,6 @@
     * [Antivirus](linux/system-ops/security/antivirus.md)
     * [Firewall](linux/system-ops/security/firewall.md)
     * [SSH Keys](linux/system-ops/security/ssh-keys.md)
+  * [History & Logs](linux/system-ops/history-and-logs/README.md)
+    * [History](linux/system-ops/history-and-logs/history.md)
+    * [Logs](linux/system-ops/history-and-logs/logs.md)
