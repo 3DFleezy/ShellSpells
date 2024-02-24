@@ -28,3 +28,6 @@
   * [Users & Groups](linux/system-ops/users-and-groups/README.md)
     * [Enumerate](linux/system-ops/users-and-groups/enumerate.md)
     * [Modify](linux/system-ops/users-and-groups/modify.md)
+  * [Network](linux/system-ops/network/README.md)
+    * [Enumerate](linux/system-ops/network/enumerate.md)
+    * [Modify](linux/system-ops/network/modify.md)
