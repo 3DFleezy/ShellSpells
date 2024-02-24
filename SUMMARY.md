@@ -46,3 +46,7 @@
   * [Startup/Boot Scripts](linux/system-ops/startup-boot-scripts/README.md)
     * [Enumerate](linux/system-ops/startup-boot-scripts/enumerate.md)
     * [Modify](linux/system-ops/startup-boot-scripts/modify.md)
+  * [Security](linux/system-ops/security/README.md)
+    * [Antivirus](linux/system-ops/security/antivirus.md)
+    * [Firewall](linux/system-ops/security/firewall.md)
+    * [SSH Keys](linux/system-ops/security/ssh-keys.md)
