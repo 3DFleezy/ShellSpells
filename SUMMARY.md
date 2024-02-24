@@ -31,3 +31,6 @@
   * [Network](linux/system-ops/network/README.md)
     * [Enumerate](linux/system-ops/network/enumerate.md)
     * [Modify](linux/system-ops/network/modify.md)
+  * [Scheduled Jobs](linux/system-ops/scheduled-jobs/README.md)
+    * [Enumerate](linux/system-ops/scheduled-jobs/enumerate.md)
+    * [Modify](linux/system-ops/scheduled-jobs/modify.md)
