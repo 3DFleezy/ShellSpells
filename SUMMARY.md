@@ -39,4 +39,7 @@
     * [Modify](linux/system-ops/processes/modify.md)
     * [Custom Script and Shared Object](linux/system-ops/processes/custom-script-and-shared-object.md)
     * [Process I/O Redirection](linux/system-ops/processes/process-i-o-redirection.md)
-    * [Page](linux/system-ops/processes/page.md)
+  * [Services](linux/system-ops/services/README.md)
+    * [Enumerate](linux/system-ops/services/enumerate.md)
+    * [Modify](linux/system-ops/services/modify.md)
+    * [Create a Service](linux/system-ops/services/create-a-service.md)
