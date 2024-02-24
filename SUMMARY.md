@@ -53,3 +53,6 @@
   * [History & Logs](linux/system-ops/history-and-logs/README.md)
     * [History](linux/system-ops/history-and-logs/history.md)
     * [Logs](linux/system-ops/history-and-logs/logs.md)
+* [Terminal Ops](linux/terminal-ops/README.md)
+  * [Keyboard Shortcuts](linux/terminal-ops/keyboard-shortcuts.md)
+  * [Tmux Shortcuts](linux/terminal-ops/tmux-shortcuts.md)
