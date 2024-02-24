@@ -43,3 +43,6 @@
     * [Enumerate](linux/system-ops/services/enumerate.md)
     * [Modify](linux/system-ops/services/modify.md)
     * [Create a Service](linux/system-ops/services/create-a-service.md)
+  * [Startup/Boot Scripts](linux/system-ops/startup-boot-scripts/README.md)
+    * [Enumerate](linux/system-ops/startup-boot-scripts/enumerate.md)
+    * [Modify](linux/system-ops/startup-boot-scripts/modify.md)
