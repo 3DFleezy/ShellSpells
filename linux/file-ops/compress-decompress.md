@@ -1,26 +1,9 @@
 # Compress/Decompress
 
-## Compressing Files
+## <mark style="color:red;">Compressing Files</mark>
 
-| Command                         | Description                                                                |
-| ------------------------------- | -------------------------------------------------------------------------- |
-| `gzip file`                     | Compress `file` using gzip.                                                |
-| `bzip2 file`                    | Compress `file` using bzip2.                                               |
-| `xz file`                       | Compress `file` using xz.                                                  |
-| `zip archive.zip file`          | Compress `file` into a zip archive named `archive.zip`.                    |
-| `tar -czf archive.tar.gz file`  | Create a gzip-compressed tar archive `archive.tar.gz` containing `file`.   |
-| `tar -cjf archive.tar.bz2 file` | Create a bzip2-compressed tar archive `archive.tar.bz2` containing `file`. |
-| `tar -cJf archive.tar.xz file`  | Create an xz-compressed tar archive `archive.tar.xz` containing `file`.    |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="353">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>gzip file</code></td><td>Compress <code>file</code> using gzip.</td></tr><tr><td><code>bzip2 file</code></td><td>Compress <code>file</code> using bzip2.</td></tr><tr><td><code>xz file</code></td><td>Compress <code>file</code> using xz.</td></tr><tr><td><code>zip archive.zip file</code></td><td>Compress <code>file</code> into a zip archive named <code>archive.zip</code>.</td></tr><tr><td><code>tar -czf archive.tar.gz file</code></td><td>Create a gzip-compressed tar archive <code>archive.tar.gz</code> containing <code>file</code>.</td></tr><tr><td><code>tar -cjf archive.tar.bz2 file</code></td><td>Create a bzip2-compressed tar archive <code>archive.tar.bz2</code> containing <code>file</code>.</td></tr><tr><td><code>tar -cJf archive.tar.xz file</code></td><td>Create an xz-compressed tar archive <code>archive.tar.xz</code> containing <code>file</code>.</td></tr></tbody></table>
 
-## Decompressing Files
+## <mark style="color:red;">Decompressing Files</mark>
 
-| Command                    | Description                                                                   |
-| -------------------------- | ----------------------------------------------------------------------------- |
-| `gunzip file.gz`           | Decompress a gzip-compressed file.                                            |
-| `bunzip2 file.bz2`         | Decompress a bzip2-compressed file.                                           |
-| `unxz file.xz`             | Decompress an xz-compressed file.                                             |
-| `unzip archive.zip`        | Extract files from a zip archive.                                             |
-| `tar -xzf archive.tar.gz`  | Extract a gzip-compressed tar archive.                                        |
-| `tar -xjf archive.tar.bz2` | Extract a bzip2-compressed tar archive.                                       |
-| `tar -xJf archive.tar.xz`  | Extract an xz-compressed tar archive.                                         |
-| `tar -xvf [file]`          | Extract files from a tar archive, with verbose output and progress indicator. |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="355">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>gunzip file.gz</code></td><td>Decompress a gzip-compressed file.</td></tr><tr><td><code>bunzip2 file.bz2</code></td><td>Decompress a bzip2-compressed file.</td></tr><tr><td><code>unxz file.xz</code></td><td>Decompress an xz-compressed file.</td></tr><tr><td><code>unzip archive.zip</code></td><td>Extract files from a zip archive.</td></tr><tr><td><code>tar -xzf archive.tar.gz</code></td><td>Extract a gzip-compressed tar archive.</td></tr><tr><td><code>tar -xjf archive.tar.bz2</code></td><td>Extract a bzip2-compressed tar archive.</td></tr><tr><td><code>tar -xJf archive.tar.xz</code></td><td>Extract an xz-compressed tar archive.</td></tr><tr><td><code>tar -xvf [file]</code></td><td>Extract files from a tar archive, with verbose output and progress indicator.</td></tr></tbody></table>

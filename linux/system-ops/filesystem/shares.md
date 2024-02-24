@@ -62,7 +62,7 @@ Modify the Samba configuration file (smb.conf) to define your shares. \
 `sudo nano /etc/samba/smb.conf`\
 &#x20;Add an entry like:
 
-```
+```bash
 [MyShare]
 path = /shared_directory
 read only = no

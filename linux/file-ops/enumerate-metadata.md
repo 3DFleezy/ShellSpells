@@ -1,10 +1,9 @@
 # Enumerate Metadata
 
-## Commands
+## <mark style="color:red;">Commands</mark>
 
-| Command                    | Description                                                     |
-| -------------------------- | --------------------------------------------------------------- |
 | `ls -lisa`                 | File info                                                       |
+| -------------------------- | --------------------------------------------------------------- |
 | `file [file]`              | Determine File Type.                                            |
 | `stat [file]`              | Display Detailed File Information.                              |
 | `statvfs [directory_path]` | Display Filesystem Information.                                 |
@@ -15,7 +14,7 @@
 
 
 
-### Identifying Symlinks and Hard Links
+### <mark style="color:purple;">Identifying Symlinks and Hard Links</mark>
 
 `ls -l`
 
@@ -43,7 +42,7 @@ Soft link: st\_ino will be different for the link and the original file.
 
 
 
-## ls Options
+## <mark style="color:red;">ls Options</mark>
 
 `-a` or `--all`
 

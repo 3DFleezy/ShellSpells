@@ -2,7 +2,9 @@
 
 ## <mark style="color:red;">Generate Keys</mark>
 
-`ssh-keygen -t rsa -b 2048 -C "your_email@example.com"`
+```bash
+ssh-keygen -t rsa -b 2048 -C "your_email@example.com"
+```
 
 Key Type `-t`: \
 <mark style="color:orange;">**rsa**</mark>: RSA key type. \
@@ -29,7 +31,10 @@ The program will prompt for the file containing the private key, for the old pas
 Key Location: \
 By default, keys are saved in \~/.ssh/ directory.
 
-`ssh-keygen -t rsa -b 2048 -C "john.doe@example.com" -f ~/.ssh/id_rsa`\
+```bash
+ssh-keygen -t rsa -b 2048 -C "john.doe@example.com" -f ~/.ssh/id_rsa
+```
+
 This command generates an RSA key pair with a key length of 2048 bits and a comment of "john.doe@example.com". \
 The keys will be saved as id\_rsa (private key) and id\_rsa.pub (public key) in the \~/.ssh/ directory.
 
@@ -37,31 +42,30 @@ The keys will be saved as id\_rsa (private key) and id\_rsa.pub (public key) in 
 
 ### <mark style="color:purple;">Find Private Keys</mark>
 
-| Command                                    | Description                                  |
-| ------------------------------------------ | -------------------------------------------- |
-| `find / -name id_rsa`                      | System-wide search for key by name.          |
-| `locate id_rsa`                            | Searches for key using the `locate` command. |
-| `grep -r -l "BEGIN RSA PRIVATE KEY" /etc/` | Search /etc/ for keys                        |
-| `find ~/.ssh -name "id_rsa*" -type f`      | Search in home dir                           |
-| `find /etc/ssh -name "id_rsa*" -type f`    | Search for system-wide keys                  |
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find / -name id_rsa</code></td><td>System-wide search for key by name.</td></tr><tr><td><code>locate id_rsa</code></td><td>Searches for key using the <code>locate</code> command.</td></tr><tr><td><code>grep -r -l "BEGIN RSA PRIVATE KEY" /etc/</code></td><td>Search /etc/ for keys</td></tr><tr><td><code>find ~/.ssh -name "id_rsa*" -type f</code></td><td>Search in home dir</td></tr><tr><td><code>find /etc/ssh -name "id_rsa*" -type f</code></td><td>Search for system-wide keys</td></tr></tbody></table>
 
 ### <mark style="color:purple;">Find Public Keys</mark>
 
-| Command                                   | Description                                        |
-| ----------------------------------------- | -------------------------------------------------- |
-| `find / -name "*.pub"`                    | System-wide search for key files by name.          |
-| `locate "*.pub"`                          | Searches for key files using the `locate` command. |
-| `grep -r -l "ssh-rsa" /etc/`              | Search /etc/ for keys                              |
-| `find ~/ -name "[filename].pub" -type f`  | Search in home dir                                 |
-| `find ~/.ssh -name "id_rsa*.pub" -type f` | Search in home dir                                 |
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find / -name "*.pub"</code></td><td>System-wide search for key files by name.</td></tr><tr><td><code>locate "*.pub"</code></td><td>Searches for key files using the <code>locate</code> command.</td></tr><tr><td><code>grep -r -l "ssh-rsa" /etc/</code></td><td>Search /etc/ for keys</td></tr><tr><td><code>find ~/ -name "[filename].pub" -type f</code></td><td>Search in home dir</td></tr><tr><td><code>find ~/.ssh -name "id_rsa*.pub" -type f</code></td><td>Search in home dir</td></tr></tbody></table>
 
-Display SSH host key information: \
-`ls -l /etc/ssh/ssh_host*`
+Display SSH host key information:
+
+```bash
+ls -l /etc/ssh/ssh_host*
+```
 
 Look for .ssh and see if you can get the private key.
 
-If you can, copy it to your attack box. Then change it's permissions:\
-`chmod 600 root_key`
+If you can, copy it to your attack box. Then change it's permissions:
 
-Use the key to log in to that user that it belongs to.\
-`ssh -i root_key -oPubkeyAcceptedKeyTypes=+ssh-rsa -oHostKeyAlgorithms=+ssh-rsa [user]@[targetIP]`
+```bash
+chmod 600 root_key
+```
+
+Use the key to log in to that user that it belongs to.
+
+{% code overflow="wrap" %}
+```bash
+ssh -i root_key -oPubkeyAcceptedKeyTypes=+ssh-rsa -oHostKeyAlgorithms=+ssh-rsa <user>@<targetIP>
+```
+{% endcode %}

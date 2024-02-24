@@ -2,66 +2,29 @@
 
 Note: `sed -i` will change original file.
 
-## Overwrite
+## <mark style="color:red;">Overwrite</mark>
 
-| Command                                                    | Description                                                       |
-| ---------------------------------------------------------- | ----------------------------------------------------------------- |
-| `cat > file`                                               | Overwrite/create file                                             |
-| `echo "text" > [file]`                                     | Overwrite/create file                                             |
-| `echo "text" \| tee [file]`                                | Overwrite/create file and display                                 |
-| `printf "Line 1\nLine 2" > [file]`                         | Overwrite/create file with newlines.                              |
-| `awk -v text="some text" 'BEGIN{print text > "filename"}'` | Overwrite/create file                                             |
-| `echo "text" \| dd of=file`                                | Write "text" to `file` using `dd`, overwriting existing contents. |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="598">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>cat > file</code></td><td>Overwrite/create file</td></tr><tr><td><code>echo "text" > [file]</code></td><td>Overwrite/create file</td></tr><tr><td><code>echo "text" | tee [file]</code></td><td>Overwrite/create file and display</td></tr><tr><td><code>printf "Line 1\nLine 2" > [file]</code></td><td>Overwrite/create file with newlines.</td></tr><tr><td><code>awk -v text="some text" 'BEGIN{print text > "filename"}'</code></td><td>Overwrite/create file</td></tr><tr><td><code>echo "text" | dd of=file</code></td><td>Write "text" to <code>file</code> using <code>dd</code>, overwriting existing contents.</td></tr></tbody></table>
 
-## Insert
+## <mark style="color:red;">Insert</mark>
 
-### Strings
+### <mark style="color:purple;">Strings</mark>
 
-| Command                                                    | Description                                      |
-| ---------------------------------------------------------- | ------------------------------------------------ |
-| `echo "text" >> [file]`                                    | Append "text" to the end of a file.              |
-| `sed i\text`                                               | Before each line                                 |
-| `sed a\text`                                               | After each line                                  |
-| `sed '$ a\text' [file]`                                    | Use `sed` to insert "text" at the end of a file. |
-| `sed '$a text' file`                                       | Append "text" at the end of `file`.              |
-| `sed '1i text' file`                                       | Insert "text" at the beginning of `file`         |
-| `awk 'END {print "text"} 1' file > temp && mv temp [file]` | Append "text" at the end of a file.              |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="600">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>echo "text" >> [file]</code></td><td>Append "text" to the end of a file.</td></tr><tr><td><code>sed i\text</code></td><td>Before each line</td></tr><tr><td><code>sed a\text</code></td><td>After each line</td></tr><tr><td><code>sed '$ a\text' [file]</code></td><td>Use <code>sed</code> to insert "text" at the end of a file.</td></tr><tr><td><code>sed '$a text' file</code></td><td>Append "text" at the end of <code>file</code>.</td></tr><tr><td><code>sed '1i text' file</code></td><td>Insert "text" at the beginning of <code>file</code></td></tr><tr><td><code>awk 'END {print "text"} 1' file > temp &#x26;&#x26; mv temp [file]</code></td><td>Append "text" at the end of a file.</td></tr></tbody></table>
 
-### Lines
+### <mark style="color:purple;">Lines</mark>
 
-| Command                                            | Description                                  |
-| -------------------------------------------------- | -------------------------------------------- |
-| `sed '1i\New line' [file]`                         | Insert newline at beginning                  |
-| `sed '$a\New line' [file]`                         | Append new line at the end                   |
-| `sed '/pattern/a\new line' file`                   | Append new line after lines with pattern     |
-| `sed G [file]`                                     | Adds blank line between lines (Double Space) |
-| `nl -ba file > temp && mv temp file`               | Add line numbers to each line.               |
-| `awk '{print NR, $0}' file > temp && mv temp file` | Add line numbers to each line.               |
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>sed '1i\New line' [file]</code></td><td>Insert newline at beginning</td></tr><tr><td><code>sed '$a\New line' [file]</code></td><td>Append new line at the end</td></tr><tr><td><code>sed '/pattern/a\new line' file</code></td><td>Append new line after lines with pattern</td></tr><tr><td><code>sed G [file]</code></td><td>Adds blank line between lines (Double Space)</td></tr><tr><td><code>nl -ba file > temp &#x26;&#x26; mv temp file</code></td><td>Add line numbers to each line.</td></tr><tr><td><code>awk '{print NR, $0}' file > temp &#x26;&#x26; mv temp file</code></td><td>Add line numbers to each line.</td></tr></tbody></table>
 
-### Append
+### <mark style="color:purple;">Append</mark>
 
-| Command                                                | Description                                     |
-| ------------------------------------------------------ | ----------------------------------------------- |
-| `cat >> file`                                          | Append to `file` from stdin until EOF (Ctrl+D). |
-| `echo "text" \| tee -a [file]`                         | Append and display                              |
-| `printf "text" >> [file]`                              | Append                                          |
-| `awk -v text="more text" '{print $0 ORS text}' [file]` | Append?                                         |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="557">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>cat >> file</code></td><td>Append to <code>file</code> from stdin until EOF (Ctrl+D).</td></tr><tr><td><code>echo "text" | tee -a [file]</code></td><td>Append and display</td></tr><tr><td><code>printf "text" >> [file]</code></td><td>Append</td></tr><tr><td><code>awk -v text="more text" '{print $0 ORS text}' [file]</code></td><td>Append?</td></tr></tbody></table>
 
-## Replace / Remove
+## <mark style="color:red;">Replace / Remove</mark>
 
-### Replace Strings
+### <mark style="color:purple;">Replace Strings</mark>
 
-| Command                               | Description                                  |
-| ------------------------------------- | -------------------------------------------- |
-| `sed 's/pattern/new/' [file]`         | Replace pattern with new in file.txt         |
-| `sed 's/pattern/new/g' [file]`        | Replace all occurrences of "old" with "new". |
-| `sed 's/pattern/new/2' [file]`        | Replace 2nd pattern in a line.               |
-| `sed '2 s/pattern/new/' [file]`       | Replace pattern on line 2                    |
-| `sed 1,5s/pattern/new/ [file]`        | Replace pattern on lines 1 to 5              |
-| `sed /pattern/, /pattern2/s/old/new/` | Replace between two patterns                 |
-| `sed $s/pattern/new/`                 | Replace pattern on last line                 |
-| `sed 's/,/\n/g' file`                 | Replace Commas with Newline                  |
-| `tr , '\n' < file`                    | Replace Commas with Newline                  |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="426">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>sed 's/pattern/new/' [file]</code></td><td>Replace pattern with new in file.txt</td></tr><tr><td><code>sed 's/pattern/new/g' [file]</code></td><td>Replace all occurrences of "old" with "new".</td></tr><tr><td><code>sed 's/pattern/new/2' [file]</code></td><td>Replace 2nd pattern in a line.</td></tr><tr><td><code>sed '2 s/pattern/new/' [file]</code></td><td>Replace pattern on line 2</td></tr><tr><td><code>sed 1,5s/pattern/new/ [file]</code></td><td>Replace pattern on lines 1 to 5</td></tr><tr><td><code>sed /pattern/, /pattern2/s/old/new/</code></td><td>Replace between two patterns</td></tr><tr><td><code>sed $s/pattern/new/</code></td><td>Replace pattern on last line</td></tr><tr><td><code>sed 's/,/\n/g' file</code></td><td>Replace Commas with Newline</td></tr><tr><td><code>tr , '\n' &#x3C; file</code></td><td>Replace Commas with Newline</td></tr></tbody></table>
 
 Replaces occurrences of 'old\_pattern' with 'new\_pattern' and prints each line:
 
@@ -87,61 +50,48 @@ Use `perl` to replace "old" with "new" in a file, similar to `sed`:
 perl -pi -e 's/old/new/g' [file]
 ```
 
-### Remove Strings
+### <mark style="color:purple;">Remove Strings</mark>
 
 | Command                    | Description                          |
 | -------------------------- | ------------------------------------ |
 | `cut -f 1 -d $'\t' [file]` | Suppressing Non-Printable Characters |
 
-### Remove Lines
+### <mark style="color:purple;">Remove Lines</mark>
 
-#### Patterns
+#### <mark style="color:green;">Patterns</mark>
 
-| Command                                         | Description                                                  |
-| ----------------------------------------------- | ------------------------------------------------------------ |
-| `sed '/pattern/d' file`                         | Remove lines matching "pattern".                             |
-| `awk '!/pattern/' file > temp && mv temp file`  | Remove lines matching "pattern".                             |
-| `grep -v "pattern" file > temp && mv temp file` | Use `grep` with `-v` to filter out lines matching "pattern". |
+<table data-header-hidden data-full-width="false"><thead><tr><th width="495">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>sed '/pattern/d' file</code></td><td>Remove lines matching "pattern".</td></tr><tr><td><code>awk '!/pattern/' file > temp &#x26;&#x26; mv temp file</code></td><td>Remove lines matching "pattern".</td></tr><tr><td><code>grep -v "pattern" file > temp &#x26;&#x26; mv temp file</code></td><td>Use <code>grep</code> with <code>-v</code> to filter out lines matching "pattern".</td></tr></tbody></table>
 
-#### Line Numbers
+#### <mark style="color:green;">Line Numbers</mark>
 
-| Command              | Description                  |
-| -------------------- | ---------------------------- |
 | `sed '/^9/d' [file]` | Delete lines starting with 9 |
+| -------------------- | ---------------------------- |
 | `sed '1,3d' [file]`  | Delete lines 1 to 3          |
 
-#### Blank Lines
+#### <mark style="color:green;">Blank Lines</mark>
 
-| Command                                    | Description                                                                              |
-| ------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| `sed '/^$/d' [file]`                       | Remove blank lines.                                                                      |
-| `sed 'n;d'`                                | Remove blank lines between lines (Double Spaced) (assumes even numbered lines are blank) |
-| `awk 'NF' [file] > temp && mv temp [file]` | Remove blank lines, keeping lines with at least one field.                               |
+<table data-header-hidden><thead><tr><th width="456">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>sed '/^$/d' [file]</code></td><td>Remove blank lines.</td></tr><tr><td><code>sed 'n;d'</code></td><td>Remove blank lines between lines (Double Spaced) (assumes even numbered lines are blank)</td></tr><tr><td><code>awk 'NF' [file] > temp &#x26;&#x26; mv temp [file]</code></td><td>Remove blank lines, keeping lines with at least one field.</td></tr></tbody></table>
 
-#### Duplicate Lines
+#### <mark style="color:green;">Duplicate Lines</mark>
 
-| Command                                         | Description                                                              |
-| ----------------------------------------------- | ------------------------------------------------------------------------ |
-| `awk '!seen[$0]++' file > temp && mv temp file` | Remove duplicate lines, preserving the order.                            |
-| `sort -u file > temp && mv temp file`           | Sort the file and remove duplicate lines, may change the original order. |
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>awk '!seen[$0]++' file > temp &#x26;&#x26; mv temp file</code></td><td>Remove duplicate lines, preserving the order.</td></tr><tr><td><code>sort -u file > temp &#x26;&#x26; mv temp file</code></td><td>Sort the file and remove duplicate lines, may change the original order.</td></tr></tbody></table>
 
-#### Comment Lines
+#### <mark style="color:green;">Comment Lines</mark>
 
-Removing lines that start with `#`. E ssentially this removes all the comments out of a file. This is good when examining a config file full of comments when you just want to see a certain line. `cat [file] | grep -v ^\# | grep .` sed '/^#/d' \[file]
+Removing lines that start with `#`. E ssentially this removes all the comments out of a file. This is good when examining a config file full of comments when you just want to see a certain line.
 
-## Convert Case
+```bash
+cat <file> |  grep -v ^\# | grep .
+```
 
-| Command                                                    | Description                                |
-| ---------------------------------------------------------- | ------------------------------------------ |
-| `tr '[:upper:]' '[:lower:]' < file > temp && mv temp file` | Convert all text to lowercase.             |
-| `tr '[:lower:]' '[:upper:]' < file > temp && mv temp file` | Convert all text to uppercase.             |
-| `awk '{print tolower($0)}' file > temp && mv temp file`    | Convert all text to lowercase using `awk`. |
-| `awk '{print toupper($0)}' file > temp && mv temp file`    | Convert all text to uppercase using `awk`. |
+```bash
+sed '/^#/d' <file>
+```
 
-## Text Editors
+## <mark style="color:red;">Convert Case</mark>
 
-| Command      | Description                                                                                       |
-| ------------ | ------------------------------------------------------------------------------------------------- |
-| `vim file`   | Open `file` in Vim editor for editing. Save and exit with `:wq`.                                  |
-| `nano file`  | Open `file` in Nano editor for editing. Save and exit with `Ctrl+O`, `Ctrl+X`.                    |
-| `emacs file` | Open `file` in Emacs editor for editing. Save with `Ctrl+x Ctrl+s` and exit with `Ctrl+x Ctrl+c`. |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="599">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>tr '[:upper:]' '[:lower:]' &#x3C; file > temp &#x26;&#x26; mv temp file</code></td><td>Convert all text to lowercase.</td></tr><tr><td><code>tr '[:lower:]' '[:upper:]' &#x3C; file > temp &#x26;&#x26; mv temp file</code></td><td>Convert all text to uppercase.</td></tr><tr><td><code>awk '{print tolower($0)}' file > temp &#x26;&#x26; mv temp file</code></td><td>Convert all text to lowercase using <code>awk</code>.</td></tr><tr><td><code>awk '{print toupper($0)}' file > temp &#x26;&#x26; mv temp file</code></td><td>Convert all text to uppercase using <code>awk</code>.</td></tr></tbody></table>
+
+## <mark style="color:red;">Text Editors</mark>
+
+<table data-header-hidden data-full-width="true"><thead><tr><th width="171">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>vim file</code></td><td>Open <code>file</code> in Vim editor for editing. Save and exit with <code>:wq</code>.</td></tr><tr><td><code>nano file</code></td><td>Open <code>file</code> in Nano editor for editing. Save and exit with <code>Ctrl+O</code>, <code>Ctrl+X</code>.</td></tr><tr><td><code>emacs file</code></td><td>Open <code>file</code> in Emacs editor for editing. Save with <code>Ctrl+x Ctrl+s</code> and exit with <code>Ctrl+x Ctrl+c</code>.</td></tr></tbody></table>

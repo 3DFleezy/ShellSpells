@@ -1,29 +1,3 @@
 # Keyboard Shortcuts
 
-| Shortcut                | Description                                                        |
-| ----------------------- | ------------------------------------------------------------------ |
-| `Ctrl + Shift + N`      | Open new terminal window.                                          |
-| `Ctrl + Shift + T`      | Open new tab on current terminal.                                  |
-| `Ctrl + Shift + D`      | Detach window.                                                     |
-| `Ctrl + Shift + W`      | Close current tab.                                                 |
-| `Ctrl + Shift + Q`      | Close terminal window.                                             |
-| `Ctrl + PageUp`         | Move to previous tab.                                              |
-| `Ctrl + PageDown`       | Move to next tab.                                                  |
-| `Alt + Number (1,2,3)`  | Move to tab 1/2/3.                                                 |
-| `Ctrl + Shift + C`      | Copy from terminal.                                                |
-| `Ctrl + Shift + V`      | Paste to terminal.                                                 |
-| `Ctrl + Shift + A`      | Select all.                                                        |
-| `Ctrl + Shift + F`      | Search.                                                            |
-| `Up Arrow / Ctrl + P`   | Scrolls through the commands you've entered before.                |
-| `Down Arrow / Ctrl + N` | Takes you back to a more recent command.                           |
-| `Ctrl + R`              | Searches for commands you've already typed.                        |
-| `Ctrl + A / Home`       | Moves the cursor to the start of a line.                           |
-| `Ctrl + E / End`        | Moves the cursor to the end of a line.                             |
-| `Ctrl + K`              | Deletes from the current cursor position to the end of the line.   |
-| `Ctrl + U`              | Deletes from the start of the line to the current cursor position. |
-| `Ctrl + W`              | Deletes the word before the cursor.                                |
-| `Ctrl + Y`              | Revert that remove by Ctrl + W.                                    |
-| `Alt + B`               | Goes back one word at a time.                                      |
-| `Alt + Shift + F`       | Moves forward one word at a time.                                  |
-| `Alt + C`               | Capitalizes letter where cursor is and moves to end of word.       |
-| `Ctrl + L`              | Clear terminal output.                                             |
+<table><thead><tr><th width="283">Shortcut</th><th>Description</th></tr></thead><tbody><tr><td><code>Ctrl + Shift + N</code></td><td>Open new terminal window.</td></tr><tr><td><code>Ctrl + Shift + T</code></td><td>Open new tab on current terminal.</td></tr><tr><td><code>Ctrl + Shift + D</code></td><td>Detach window.</td></tr><tr><td><code>Ctrl + Shift + W</code></td><td>Close current tab.</td></tr><tr><td><code>Ctrl + Shift + Q</code></td><td>Close terminal window.</td></tr><tr><td><code>Ctrl + PageUp</code></td><td>Move to previous tab.</td></tr><tr><td><code>Ctrl + PageDown</code></td><td>Move to next tab.</td></tr><tr><td><code>Alt + Number (1,2,3)</code></td><td>Move to tab 1/2/3.</td></tr><tr><td><code>Ctrl + Shift + C</code></td><td>Copy from terminal.</td></tr><tr><td><code>Ctrl + Shift + V</code></td><td>Paste to terminal.</td></tr><tr><td><code>Ctrl + Shift + A</code></td><td>Select all.</td></tr><tr><td><code>Ctrl + Shift + F</code></td><td>Search.</td></tr><tr><td><code>Up Arrow / Ctrl + P</code></td><td>Scrolls through the commands you've entered before.</td></tr><tr><td><code>Down Arrow / Ctrl + N</code></td><td>Takes you back to a more recent command.</td></tr><tr><td><code>Ctrl + R</code></td><td>Searches for commands you've already typed.</td></tr><tr><td><code>Ctrl + A / Home</code></td><td>Moves the cursor to the start of a line.</td></tr><tr><td><code>Ctrl + E / End</code></td><td>Moves the cursor to the end of a line.</td></tr><tr><td><code>Ctrl + K</code></td><td>Deletes from the current cursor position to the end of the line.</td></tr><tr><td><code>Ctrl + U</code></td><td>Deletes from the start of the line to the current cursor position.</td></tr><tr><td><code>Ctrl + W</code></td><td>Deletes the word before the cursor.</td></tr><tr><td><code>Ctrl + Y</code></td><td>Revert that remove by Ctrl + W.</td></tr><tr><td><code>Alt + B</code></td><td>Goes back one word at a time.</td></tr><tr><td><code>Alt + Shift + F</code></td><td>Moves forward one word at a time.</td></tr><tr><td><code>Alt + C</code></td><td>Capitalizes letter where cursor is and moves to end of word.</td></tr><tr><td><code>Ctrl + L</code></td><td>Clear terminal output.</td></tr></tbody></table>

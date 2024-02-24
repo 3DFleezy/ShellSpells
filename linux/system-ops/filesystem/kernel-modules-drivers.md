@@ -8,7 +8,7 @@
 
 ## <mark style="color:red;">Modify</mark>
 
-<table data-header-hidden><thead><tr><th width="283">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>depmod -a</code></td><td>Updates module dependency information.</td></tr><tr><td><code>modprobe &#x3C;mod_name></code></td><td>Loads a kernel module if it's not already loaded.</td></tr><tr><td><code>modprobe -r &#x3C;mod_name></code></td><td>Unloads a module.</td></tr><tr><td><code>insmod &#x3C;module_file></code></td><td>Manually loads a module (less common).</td></tr><tr><td><code>insmod &#x3C;module_path></code></td><td>Manually inserts module into the kernel. Use with caution.</td></tr><tr><td><code>rmmod &#x3C;module_name></code></td><td>Removes (unloads) a loaded kernel module.</td></tr><tr><td><code>modconf</code></td><td>Configures kernel modules interactively.</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th width="310">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>depmod -a</code></td><td>Updates module dependency information.</td></tr><tr><td><code>modprobe &#x3C;mod_name></code></td><td>Loads a kernel module if it's not already loaded.</td></tr><tr><td><code>modprobe -r &#x3C;mod_name></code></td><td>Unloads a module.</td></tr><tr><td><code>insmod &#x3C;module_file></code></td><td>Manually loads a module (less common).</td></tr><tr><td><code>insmod &#x3C;module_path></code></td><td>Manually inserts module into the kernel. Use with caution.</td></tr><tr><td><code>rmmod &#x3C;module_name></code></td><td>Removes (unloads) a loaded kernel module.</td></tr><tr><td><code>modconf</code></td><td>Configures kernel modules interactively.</td></tr></tbody></table>
 
 
 

@@ -2,7 +2,7 @@
 
 ## <mark style="color:red;">NICs</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th width="443">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>ifconfig -a</code></td><td>Prints network information/configuration.</td></tr><tr><td><code>ifconfig eth0</code></td><td>Specific interface</td></tr><tr><td><code>ip addr show</code></td><td>Show NIC Info</td></tr><tr><td><code>ip addr show eth0</code></td><td>Specific interface</td></tr><tr><td><code>netstat -I</code></td><td>Shows interface stats.</td></tr><tr><td><code>netstat -ie</code></td><td>Shows interface stats, including MAC addresses.</td></tr><tr><td><code>ip link show</code></td><td>Shows the state of all network interfaces.</td></tr><tr><td><code>ls /sys/class/net/</code></td><td>Lists all network interfaces recognized by the kernel</td></tr><tr><td>`lspci</td><td>grep -i network`</td></tr><tr><td><code>nmcli device status</code></td><td>Lists network devices and their status using the NetworkManager command-line tool</td></tr><tr><td><code>nmtui</code></td><td>Provides a text user interface to NetworkManager</td></tr><tr><td><code>ethtool &#x3C;interface></code></td><td>Shows detailed info about a specific Eth interface</td></tr><tr><td><code>lshw -class network</code></td><td>Detailed info on all network interfaces. Requires <code>lshw</code> to be installed.</td></tr><tr><td><code>cat /sys/class/net/&#x3C;interface>/address</code></td><td>Directly reads the MAC address from the system's file</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th width="443">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>ifconfig -a</code></td><td>Prints network information/configuration.</td></tr><tr><td><code>ifconfig eth0</code></td><td>Specific interface</td></tr><tr><td><code>ip addr show</code></td><td>Show NIC Info</td></tr><tr><td><code>ip addr show eth0</code></td><td>Specific interface</td></tr><tr><td><code>netstat -I</code></td><td>Shows interface stats.</td></tr><tr><td><code>netstat -ie</code></td><td>Shows interface stats, including MAC addresses.</td></tr><tr><td><code>ip link show</code></td><td>Shows the state of all network interfaces.</td></tr><tr><td><code>ls /sys/class/net/</code></td><td>Lists all network interfaces recognized by the kernel</td></tr><tr><td><code>lspci | grep -i network</code></td><td>Lists all PCI network interfaces by searching for "network"</td></tr><tr><td><code>nmcli device status</code></td><td>Lists network devices and their status using the NetworkManager command-line tool</td></tr><tr><td><code>nmtui</code></td><td>Provides a text user interface to NetworkManager</td></tr><tr><td><code>ethtool &#x3C;interface></code></td><td>Shows detailed info about a specific Eth interface</td></tr><tr><td><code>lshw -class network</code></td><td>Detailed info on all network interfaces. Requires <code>lshw</code> to be installed.</td></tr><tr><td><code>cat /sys/class/net/&#x3C;interface>/address</code></td><td>Directly reads the MAC address from the system's file</td></tr></tbody></table>
 
 ### <mark style="color:purple;">Wireless</mark>
 
@@ -55,13 +55,21 @@ Use with caution as it sends signals to processes and could affect their behavio
 
 ### <mark style="color:purple;">Find Processes that have Port Information</mark>
 
-``pfiles \ `ptree | awk '{print $1}'\`| egrep '^[0-9]|port:'``
+```bash
+pfiles \ `ptree | awk '{print $1}'\`| egrep '^[0-9]|port:'
+```
 
-Captures TCP packets with SYN or ACK flags, indicating connection attempts. Requires root privileges: \
-`tcpdump -i -n 'tcp[tcpflags] & (tcp-syn|tcp-ack) != 0'`
+Captures TCP packets with SYN or ACK flags, indicating connection attempts. Requires root privileges:&#x20;
 
-Sets up a rule in iptables to log network connections initiated by processes owned by a specific user. This requires analyzing the log to see the connections:\
-`iptables -A OUTPUT -m owner --uid-owner -j LOG`
+```bash
+tcpdump -i <interface> -n 'tcp[tcpflags] & (tcp-syn|tcp-ack) != 0'
+```
+
+Sets up a rule in iptables to log network connections initiated by processes owned by a specific user. This requires analyzing the log to see the connections:
+
+```bash
+iptables -A OUTPUT -m owner --uid-owner <user> -j LOG
+```
 
 ## <mark style="color:red;">Solaris</mark>
 

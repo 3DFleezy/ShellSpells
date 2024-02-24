@@ -1,77 +1,64 @@
 # Modify Metadata
 
-## Rename
+## <mark style="color:red;">Rename</mark>
 
-| Command                    | Description                                    |
-| -------------------------- | ---------------------------------------------- |
 | `mv [old_name] [new_name]` | Rename                                         |
+| -------------------------- | ---------------------------------------------- |
 | `rename 's/ /_/g' *`       | Replace spaces with underscores for all files. |
 
 
 
-## Timestamps
+## <mark style="color:red;">Timestamps</mark>
 
-| Command                            | Description                                                                        |
-| ---------------------------------- | ---------------------------------------------------------------------------------- |
-| `touch`                            | Updates access and modification to current datetime.                               |
-| `touch -t YYYYMMDDhhmm [file]`     | `-t` lets you customize the datetime. Without it, it sets to the current datetime. |
-| `touch -a -t YYYYMMDDhhmm [file]`  | Updates only \*access to specified datetime.                                       |
-| `touch -m -t YYYYMMDDhhmm [file]`  | Updates only \*modification to specified datetime.                                 |
-| `touch -d -t YYYYMMDDhhmm [file]`  | Updates \*access and \*modification to specific datetime.                          |
-| `touch -r <reference_file> [file]` | Updates \*access and \*modification to match another file.                         |
+| `touch`                            | Updates <mark style="color:orange;">**access**</mark> and <mark style="color:orange;">**modification**</mark> to current datetime.   |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `touch -t YYYYMMDDhhmm [file]`     | `-t` lets you customize the datetime. Without it, it sets to the current datetime.                                                   |
+| `touch -a -t YYYYMMDDhhmm [file]`  | Updates only <mark style="color:orange;">**access**</mark> to specified datetime.                                                    |
+| `touch -m -t YYYYMMDDhhmm [file]`  | Updates only <mark style="color:orange;">**modification**</mark> to specified datetime.                                              |
+| `touch -d -t YYYYMMDDhhmm [file]`  | Updates <mark style="color:orange;">**access**</mark> and <mark style="color:orange;">**modification**</mark> to specific datetime.  |
+| `touch -r <reference_file> [file]` | Updates <mark style="color:orange;">**access**</mark> and <mark style="color:orange;">**modification**</mark> to match another file. |
 
 Updates \*access and \*modification of files found.
 
 You can customize the `find` criteria to modify timestamps of specific files:
 
-`find -exec touch {} \;`
+```bash
+find -exec touch {} \;
+```
 
 Change the system time, which indirectly affects newly created or modified files:
 
-`date -s YYYYMMDDhhmm`
+```bash
+date -s YYYYMMDDhhmm
+```
 
 This modifies timestamps of files listed by `ls`, extracting filenames with `awk` and using `xargs` to pipe them to `touch`:
 
-`ls -ltr | awk '{print $9}' | xargs -I {} touch -t YYYYMMDDhhmm {}`
+```bash
+ls -ltr | awk '{print $9}' | xargs -I {} touch -t YYYYMMDDhhmm {}
+```
 
 Note:
 
-\*ctime (change time) of a file is updated to the current system time whenever the file's metadata or content changes.
+<mark style="color:orange;">**ctime**</mark> (change time) of a file is updated to the current system time whenever the file's metadata or content changes.
 
 It cannot be modified directly by any command.
 
-\*mtime (modification time) is updated when the file's content changes
+<mark style="color:orange;">**mtime**</mark> (modification time) is updated when the file's content changes
 
-\*atime (access time) is updated when the file's content is accessed.
-
-
-
-## Ownership
-
-| Command                          | Description                                                                           |
-| -------------------------------- | ------------------------------------------------------------------------------------- |
-| `chown [owner] [file]`           | Change owner.                                                                         |
-| `chown [UID] [dir]`              | Change owner to UID.                                                                  |
-| `chown [owner][:group] [file]`   | Changes owner and/or group of a file.                                                 |
-| `chown -R [owner][:group] [dir]` | Recursively changes owner and/or group of a directory, sub-directories, and contents. |
-| `chgrp [group] [file]`           | Changes group of a file to the specified group name.                                  |
-| `chgrp 100 directory1`           | Change group to GID.                                                                  |
-| `chgrp -R [group] [dir]`         | Recursively changes group of a directory, sub-directories, and contents.              |
+<mark style="color:orange;">**atime**</mark> (access time) is updated when the file's content is accessed.
 
 
 
-## Permissions
+## <mark style="color:red;">Ownership</mark>
 
-| Command                               | Description                                                                                           |
-| ------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `chmod [mode] [file]`                 | Changes permissions. (`u+x`, `g-w`, `o=r`) or (`644`, `755`).                                         |
-| `chmod +x [file]`                     | Adds execute permission for the owner, group, and others. Shorthand for `a+x` or `ugo+x`.             |
-| `chmod u=rwx,g=rx,o=r [file]`         | Sets the permissions explicitly.                                                                      |
-| `chmod 755 [file]`                    | Octal notation.                                                                                       |
-| `chmod -R mode [dir]`                 | Recursively changes the permissions of a directory and all its contents.                              |
-| `chmod --reference=<ref_file> [file]` | Match permissions of reference file.                                                                  |
-| `umask`                               | umask = "user file-creation mode mask". Sets the default creation permissions for new files and dirs. |
-| `umask 022`                           | New default permissions on created files and dirs is 755.                                             |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="358">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>chown [owner] [file]</code></td><td>Change owner.</td></tr><tr><td><code>chown [UID] [dir]</code></td><td>Change owner to UID.</td></tr><tr><td><code>chown [owner][:group] [file]</code></td><td>Changes owner and/or group of a file.</td></tr><tr><td><code>chown -R [owner][:group] [dir]</code></td><td>Recursively changes owner and/or group of a directory, sub-directories, and contents.</td></tr><tr><td><code>chgrp [group] [file]</code></td><td>Changes group of a file to the specified group name.</td></tr><tr><td><code>chgrp 100 directory1</code></td><td>Change group to GID.</td></tr><tr><td><code>chgrp -R [group] [dir]</code></td><td>Recursively changes group of a directory, sub-directories, and contents.</td></tr></tbody></table>
+
+
+
+## <mark style="color:red;">Permissions</mark>
+
+<table data-header-hidden data-full-width="true"><thead><tr><th width="419">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>chmod [mode] [file]</code></td><td>Changes permissions. (<code>u+x</code>, <code>g-w</code>, <code>o=r</code>) or (<code>644</code>, <code>755</code>).</td></tr><tr><td><code>chmod +x [file]</code></td><td>Adds execute permission for the owner, group, and others. Shorthand for <code>a+x</code> or <code>ugo+x</code>.</td></tr><tr><td><code>chmod u=rwx,g=rx,o=r [file]</code></td><td>Sets the permissions explicitly.</td></tr><tr><td><code>chmod 755 [file]</code></td><td>Octal notation.</td></tr><tr><td><code>chmod -R mode [dir]</code></td><td>Recursively changes the permissions of a directory and all its contents.</td></tr><tr><td><code>chmod --reference=&#x3C;ref_file> [file]</code></td><td>Match permissions of reference file.</td></tr><tr><td><code>umask</code></td><td>umask = "user file-creation mode mask". Sets the default creation permissions for new files and dirs.</td></tr><tr><td><code>umask 022</code></td><td>New default permissions on created files and dirs is 755.</td></tr></tbody></table>
 
 Note:
 
@@ -89,14 +76,11 @@ Note:
 
 
 
-## Attributes
+## <mark style="color:red;">Attributes</mark>
 
-| Command                             | Description                                   |
-| ----------------------------------- | --------------------------------------------- |
 | `chattr [+,-,=][attributes] [file]` | Modify attributes                             |
+| ----------------------------------- | --------------------------------------------- |
 | `chattr =i [file]`                  | Make file immutable, clears other attributes. |
-
-Attributes:
 
 `a` (Append only): Can be added to, but existing data cannot be modified or deleted. This is useful for log files.
 
@@ -110,14 +94,11 @@ Attributes:
 
 
 
-## Capabilities
+## <mark style="color:red;">Capabilities</mark>
 
-| Command                                   | Description                                        |
-| ----------------------------------------- | -------------------------------------------------- |
-| `setcap [capabilities] [file]`            | Set capabilities                                   |
-| `setcap 'cap_net_bind_service+ep' [file]` | Set capability as `e`-effectivce and `p`-permitted |
+<table data-header-hidden><thead><tr><th width="432">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>setcap [capabilities] [file]</code></td><td>Set capabilities</td></tr><tr><td><code>setcap 'cap_net_bind_service+ep' [file]</code></td><td>Set capability as <code>e</code>-effectivce and <code>p</code>-permitted</td></tr></tbody></table>
 
-### Operators and Sets
+### <mark style="color:purple;">Operators and Sets</mark>
 
 `+` (Add)
 
@@ -131,49 +112,19 @@ Attributes:
 
 <mark style="color:orange;">**Inheritable**</mark> (`i`): This set determines which capabilities can be inherited by child processes. If a capability is in the inheritable set of a parent process and also in the permitted set of an executable being run by that process, it can be added to the permitted and effective sets of the child process.<==
 
-### Capability Options
+### <mark style="color:purple;">Capability Options</mark>
 
-| Capability              | Description                                                                                                                                         |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| cap\_chown              | Allows changing the owner of any file.                                                                                                              |
-| cap\_dac\_override      | Bypasses file read, write, and execute permission checks.                                                                                           |
-| cap\_dac\_read\_search  | Bypasses file read permission checks and directory read and execute permission checks.                                                              |
-| cap\_fowner             | Bypasses permission checks on operations that normally require the filesystem UID of the process to match the UID of the file (e.g., chown, chmod). |
-| cap\_fsetid             | Allows setting the set-user-ID and set-group-ID bits on files; allows setgid to work on a file regardless of the file's GID.                        |
-| cap\_kill               | Allows sending signals to any process, bypassing permission checks.                                                                                 |
-| cap\_net\_bind\_service | Allows binding to TCP/UDP sockets below 1024, which are normally reserved for processes with root privileges.                                       |
-| cap\_net\_broadcast     | Allows sending broadcast packets over a network.                                                                                                    |
-| cap\_net\_admin         | Allows various network-related operations, such as interface configuration, administration of IP firewall, masquerading, and routing.               |
-| cap\_net\_raw           | Allows using RAW and PACKET sockets, providing the capability to craft packets that could manipulate the network, which is potentially dangerous.   |
-| cap\_ipc\_lock          | Allows locking memory segments, preventing them from being swapped out to disk.                                                                     |
-| cap\_ipc\_owner         | Bypasses permission checks for operations on System V IPC objects.                                                                                  |
-| cap\_sys\_module        | Allows loading and unloading kernel modules.                                                                                                        |
-| cap\_sys\_rawio         | Allows direct I/O access to hardware devices.                                                                                                       |
-| cap\_sys\_chroot        | Allows using the chroot() system call, changing the root directory of a process.                                                                    |
-| cap\_sys\_ptrace        | Allows using ptrace(), useful for debugging and tracing system calls.                                                                               |
-| cap\_sys\_pacct         | Allows managing process accounting files.                                                                                                           |
-| cap\_sys\_admin         | A broad capability allowing various system administration operations, like mounting filesystems, configuring the kernel, and more.                  |
-| cap\_sys\_boot          | Allows rebooting or enabling/disabling device power.                                                                                                |
-| cap\_sys\_nice          | Allows raising process priorities and setting real-time scheduling policies.                                                                        |
-| cap\_sys\_resource      | Allows overriding resource limits.                                                                                                                  |
-| cap\_sys\_time          | Allows setting the system clock.                                                                                                                    |
-| cap\_sys\_tty\_config   | Allows configuration of tty devices.                                                                                                                |
-| cap\_mknod              | Allows creation of special files using mknod().                                                                                                     |
-| cap\_lease              | Allows establishing leases on arbitrary files (useful for locking).                                                                                 |
-| cap\_audit\_write       | Allows writing to the kernel audit log.                                                                                                             |
-| cap\_audit\_control     | Allows control over kernel audit system.                                                                                                            |
-| cap\_setfcap            | Allows setting file capabilities.                                                                                                                   |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="220">Capability</th><th>Description</th></tr></thead><tbody><tr><td>cap_chown</td><td>Allows changing the owner of any file.</td></tr><tr><td>cap_dac_override</td><td>Bypasses file read, write, and execute permission checks.</td></tr><tr><td>cap_dac_read_search</td><td>Bypasses file read permission checks and directory read and execute permission checks.</td></tr><tr><td>cap_fowner</td><td>Bypasses permission checks on operations that normally require the filesystem UID of the process to match the UID of the file (e.g., chown, chmod).</td></tr><tr><td>cap_fsetid</td><td>Allows setting the set-user-ID and set-group-ID bits on files; allows setgid to work on a file regardless of the file's GID.</td></tr><tr><td>cap_kill</td><td>Allows sending signals to any process, bypassing permission checks.</td></tr><tr><td>cap_net_bind_service</td><td>Allows binding to TCP/UDP sockets below 1024, which are normally reserved for processes with root privileges.</td></tr><tr><td>cap_net_broadcast</td><td>Allows sending broadcast packets over a network.</td></tr><tr><td>cap_net_admin</td><td>Allows various network-related operations, such as interface configuration, administration of IP firewall, masquerading, and routing.</td></tr><tr><td>cap_net_raw</td><td>Allows using RAW and PACKET sockets, providing the capability to craft packets that could manipulate the network, which is potentially dangerous.</td></tr><tr><td>cap_ipc_lock</td><td>Allows locking memory segments, preventing them from being swapped out to disk.</td></tr><tr><td>cap_ipc_owner</td><td>Bypasses permission checks for operations on System V IPC objects.</td></tr><tr><td>cap_sys_module</td><td>Allows loading and unloading kernel modules.</td></tr><tr><td>cap_sys_rawio</td><td>Allows direct I/O access to hardware devices.</td></tr><tr><td>cap_sys_chroot</td><td>Allows using the chroot() system call, changing the root directory of a process.</td></tr><tr><td>cap_sys_ptrace</td><td>Allows using ptrace(), useful for debugging and tracing system calls.</td></tr><tr><td>cap_sys_pacct</td><td>Allows managing process accounting files.</td></tr><tr><td>cap_sys_admin</td><td>A broad capability allowing various system administration operations, like mounting filesystems, configuring the kernel, and more.</td></tr><tr><td>cap_sys_boot</td><td>Allows rebooting or enabling/disabling device power.</td></tr><tr><td>cap_sys_nice</td><td>Allows raising process priorities and setting real-time scheduling policies.</td></tr><tr><td>cap_sys_resource</td><td>Allows overriding resource limits.</td></tr><tr><td>cap_sys_time</td><td>Allows setting the system clock.</td></tr><tr><td>cap_sys_tty_config</td><td>Allows configuration of tty devices.</td></tr><tr><td>cap_mknod</td><td>Allows creation of special files using mknod().</td></tr><tr><td>cap_lease</td><td>Allows establishing leases on arbitrary files (useful for locking).</td></tr><tr><td>cap_audit_write</td><td>Allows writing to the kernel audit log.</td></tr><tr><td>cap_audit_control</td><td>Allows control over kernel audit system.</td></tr><tr><td>cap_setfcap</td><td>Allows setting file capabilities.</td></tr></tbody></table>
 
 
 
-## Links
+## <mark style="color:red;">Links</mark>
 
-| Command                             | Description |
-| ----------------------------------- | ----------- |
-| `ln <source_file> <target_file>`    | Hard link   |
-| `ln -s <source_file> <target_file>` | Soft link   |
+| `ln <source_file> <target_file>`    | Hard link |
+| ----------------------------------- | --------- |
+| `ln -s <source_file> <target_file>` | Soft link |
 
-### Hard links
+### <mark style="color:purple;">Hard links</mark>
 
 Useful for saving disk space as they share the same data
 
@@ -181,7 +132,7 @@ Deleting one removes the data if it's the last link.
 
 They cannot link across filesystems or to directories.
 
-### Soft links
+### <mark style="color:purple;">Soft links</mark>
 
 Handy for creating flexible shortcuts that work across filesystems and can point to directories.
 

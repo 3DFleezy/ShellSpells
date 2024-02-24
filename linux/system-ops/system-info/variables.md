@@ -2,13 +2,13 @@
 
 ## <mark style="color:red;">Enumerate</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th width="178">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>env</code></td><td>Displays environment variables.</td></tr><tr><td><code>printenv</code></td><td>Similar to env, also lists environment variables.</td></tr><tr><td><code>set</code></td><td>Lists shell variables and functions (bash-specific).</td></tr><tr><td><code>declare -p</code></td><td>Lists shell variables with their attributes (bash-specific).</td></tr><tr><td><code>export</code></td><td>Displays exported variables (visible to child processes).</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th width="299">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>env</code></td><td>Displays environment variables.</td></tr><tr><td><code>printenv</code></td><td>Similar to env, also lists environment variables.</td></tr><tr><td><code>set</code></td><td>Lists shell variables and functions (bash-specific).</td></tr><tr><td><code>declare -p</code></td><td>Lists shell variables with their attributes (bash-specific).</td></tr><tr><td><code>export</code></td><td>Displays exported variables (visible to child processes).</td></tr></tbody></table>
 
 
 
 ## <mark style="color:red;">Modify</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>export VAR_NAME=VALUE</code></td><td>Sets an environment variable for the current shell and child processes.</td></tr><tr><td><code>VAR_NAME=VALUE</code></td><td>Sets a variable for the current shell only (not inherited by child processes).</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th width="301">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>export VAR_NAME=VALUE</code></td><td>Sets an environment variable for the current shell and child processes.</td></tr><tr><td><code>VAR_NAME=VALUE</code></td><td>Sets a variable for the current shell only (not inherited by child processes).</td></tr></tbody></table>
 
 ### <mark style="color:purple;">Sourcing files</mark>
 

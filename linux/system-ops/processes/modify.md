@@ -1,17 +1,4 @@
 # Modify
 
-| Command                       | Description                                                                                |
-| ----------------------------- | ------------------------------------------------------------------------------------------ |
-| `kill [PID]`                  | Sends a termination signal to a process (SIGTERM by default).                              |
-| `kill -9 [PID]`               | Sends a forceful termination signal (SIGKILL).                                             |
-| `kill -15 [PID]`              | Sends the graceful termination signal (SIGTERM) to a process.                              |
-| `killall [process_name]`      | Terminates all processes with a matching name.                                             |
-| `pkill [process_name]`        | Terminates processes based on their name.                                                  |
-| `bg [job_number]`             | Moves a suspended job to the background.                                                   |
-| `fg [job_number]`             | Brings a background job to the foreground.                                                 |
-| `ctrl+z`                      | Suspends the current foreground process in the terminal.                                   |
-| `nice <priority> [command]`   | Runs a command with a lower priority.                                                      |
-| `renice [PID] [new_priority]` | Changes priority of a running process.                                                     |
-| `nohup command &`             | Runs a command immune to hangups, with output to a non-tty.                                |
-| `disown %jobnumber`           | Removes a job from the shell's job table, making it immune to signals from the shell.      |
-| `disown [PID]`                | Removes a process from the shell's job table, preventing it from receiving SIGHUP signals. |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="332">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>kill [PID]</code></td><td>Sends a termination signal to a process (SIGTERM by default).</td></tr><tr><td><code>kill -9 [PID]</code></td><td>Sends a forceful termination signal (SIGKILL).</td></tr><tr><td><code>kill -15 [PID]</code></td><td>Sends the graceful termination signal (SIGTERM) to a process.</td></tr><tr><td><code>killall [process_name]</code></td><td>Terminates all processes with a matching name.</td></tr><tr><td><code>pkill [process_name]</code></td><td>Terminates processes based on their name.</td></tr><tr><td><code>bg [job_number]</code></td><td>Moves a suspended job to the background.</td></tr><tr><td><code>fg [job_number]</code></td><td>Brings a background job to the foreground.</td></tr><tr><td><code>ctrl+z</code></td><td>Suspends the current foreground process in the terminal.</td></tr><tr><td><code>nice &#x3C;priority> [command]</code></td><td>Runs a command with a lower priority.</td></tr><tr><td><code>renice [PID] [new_priority]</code></td><td>Changes priority of a running process.</td></tr><tr><td><code>nohup command &#x26;</code></td><td>Runs a command immune to hangups, with output to a non-tty.</td></tr><tr><td><code>disown %jobnumber</code></td><td>Removes a job from the shell's job table, making it immune to signals from the shell.</td></tr><tr><td><code>disown [PID]</code></td><td>Removes a process from the shell's job table, preventing it from receiving SIGHUP signals.</td></tr></tbody></table>
+

@@ -31,12 +31,21 @@ WantedBy: Target unit to enable automatic startup.
 Save the file: \
 Save it as \[service\_name].service in /etc/systemd/system/.
 
-Reload and enable: \
-`sudo systemctl daemon-reload`\
-`sudo systemctl enable [service_name].service`
+Reload and enable:
 
-Start the service:\
-`sudo systemctl start [service_name].service`
+```bash
+sudo systemctl daemon-reload
+```
+
+```bash
+sudo systemctl enable <service_name>.service
+```
+
+Start the service:
+
+```bash
+sudo systemctl start <service_name>.service.
+```
 
 ## <mark style="color:red;">SysV</mark>&#x20;
 
@@ -72,10 +81,17 @@ esac
 exit 0
 ```
 
-Make the script executable: \
-`chmod +x /etc/init.d/[service_name]` \
-Start/stop the service: \
-`/etc/init.d/[service_name] start/stop`
+Make the script executable:
+
+```bash
+chmod +x /etc/init.d/<service_name>
+```
+
+Start/stop the service:
+
+```bash
+/etc/init.d/<service_name> start/stop
+```
 
 Optional: Enable automatic startup by linking the script to /etc/rc?.d/S (depending on your runlevel).
 
@@ -102,6 +118,12 @@ end script
 
 Save the file: Save it as \[service\_name].conf in /etc/init/.
 
-Reload and start: \
-`sudo initctl reload`\
-`sudo start [service_name]`
+Reload and start:
+
+```bash
+sudo initctl reload 
+```
+
+```bash
+sudo start <service_name>
+```

@@ -1,20 +1,8 @@
 # Filename
 
-## Filenames
+## <mark style="color:red;">Filenames</mark>
 
-| Command                                 | Description                                                   |
-| --------------------------------------- | ------------------------------------------------------------- |
-| `grep -rli file*`                       | Pattern match                                                 |
-| `grep -rli "filename" /path/to/search`  | Recursive                                                     |
-| `ls -R [directory] \| grep "filename"`  | Recursive                                                     |
-| `find / -a -iname "filename"`           | Case insensitive                                              |
-| `find / -a -type f -name password.txt`  | Recursive exact match                                         |
-| `find / -a -name "pat*tern"`            | Pattern match "pat" and ending with "tern"                    |
-| `find / -a -type d -name config`        | Exact directory match                                         |
-| `find / -a -type d -name "\*687-250\*"` | Pattern directory match                                       |
-| `find / -a -regex "regex_pattern"`      | Regex                                                         |
-| `locate "[filename]"`                   | Uses a database updated by `updatedb` to quickly locate files |
-| `locate -i "[filename]"`                | Case-insensitive                                              |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="420">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>grep -rli file*</code></td><td>Pattern match</td></tr><tr><td><code>grep -rli "filename" /path/to/search</code></td><td>Recursive</td></tr><tr><td><code>ls -R [directory] | grep "filename"</code></td><td>Recursive</td></tr><tr><td><code>find / -a -iname "filename"</code></td><td>Case insensitive</td></tr><tr><td><code>find / -a -type f -name password.txt</code></td><td>Recursive exact match</td></tr><tr><td><code>find / -a -name "pat*tern"</code></td><td>Pattern match "pat" and ending with "tern"</td></tr><tr><td><code>find / -a -type d -name config</code></td><td>Exact directory match</td></tr><tr><td><code>find / -a -type d -name "\*687-250\*"</code></td><td>Pattern directory match</td></tr><tr><td><code>find / -a -regex "regex_pattern"</code></td><td>Regex</td></tr><tr><td><code>locate "[filename]"</code></td><td>Uses a database updated by <code>updatedb</code> to quickly locate files</td></tr><tr><td><code>locate -i "[filename]"</code></td><td>Case-insensitive</td></tr></tbody></table>
 
 Use extended regex syntax:
 
@@ -50,27 +38,15 @@ find / -a -name gcc*
 
 
 
-## File Extensions
+## <mark style="color:red;">File Extensions</mark>
 
-| Command                                                 | Description                                                                                               |
-| ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `ls [directory]/*.ext`                                  | Not Recursive                                                                                             |
-| `find / -a -type f \( -name "*.txt" -o -name "*.sh" \)` | Multiple file extensions.                                                                                 |
-| `find / -a -type f -name "*.txt"`                       | Recursive                                                                                                 |
-| `find / -a -type f -iname "*.txt"`                      | Case-insensitive.                                                                                         |
-| `find / -a -type f -regex ".*\.txt"`                    | Use regular expressions.                                                                                  |
-| `find / -a -regextype posix -regex ".+\.log$"`          | Matches all files ending with .log, using POSIX regex syntax.                                             |
-| `grep -rli "\.txt$" /path/to/search`                    | Recursive                                                                                                 |
-| `grep -rli --include=\*.ext "pattern" [directory]`      | Recursively searches for files with the `.ext` extension containing "pattern" in the specified directory. |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="572">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>ls [directory]/*.ext</code></td><td>Not Recursive</td></tr><tr><td><code>find / -a -type f \( -name "*.txt" -o -name "*.sh" \)</code></td><td>Multiple file extensions.</td></tr><tr><td><code>find / -a -type f -name "*.txt"</code></td><td>Recursive</td></tr><tr><td><code>find / -a -type f -iname "*.txt"</code></td><td>Case-insensitive.</td></tr><tr><td><code>find / -a -type f -regex ".*\.txt"</code></td><td>Use regular expressions.</td></tr><tr><td><code>find / -a -regextype posix -regex ".+\.log$"</code></td><td>Matches all files ending with .log, using POSIX regex syntax.</td></tr><tr><td><code>grep -rli "\.txt$" /path/to/search</code></td><td>Recursive</td></tr><tr><td><code>grep -rli --include=\*.ext "pattern" [directory]</code></td><td>Recursively searches for files with the <code>.ext</code> extension containing "pattern" in the specified directory.</td></tr></tbody></table>
 
 
 
-## Search Multiple Dirs
+## <mark style="color:red;">Search Multiple Dirs</mark>
 
-| Command                                          | Description                 |
-| ------------------------------------------------ | --------------------------- |
-| `find /opt /usr /var -a -type f -name foo.scala` | Search specific directories |
-| `find /directory* -name foo.txt`                 | Wildcard                    |
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find /opt /usr /var -a -type f -name foo.scala</code></td><td>Search specific directories</td></tr><tr><td><code>find /directory* -name foo.txt</code></td><td>Wildcard</td></tr></tbody></table>
 
 Loop: Iterates through each directory and runs the find command inside each, effectively searching them all.
 
@@ -82,40 +58,19 @@ done
 
 
 
-## Inverse
+## <mark style="color:red;">Inverse</mark>
 
-| Command                                                      | Description                                                                 |
-| ------------------------------------------------------------ | --------------------------------------------------------------------------- |
-| `grep -L`                                                    | Lists files that do not contain a specified pattern.                        |
-| `ls / \| grep -v "[pattern]"`                                | Lists files in the root directory that do not match the specified pattern.  |
-| `find / -a -not -name "[pattern]"`                           | Finds files not matching a specific pattern.                                |
-| `find / -a -type f -not -name "*.html"`                      | Finds files that do not end in ".html".                                     |
-| `find / -a ! -name "[pattern]"`                              | An alternative to `-not`, finds files not matching a specific pattern.      |
-| `find / -a ! -name "pattern1" ! -name "pattern2"`            | Finds files not matching multiple patterns.                                 |
-| `find / -a -type f ! -exec grep -q "[pattern]" {} \; -print` | Finds files that do not contain a specified pattern using `-exec`.          |
-| `find / -a -type f -print0 \| xargs -0 grep -L "[pattern]"`  | Finds files that do not contain a specified pattern using `xargs`.          |
-| `awk '!/[pattern]/' [file]`                                  | Uses `awk` to print lines from a file that do not match a specific pattern. |
-| `sed -n '/[pattern]/!p' [file]`                              | Uses `sed` to print lines from a file that do not match a specific pattern. |
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>grep -L</code></td><td>Lists files that do not contain a specified pattern.</td></tr><tr><td><code>ls / | grep -v "[pattern]"</code></td><td>Lists files in the root directory that do not match the specified pattern.</td></tr><tr><td><code>find / -a -not -name "[pattern]"</code></td><td>Finds files not matching a specific pattern.</td></tr><tr><td><code>find / -a -type f -not -name "*.html"</code></td><td>Finds files that do not end in ".html".</td></tr><tr><td><code>find / -a ! -name "[pattern]"</code></td><td>An alternative to <code>-not</code>, finds files not matching a specific pattern.</td></tr><tr><td><code>find / -a ! -name "pattern1" ! -name "pattern2"</code></td><td>Finds files not matching multiple patterns.</td></tr><tr><td><code>find / -a -type f ! -exec grep -q "[pattern]" {} \; -print</code></td><td>Finds files that do not contain a specified pattern using <code>-exec</code>.</td></tr><tr><td><code>find / -a -type f -print0 | xargs -0 grep -L "[pattern]"</code></td><td>Finds files that do not contain a specified pattern using <code>xargs</code>.</td></tr><tr><td><code>awk '!/[pattern]/' [file]</code></td><td>Uses <code>awk</code> to print lines from a file that do not match a specific pattern.</td></tr><tr><td><code>sed -n '/[pattern]/!p' [file]</code></td><td>Uses <code>sed</code> to print lines from a file that do not match a specific pattern.</td></tr></tbody></table>
 
 
 
-## Weird Filenames
+## <mark style="color:red;">Weird Filenames</mark>
 
-| Command                                                           | Description                                                            |
-| ----------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `find / -a -type d -name " \*" -exec ls -ladtri {} 2>/dev/null +` | Directories with a space                                               |
-| `find / -a -type f -name " \*" -exec ls -latriQ {} 2>/dev/null +` | Files with a space                                                     |
-| `find / -a -type f -name '*[![:alnum:]_\-\.]*'`                   | Files with non-alphanumeric characters in their filenames.             |
-| `find / -a -type f -regex '.*[^[:alnum:]_\-\.].*'`                | Files with non-alphanumeric characters in their filenames using regex. |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="496">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find / -a -type d -name " \*" -exec ls -ladtri {} 2>/dev/null +</code></td><td>Directories with a space</td></tr><tr><td><code>find / -a -type f -name " \*" -exec ls -latriQ {} 2>/dev/null +</code></td><td>Files with a space</td></tr><tr><td><code>find / -a -type f -name '*[![:alnum:]_\-\.]*'</code></td><td>Files with non-alphanumeric characters in their filenames.</td></tr><tr><td><code>find / -a -type f -regex '.*[^[:alnum:]_\-\.].*'</code></td><td>Files with non-alphanumeric characters in their filenames using regex.</td></tr></tbody></table>
 
 
 
-## Executables
+## <mark style="color:red;">Executables</mark>
 
-| Command                 | Description                                        |
-| ----------------------- | -------------------------------------------------- |
-| `which grep`            | Single binary                                      |
-| `which python java gcc` | Multiple binaries                                  |
-| `type ls`               | Shows how the command is interpreted by the shell. |
-| `command -v ls`         | Shows how the command is interpreted by the shell. |
-| `which -a python`       | All instances of "python" in the path.             |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="494">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>which grep</code></td><td>Single binary</td></tr><tr><td><code>which python java gcc</code></td><td>Multiple binaries</td></tr><tr><td><code>type ls</code></td><td>Shows how the command is interpreted by the shell.</td></tr><tr><td><code>command -v ls</code></td><td>Shows how the command is interpreted by the shell.</td></tr><tr><td><code>which -a python</code></td><td>All instances of "python" in the path.</td></tr></tbody></table>
+

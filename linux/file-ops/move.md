@@ -1,11 +1,3 @@
 # Move
 
-| Command                    | Description                                                                                    |
-| -------------------------- | ---------------------------------------------------------------------------------------------- |
-| `mv [file] /put/file/here` | Move file.                                                                                     |
-| `mv file1 file2 /dir`      | Move multiple files.                                                                           |
-| `mv * /dir`                | Move all files in the current directory to `/dir`.                                             |
-| `mv *.txt /dir`            | Move all `.txt` files in the current directory to `/dir`.                                      |
-| `mv .[^.]* /dir`           | Move all hidden files (those starting with a dot) to `/dir`. This pattern avoids `.` and `..`. |
-| `mv -v [file] /dir`        | Verbose output, showing the file names as they are moved.                                      |
-| `mv -n [file] /dir`        | No Clobber. Won't overwriting any existing file in the target location.                        |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="296">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>mv [file] /put/file/here</code></td><td>Move file.</td></tr><tr><td><code>mv file1 file2 /dir</code></td><td>Move multiple files.</td></tr><tr><td><code>mv * /dir</code></td><td>Move all files in the current directory to <code>/dir</code>.</td></tr><tr><td><code>mv *.txt /dir</code></td><td>Move all <code>.txt</code> files in the current directory to <code>/dir</code>.</td></tr><tr><td><code>mv .[^.]* /dir</code></td><td>Move all hidden files (those starting with a dot) to <code>/dir</code>. This pattern avoids <code>.</code> and <code>..</code>.</td></tr><tr><td><code>mv -v [file] /dir</code></td><td>Verbose output, showing the file names as they are moved.</td></tr><tr><td><code>mv -n [file] /dir</code></td><td>No Clobber. Won't overwriting any existing file in the target location.</td></tr></tbody></table>

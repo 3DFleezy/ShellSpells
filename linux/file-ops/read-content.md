@@ -1,21 +1,3 @@
 # Read Content
 
-| Command                     | Description                                                                          |
-| --------------------------- | ------------------------------------------------------------------------------------ |
-| `cat [file]`                | Display all                                                                          |
-| `less [file]`               | Paging with search                                                                   |
-| `more [file]`               | Paging                                                                               |
-| `head [file]`               | First lines (default is 10 lines)                                                    |
-| `head -n 15 [file]`         | First 15 lines.                                                                      |
-| `tail [file]`               | Last lines (default is 10 lines)                                                     |
-| `tail -n 15 [file]`         | Last 15 lines.                                                                       |
-| `tail -f [file]`            | Continuously monitor for new lines, useful for logs.                                 |
-| `nl [file]`                 | Display contents with line numbers                                                   |
-| `od -c [file]`              | Display in octal along with ASCII characters.                                        |
-| `hexdump -C [file]`         | Display in hex. Useful for binaries.                                                 |
-| `strings [file]`            | Extract and display printable strings.                                               |
-| `zcat file.gz`              | Display contents of gzipped files without decompressing it on disk.                  |
-| `zless file.gz`             | View the contents of a gzipped \[file] in an interactive `less`-like interface.      |
-| `zmore file.gz`             | View the contents of a gzipped \[file] page by page, similar to `more`.              |
-| `bzcat file.bz2`            | Display the contents of a bzip2-compressed \[file] without decompressing it on disk. |
-| `highlight --syntax [file]` | Applies syntax highlighting based on the file type.                                  |
+<table><thead><tr><th width="304">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>cat [file]</code></td><td>Display all</td></tr><tr><td><code>less [file]</code></td><td>Paging with search</td></tr><tr><td><code>more [file]</code></td><td>Paging</td></tr><tr><td><code>head [file]</code></td><td>First lines (default is 10 lines)</td></tr><tr><td><code>head -n 15 [file]</code></td><td>First 15 lines.</td></tr><tr><td><code>tail [file]</code></td><td>Last lines (default is 10 lines)</td></tr><tr><td><code>tail -n 15 [file]</code></td><td>Last 15 lines.</td></tr><tr><td><code>tail -f [file]</code></td><td>Continuously monitor for new lines, useful for logs.</td></tr><tr><td><code>nl [file]</code></td><td>Display contents with line numbers</td></tr><tr><td><code>od -c [file]</code></td><td>Display in octal along with ASCII characters.</td></tr><tr><td><code>hexdump -C [file]</code></td><td>Display in hex. Useful for binaries.</td></tr><tr><td><code>strings [file]</code></td><td>Extract and display printable strings.</td></tr><tr><td><code>zcat file.gz</code></td><td>Display contents of gzipped files without decompressing it on disk.</td></tr><tr><td><code>zless file.gz</code></td><td>View the contents of a gzipped [file] in an interactive <code>less</code>-like interface.</td></tr><tr><td><code>zmore file.gz</code></td><td>View the contents of a gzipped [file] page by page, similar to <code>more</code>.</td></tr><tr><td><code>bzcat file.bz2</code></td><td>Display the contents of a bzip2-compressed [file] without decompressing it on disk.</td></tr><tr><td><code>highlight --syntax [file]</code></td><td>Applies syntax highlighting based on the file type.</td></tr></tbody></table>

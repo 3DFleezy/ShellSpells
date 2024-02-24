@@ -95,7 +95,7 @@ Similar to \~/.bash\_profile for bash, this file is executed for login shells.
 Executed for interactive shell sessions. \
 It's common to place most shell customizations here.
 
-## C Shell (csh) or TENEX C Shell (tcsh)
+## <mark style="color:red;">C Shell (csh) or TENEX C Shell (tcsh)</mark>
 
 <mark style="color:orange;">**\~/.login**</mark>\
 Executed at the beginning of a csh or tcsh login shell session.
@@ -104,7 +104,7 @@ Executed at the beginning of a csh or tcsh login shell session.
 Read and executed when an interactive shell session starts. \
 It's used for setting up the shell environment.
 
-## Korn Shell (ksh)
+## <mark style="color:red;">Korn Shell (ksh)</mark>
 
 <mark style="color:orange;">**\~/.profile**</mark> \
 Executed for login shells. \

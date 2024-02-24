@@ -119,19 +119,31 @@ Save your file with the .service extension. Store the unit file in /etc/systemd/
 
 After saving your service file, you need to tell systemd about the new service and optionally enable it to start at boot.
 
-Reload systemd to read the new service file:\
-`sudo systemctl daemon-reload`
+Reload systemd to read the new service file:
 
-Enable the service to start on boot:\
-`sudo systemctl enable myservice.service`
+```bash
+sudo systemctl daemon-reload
+```
 
-Start the service now without rebooting:\
-`sudo systemctl start myservice.service`
+Enable the service to start on boot:
+
+```bash
+sudo systemctl enable myservice.service
+```
+
+Start the service now without rebooting:
+
+```bash
+sudo systemctl start myservice.service
+```
 
 ### <mark style="color:purple;">Step 4: Verify the Service Status</mark>
 
-You can check the status of your service to ensure it's running correctly:\
-`sudo systemctl status myservice.service`
+You can check the status of your service to ensure it's running correctly:
+
+```bash
+sudo systemctl status myservice.service
+```
 
 #### <mark style="color:green;">Additional Notes</mark>
 

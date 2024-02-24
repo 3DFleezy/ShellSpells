@@ -4,16 +4,7 @@
 
 ### <mark style="color:purple;">Searching for AV</mark>
 
-| Command                                     | Description                                                                             |
-| ------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `which [AV_command]`                        | Checks if the antivirus executable is installed and accessible in the system's PATH.    |
-| `ps -ef \| grep [AV_process]`               | Looks for running antivirus processes in the system.                                    |
-| `dpkg -l \| grep [AV_package]`              | Checks if the antivirus package is installed on Debian-based systems.                   |
-| `rpm -qa \| grep [AV_package]`              | Checks if the antivirus package is installed on RPM-based systems.                      |
-| `ps aux \| grep antivirus`                  | String search for "antivirus" in the process list.                                      |
-| `pgrep -f antivirus`                        | String search for "antivirus" in the process command arguments.                         |
-| `/etc/init.d`                               | Look for scripts related to antivirus software.                                         |
-| `systemctl list-unit-files --type=service`  | (Systemd) Check for service unit files related to antivirus software by name or vendor. |
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>which [AV_command]</code></td><td>Checks if the antivirus executable is installed and accessible in the system's PATH.</td></tr><tr><td><code>ps -ef | grep [AV_process]</code></td><td>Looks for running antivirus processes in the system.</td></tr><tr><td><code>dpkg -l | grep [AV_package]</code></td><td>Checks if the antivirus package is installed on Debian-based systems.</td></tr><tr><td><code>rpm -qa | grep [AV_package]</code></td><td>Checks if the antivirus package is installed on RPM-based systems.</td></tr><tr><td><code>ps aux | grep antivirus</code></td><td>String search for "antivirus" in the process list.</td></tr><tr><td><code>pgrep -f antivirus</code></td><td>String search for "antivirus" in the process command arguments.</td></tr><tr><td><code>/etc/init.d</code></td><td>Look for scripts related to antivirus software.</td></tr><tr><td><code>systemctl list-unit-files --type=service</code> </td><td>(Systemd) Check for service unit files related to antivirus software by name or vendor.</td></tr></tbody></table>
 
 ### <mark style="color:purple;">File System Exploration</mark>
 
@@ -61,28 +52,16 @@ done
 
 ### <mark style="color:purple;">Enable</mark>
 
-| Command                                          | Description                |
-| ------------------------------------------------ | -------------------------- |
-| `sudo systemctl enable <antivirus_service_name>` | for systemd-based systems  |
-| `sudo chkconfig <antivirus_service_name> on`     | for SysVinit-based systems |
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>sudo systemctl enable &#x3C;antivirus_service_name></code></td><td>for systemd-based systems</td></tr><tr><td><code>sudo chkconfig &#x3C;antivirus_service_name> on</code></td><td>for SysVinit-based systems</td></tr></tbody></table>
 
 ### <mark style="color:purple;">Disable</mark>
 
-| Command                                           | Description                |
-| ------------------------------------------------- | -------------------------- |
-| `sudo systemctl disable <antivirus_service_name>` | for systemd-based system   |
-| `sudo chkconfig <antivirus_service_name> off`     | for SysVinit-based systems |
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>sudo systemctl disable &#x3C;antivirus_service_name></code></td><td>for systemd-based system</td></tr><tr><td><code>sudo chkconfig &#x3C;antivirus_service_name> off</code></td><td>for SysVinit-based systems</td></tr></tbody></table>
 
 ### <mark style="color:purple;">Start</mark>
 
-| Command                                         | Description                |
-| ----------------------------------------------- | -------------------------- |
-| `sudo systemctl start <antivirus_service_name>` | for systemd-based systems  |
-| `sudo service <antivirus_service_name> start`   | for SysVinit-based systems |
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>sudo systemctl start &#x3C;antivirus_service_name></code></td><td>for systemd-based systems</td></tr><tr><td><code>sudo service &#x3C;antivirus_service_name> start</code></td><td>for SysVinit-based systems</td></tr></tbody></table>
 
 ### <mark style="color:purple;">Stop</mark>
 
-| Command                                        | Description                |
-| ---------------------------------------------- | -------------------------- |
-| `sudo systemctl stop <antivirus_service_name>` | for systemd-based systems  |
-| `sudo service <antivirus_service_name> stop`   | for SysVinit-based systems |
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>sudo systemctl stop &#x3C;antivirus_service_name></code></td><td>for systemd-based systems</td></tr><tr><td><code>sudo service &#x3C;antivirus_service_name> stop</code></td><td>for SysVinit-based systems</td></tr></tbody></table>

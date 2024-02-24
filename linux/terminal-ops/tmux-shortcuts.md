@@ -1,16 +1,3 @@
 # Tmux Shortcuts
 
-| Shortcut           | Description                                    |
-| ------------------ | ---------------------------------------------- |
-| `Ctrl+b "`         | Splits the current pane horizontally.          |
-| `Ctrl+b %`         | Splits the current pane vertically.            |
-| `Ctrl+b arrow key` | Navigates between panes.                       |
-| `Ctrl+b z`         | Toggles pane zoom.                             |
-| `Ctrl+b c`         | Creates a new window.                          |
-| `Ctrl+b ,`         | Renames the current window.                    |
-| `Ctrl+b p`         | Switches to the previous window.               |
-| `Ctrl+b n`         | Switches to the next window.                   |
-| `Ctrl+b d`         | Detaches from the current session.             |
-| `Ctrl+b [`         | Enters copy mode to scroll through the buffer. |
-| `Ctrl+b ]`         | Pastes the copied text.                        |
-| `Ctrl+b :`         | Enters tmux command mode.                      |
+<table><thead><tr><th width="266">Shortcut</th><th>Description</th></tr></thead><tbody><tr><td><code>Ctrl+b "</code></td><td>Splits the current pane horizontally.</td></tr><tr><td><code>Ctrl+b %</code></td><td>Splits the current pane vertically.</td></tr><tr><td><code>Ctrl+b arrow key</code></td><td>Navigates between panes.</td></tr><tr><td><code>Ctrl+b z</code></td><td>Toggles pane zoom.</td></tr><tr><td><code>Ctrl+b c</code></td><td>Creates a new window.</td></tr><tr><td><code>Ctrl+b ,</code></td><td>Renames the current window.</td></tr><tr><td><code>Ctrl+b p</code></td><td>Switches to the previous window.</td></tr><tr><td><code>Ctrl+b n</code></td><td>Switches to the next window.</td></tr><tr><td><code>Ctrl+b d</code></td><td>Detaches from the current session.</td></tr><tr><td><code>Ctrl+b [</code></td><td>Enters copy mode to scroll through the buffer.</td></tr><tr><td><code>Ctrl+b ]</code></td><td>Pastes the copied text.</td></tr><tr><td><code>Ctrl+b :</code></td><td>Enters tmux command mode.</td></tr></tbody></table>

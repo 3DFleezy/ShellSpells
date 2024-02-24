@@ -1,12 +1,6 @@
 # Process I/O Redirection
 
-| Command       | Description                                         |
-| ------------- | --------------------------------------------------- |
-| `> filename`  | Redirects standard output to a file.                |
-| `>> filename` | Appends standard output to a file.                  |
-| `< filename`  | Redirects standard input from a file.               |
-| `2> filename` | Redirects standard error to a file.                 |
-| `&> filename` | Redirects both standard output and error to a file. |
+<table data-header-hidden><thead><tr><th width="198">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>> filename</code></td><td>Redirects standard output to a file.</td></tr><tr><td><code>>> filename</code></td><td>Appends standard output to a file.</td></tr><tr><td><code>&#x3C; filename</code></td><td>Redirects standard input from a file.</td></tr><tr><td><code>2> filename</code></td><td>Redirects standard error to a file.</td></tr><tr><td><code>&#x26;> filename</code></td><td>Redirects both standard output and error to a file.</td></tr></tbody></table>
 
 ## <mark style="color:red;">& - Running Command in Background</mark>&#x20;
 

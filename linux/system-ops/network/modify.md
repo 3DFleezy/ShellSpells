@@ -119,17 +119,29 @@ Edit /etc/sysconfig/network-scripts/route-\<interface> (Red Hat/CentOS): Add rou
 
 ## <mark style="color:red;">Sockets</mark>
 
-Adjusts the range of ports available for user-space applications:\
-`sysctl -w net.ipv4.ip_local_port_range="1024 65535"`
+Adjusts the range of ports available for user-space applications:
 
-Enables reuse of sockets in TIME-WAIT state for new connections, affecting how sockets are managed: \
-`sysctl -w net.ipv4.tcp_tw_reuse=1`
+```bash
+sysctl -w net.ipv4.ip_local_port_range="1024 65535"
+```
 
-Uses Uncomplicated Firewall (ufw) to allow or deny access to specific ports on Ubuntu and other systems: \
-`ufw allow|deny [port]`
+Enables reuse of sockets in TIME-WAIT state for new connections, affecting how sockets are managed:
 
-Allows incoming TCP connections on a specific port. Modify rules to control access to sockets: \
-`iptables -A INPUT -p tcp --dport [port] -j ACCEPT`
+```bash
+sysctl -w net.ipv4.tcp_tw_reuse=1
+```
+
+Uses Uncomplicated Firewall (ufw) to allow or deny access to specific ports on Ubuntu and other systems:
+
+```bash
+ufw allow|deny <port>
+```
+
+Allows incoming TCP connections on a specific port. Modify rules to control access to sockets:
+
+```bash
+iptables -A INPUT -p tcp --dport <port> -j ACCEPT
+```
 
 The easiest way to open and close ports is to kill/disable the process/service using it. \
 Otherwise, you can make firewall/iptable rules to block/allow/etc.

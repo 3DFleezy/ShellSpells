@@ -1,12 +1,11 @@
 # Permission
 
-## Read
+## <mark style="color:red;">Read</mark>
 
-### Other/World
+### <mark style="color:purple;">Other/World</mark>
 
-| Command                | Description        |
-| ---------------------- | ------------------ |
 | `find / -a -perm -o+r` | World-readable     |
+| ---------------------- | ------------------ |
 | `find / -a -perm -4`   | World-readable     |
 | `grep -r "r-." /`      | Alternative method |
 
@@ -16,37 +15,25 @@ Extracts usernames from /etc/passwd and finds files owned by each user where "ot
 grep "r-" /etc/passwd | cut -d: -f1 | xargs find . -user
 ```
 
-### Current User
+### <mark style="color:purple;">Current User</mark>
 
-| Command                | Description            |
-| ---------------------- | ---------------------- |
 | `find / -a -readable`  | Current user readable. |
+| ---------------------- | ---------------------- |
 | `find / -a -perm -u+r` | Current user readable. |
 
-### User specific
+### <mark style="color:purple;">User specific</mark>
 
-| Command                                 | Description                                                                       |
-| --------------------------------------- | --------------------------------------------------------------------------------- |
-| `find / -a -user [username] -readable`  | Specific user readable.                                                           |
-| `find / -a -user [username] -perm -4`   | Specific user readable.                                                           |
-| `find / -a -user [username] -perm -u+r` | Combines owner read permission to show files owned by user with read permissions. |
+<table data-header-hidden data-full-width="false"><thead><tr><th width="419">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find / -a -user [username] -readable</code></td><td>Specific user readable.</td></tr><tr><td><code>find / -a -user [username] -perm -4</code></td><td>Specific user readable.</td></tr><tr><td><code>find / -a -user [username] -perm -u+r</code></td><td>Combines owner read permission to show files owned by user with read permissions.</td></tr></tbody></table>
 
-### Group
+### <mark style="color:purple;">Group</mark>
 
-| Command                                   | Description              |
-| ----------------------------------------- | ------------------------ |
-| `find / -a -perm -g+r`                    | Group readable.          |
-| `find / -a -group <group_name> -readable` | Specific group readable. |
+<table data-header-hidden><thead><tr><th width="444">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find / -a -perm -g+r</code></td><td>Group readable.</td></tr><tr><td><code>find / -a -group &#x3C;group_name> -readable</code></td><td>Specific group readable.</td></tr></tbody></table>
 
-## Write
+## <mark style="color:red;">Write</mark>
 
-### Other/World
+### <mark style="color:purple;">Other/World</mark>
 
-| Command                | Description         |
-| ---------------------- | ------------------- |
-| `find / -a -perm -o+w` | Writable by "Other" |
-| `find / -a -perm -2`   | Writable by "Other" |
-| `grep -r "w-." /`      | Alternative method  |
+<table data-header-hidden><thead><tr><th width="320">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find / -a -perm -o+w</code></td><td>Writable by "Other"</td></tr><tr><td><code>find / -a -perm -2</code></td><td>Writable by "Other"</td></tr><tr><td><code>grep -r "w-." /</code></td><td>Alternative method</td></tr></tbody></table>
 
 Find world-writable config files:
 
@@ -56,11 +43,10 @@ find /etc -a -type f ( -name ".conf" -o -name ".cfg" -o -name "*.ini" ) -perm -o
 ```
 {% endcode %}
 
-### Current User
+### <mark style="color:purple;">Current User</mark>
 
-| Command                           | Description           |
-| --------------------------------- | --------------------- |
 | `find / -a -writable 2>/dev/null` | Current user writable |
+| --------------------------------- | --------------------- |
 | `find / -a -perm -u+r`            | Current user writable |
 
 Current-user writable filtering out running processes:
@@ -71,30 +57,19 @@ find / -a -writable 2>/dev/null | cut -d "/" -f 2,3 | grep -v proc | sort -u
 ```
 {% endcode %}
 
-### User Specific
+### <mark style="color:purple;">User Specific</mark>
 
-| Command                                 | Description                                                                       |
-| --------------------------------------- | --------------------------------------------------------------------------------- |
-| `find / -a -user [username] -readable`  | Specific user writable                                                            |
-| `find / -a -user [username] -perm -2`   | Specific user writable                                                            |
-| `find / -a -user [username] -perm -u+r` | Combines owner read permission to show files owned by user with read permissions. |
+<table data-header-hidden><thead><tr><th width="417">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find / -a -user [username] -readable</code></td><td>Specific user writable</td></tr><tr><td><code>find / -a -user [username] -perm -2</code></td><td>Specific user writable</td></tr><tr><td><code>find / -a -user [username] -perm -u+r</code></td><td>Combines owner read permission to show files owned by user with read permissions.</td></tr></tbody></table>
 
-### Group
+### <mark style="color:purple;">Group</mark>
 
-| Command                                   | Description              |
-| ----------------------------------------- | ------------------------ |
-| `find / -a -perm -g+w`                    | Group Writable.          |
-| `find / -a -group <group_name> -readable` | Specific group Writable. |
+<table data-header-hidden><thead><tr><th width="436">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find / -a -perm -g+w</code></td><td>Group Writable.</td></tr><tr><td><code>find / -a -group &#x3C;group_name> -readable</code></td><td>Specific group Writable.</td></tr></tbody></table>
 
-## Execute
+## <mark style="color:red;">Execute</mark>
 
-### Other/World
+### <mark style="color:purple;">Other/World</mark>
 
-| Command                | Description        |
-| ---------------------- | ------------------ |
-| `find / -a -perm -o+x` | World-executable   |
-| `find / -a -perm -1`   | World-executable   |
-| `grep -r "x-." /`      | Alternative method |
+<table data-header-hidden><thead><tr><th width="280">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find / -a -perm -o+x</code></td><td>World-executable</td></tr><tr><td><code>find / -a -perm -1</code></td><td>World-executable</td></tr><tr><td><code>grep -r "x-." /</code></td><td>Alternative method</td></tr></tbody></table>
 
 Finds files owned by each user where "others" have execute permission:
 
@@ -102,33 +77,21 @@ Finds files owned by each user where "others" have execute permission:
 grep "x-" /etc/passwd | cut -d: -f1 | xargs find . -user
 ```
 
-### Current User
+### <mark style="color:purple;">Current User</mark>
 
-| Command                 | Description             |
-| ----------------------- | ----------------------- |
-| `find / -a -executable` | Current user executable |
-| `find / -a -perm -u+x`  | Current user executable |
+<table data-header-hidden><thead><tr><th width="284">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find / -a -executable</code></td><td>Current user executable</td></tr><tr><td><code>find / -a -perm -u+x</code></td><td>Current user executable</td></tr></tbody></table>
 
-### User specific
+### <mark style="color:purple;">User specific</mark>
 
-| Command                                  | Description                                                                      |
-| ---------------------------------------- | -------------------------------------------------------------------------------- |
-| `find / -a -user [username] -executable` | Specific user executable                                                         |
-| `find / -a -user [username] -perm -1`    | Specific user executable                                                         |
-| `find / -a -user [username] -perm -u+x`  | Combines owner read permission to show files owned by user with read permissions |
+<table data-header-hidden><thead><tr><th width="429">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find / -a -user [username] -executable</code></td><td>Specific user executable</td></tr><tr><td><code>find / -a -user [username] -perm -1</code></td><td>Specific user executable</td></tr><tr><td><code>find / -a -user [username] -perm -u+x</code></td><td>Combines owner read permission to show files owned by user with read permissions</td></tr></tbody></table>
 
-### Group
+### <mark style="color:purple;">Group</mark>
 
-| Command                                     | Description               |
-| ------------------------------------------- | ------------------------- |
-| `find / -a -perm -g+x`                      | Group executable          |
-| `find / -a -group <group_name> -executable` | Specific group executable |
+<table data-header-hidden><thead><tr><th width="459">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find / -a -perm -g+x</code></td><td>Group executable</td></tr><tr><td><code>find / -a -group &#x3C;group_name> -executable</code></td><td>Specific group executable</td></tr></tbody></table>
 
-## Wide-Open
+## <mark style="color:red;">Wide-Open</mark>
 
-| Command                | Description     |
-| ---------------------- | --------------- |
-| `find / -a -perm 0777` | Wide open files |
+<table data-header-hidden><thead><tr><th width="294">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find / -a -perm 0777</code></td><td>Wide open files</td></tr></tbody></table>
 
 Find files with insecure permissions:
 
@@ -136,22 +99,16 @@ Find files with insecure permissions:
 find / -a -type f ( -perm 777 -o -perm 666 ) -exec ls -l {} ;
 ```
 
-## SUID/SGID
+## <mark style="color:red;">SUID/SGID</mark>
 
-### Permission Filters
+### <mark style="color:purple;">Permission Filters</mark>
 
 `-2000` = Owner has write permissions, SGID is set. File inherits the GID of the process that executes it. `-4000` = Only files with SUID bit. \
 `/6000` = SUID, SGID, or Both.
 
-### SUID Only
+### <mark style="color:purple;">SUID Only</mark>
 
-| Command                                 | Description                  |
-| --------------------------------------- | ---------------------------- |
-| `find / -a -perm -4000`                 | SUID set                     |
-| `find / -a -perm /u=s`                  | SUID set                     |
-| `find / -a -perm -4000 -user root`      | SUID files owned by root     |
-| `find / -a -perm -4000 -not -user root` | SUID files NOT owned by root |
-| `grep -r "w-s-" /`                      | SUID set (Alternate method)  |
+<table data-header-hidden><thead><tr><th width="422">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find / -a -perm -4000</code></td><td>SUID set</td></tr><tr><td><code>find / -a -perm /u=s</code></td><td>SUID set</td></tr><tr><td><code>find / -a -perm -4000 -user root</code></td><td>SUID files owned by root</td></tr><tr><td><code>find / -a -perm -4000 -not -user root</code></td><td>SUID files NOT owned by root</td></tr><tr><td><code>grep -r "w-s-" /</code></td><td>SUID set (Alternate method)</td></tr></tbody></table>
 
 Processes usernames from /etc/passwd, searches for world-executable SUID files owned by each user.&#x20;
 
@@ -163,24 +120,13 @@ Use with Caution!
 grep -r "w-s-" / | cut -d: -f1 | xargs find . -user
 ```
 
-### SGID Only
+### <mark style="color:purple;">SGID Only</mark>
 
-| Command                                 | Description                              |
-| --------------------------------------- | ---------------------------------------- |
-| `find / -a -perm -2000`                 | Owner has write permissions, SGID is set |
-| `find / -a -perm /u=g`                  | SGID set                                 |
-| `find / -a -perm -2000 -user root`      | SGID set and owned by root               |
-| `find / -a -perm -2000 -not -user root` | SGID set and NOT owned by root           |
-| `grep -r "w-S-" /`                      | SGID set (Alternate method)              |
+<table data-header-hidden><thead><tr><th width="425">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find / -a -perm -2000</code></td><td>Owner has write permissions, SGID is set</td></tr><tr><td><code>find / -a -perm /u=g</code></td><td>SGID set</td></tr><tr><td><code>find / -a -perm -2000 -user root</code></td><td>SGID set and owned by root</td></tr><tr><td><code>find / -a -perm -2000 -not -user root</code></td><td>SGID set and NOT owned by root</td></tr><tr><td><code>grep -r "w-S-" /</code></td><td>SGID set (Alternate method)</td></tr></tbody></table>
 
-### SUID AND/OR SGID
+### <mark style="color:purple;">SUID AND/OR SGID</mark>
 
-| Command                                 | Description                                   |
-| --------------------------------------- | --------------------------------------------- |
-| `find / -a -perm /6000`                 | SUID, SGID, or both set                       |
-| `find / -a -perm /u=s,g=s`              | Both SUID and SGID set                        |
-| `find / -a -perm /6000 -user root`      | SUID, SGID, or both set and owned by root     |
-| `find / -a -perm /6000 -not -user root` | SUID, SGID, or both set and NOT owned by root |
+<table data-header-hidden><thead><tr><th width="427">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find / -a -perm /6000</code></td><td>SUID, SGID, or both set</td></tr><tr><td><code>find / -a -perm /u=s,g=s</code></td><td>Both SUID and SGID set</td></tr><tr><td><code>find / -a -perm /6000 -user root</code></td><td>SUID, SGID, or both set and owned by root</td></tr><tr><td><code>find / -a -perm /6000 -not -user root</code></td><td>SUID, SGID, or both set and NOT owned by root</td></tr></tbody></table>
 
 SUID or SGID then execute `ls -l`: &#x20;
 
@@ -196,13 +142,9 @@ find / -a -a ( -perm -u+s -o -perm -g+s ) -exec ls -l {} ; 2>/dev/null
 ```
 {% endcode %}
 
-## Capabilties
+## <mark style="color:red;">Capabilties</mark>
 
-| Command                                | Description                                                                     |
-| -------------------------------------- | ------------------------------------------------------------------------------- |
-| `getcap [filepath]`                    | Check a specific file for capabilities.                                         |
-| `getcap -r [filepath]`                 | Recursively check capabilities of files in a directory hierarchy.               |
-| `find / -a -perm -0002 \| getcap -d -` | Searches for capabilities (excluding sticky bits) and pipes getcap for details. |
+<table data-header-hidden><thead><tr><th width="399">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>getcap [filepath]</code></td><td>Check a specific file for capabilities.</td></tr><tr><td><code>getcap -r [filepath]</code></td><td>Recursively check capabilities of files in a directory hierarchy.</td></tr><tr><td><code>find / -a -perm -0002 | getcap -d -</code></td><td>Searches for capabilities (excluding sticky bits) and pipes getcap for details.</td></tr></tbody></table>
 
 Recursively to search for capabilities within open file descriptors, potentially revealing files in use with capabilities. Requires root privileges:
 

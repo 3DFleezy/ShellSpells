@@ -1,22 +1,8 @@
 # Logs
 
-## Enumerate
+## <mark style="color:red;">Enumerate</mark>
 
-| Command                                     | Description                                                                      |
-| ------------------------------------------- | -------------------------------------------------------------------------------- |
-| `journalctl`                                | Logs from the systemd journal, includes system service logs and kernel messages. |
-| `dmesg`                                     | System message buffer, containing kernel-related messages from boot time.        |
-| `ls -ltr /var/log/`                         | Lists all log files in the /var/log directory in reverse chronological order.    |
-| `grep 'keyword' /var/log/syslog`            | Searches for 'keyword' in the syslog file.                                       |
-| `grep -R <service-name> /var/log`           | Recursive search of all logs for keyword.                                        |
-| `awk '/^Sep 10/,/^Sep 12/' /var/log/syslog` | Extracts log entries between September 10 and September 12 from the syslog.      |
-| `find /var/log -type f -mtime -7`           | Finds log files modified in the last 7 days.                                     |
-| `zgrep 'keyword' /var/log/syslog*.gz`       | Searches for 'keyword' in compressed log files in /var/log.                      |
-| `cat /var/log/messages`                     | Display system messages.                                                         |
-| `cat /var/log/auth.log`                     | Display authentication logs.                                                     |
-| `cat /var/log/syslog`                       | Display system log.                                                              |
-| `strings /var/log/wtmp`                     | Find strings.                                                                    |
-| `head /var/log/secure`                      | Shows top 10 lines.                                                              |
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><code>journalctl</code></td><td>Logs from the systemd journal, includes system service logs and kernel messages.</td></tr><tr><td><code>dmesg</code></td><td>System message buffer, containing kernel-related messages from boot time.</td></tr><tr><td><code>ls -ltr /var/log/</code></td><td>Lists all log files in the /var/log directory in reverse chronological order.</td></tr><tr><td><code>grep 'keyword' /var/log/syslog</code></td><td>Searches for 'keyword' in the syslog file.</td></tr><tr><td><code>grep -R &#x3C;service-name> /var/log</code></td><td>Recursive search of all logs for keyword.</td></tr><tr><td><code>awk '/^Sep 10/,/^Sep 12/' /var/log/syslog</code></td><td>Extracts log entries between September 10 and September 12 from the syslog.</td></tr><tr><td><code>find /var/log -type f -mtime -7</code></td><td>Finds log files modified in the last 7 days.</td></tr><tr><td><code>zgrep 'keyword' /var/log/syslog*.gz</code></td><td>Searches for 'keyword' in compressed log files in /var/log.</td></tr><tr><td><code>cat /var/log/messages</code></td><td>Display system messages.</td></tr><tr><td><code>cat /var/log/auth.log</code></td><td>Display authentication logs.</td></tr><tr><td><code>cat /var/log/syslog</code></td><td>Display system log.</td></tr><tr><td><code>strings /var/log/wtmp</code></td><td>Find strings.</td></tr><tr><td><code>head /var/log/secure</code></td><td>Shows top 10 lines.</td></tr></tbody></table>
 
 Check multiple logs for info:
 
@@ -68,9 +54,9 @@ cat /var/log/messages | grep -E "[start_date] [start_time]" | grep -E "[end_date
 
 
 
-### Typical Logs
+### <mark style="color:purple;">Typical Logs</mark>
 
-#### System-wide logs:
+#### <mark style="color:green;">System-wide logs:</mark>
 
 /var/log: This is the most common location for system-wide logs on SysV-based systems. It usually contains files like messages, auth.log, kern.log, etc.
 
@@ -78,11 +64,11 @@ cat /var/log/messages | grep -E "[start_date] [start_time]" | grep -E "[end_date
 
 /var/log/audit: This directory stores audit logs related to user activity and system events.
 
-#### Application-specific logs:
+#### <mark style="color:green;">Application-specific logs:</mark>
 
 Check application documentation or configuration files for their specific log locations. They might be under /var/log or in application-specific directories like /var/log/\<application\_name>.
 
-### Common Log Locations
+### <mark style="color:purple;">Common Log Locations</mark>
 
 | Log File                              | Description                                                                        |
 | ------------------------------------- | ---------------------------------------------------------------------------------- |
@@ -110,7 +96,7 @@ Check application documentation or configuration files for their specific log lo
 
 
 
-## Modify
+## <mark style="color:red;">Modify</mark>
 
 `sed -i` will modify the original file.
 

@@ -1,8 +1,8 @@
 # Encode/Decode
 
-## Encode
+## <mark style="color:red;">Encode</mark>
 
-### Base64
+### <mark style="color:purple;">Base64</mark>
 
 Encode in base64.
 
@@ -18,7 +18,7 @@ The `-w` option specifies line wrap, and `0` disables it (GNU base64):
 base64 -w 0 [file]
 ```
 
-### URL
+### <mark style="color:purple;">URL</mark>
 
 Use Perl's URI::Escape module to URL-encode "string":
 
@@ -34,7 +34,7 @@ Sends a dummy request to `curl` and extracts the encoded URL part:
 echo -n "string" | curl -Gso /dev/null -w %{url_effective} --data-urlencode @- "" | cut -c 3-
 ```
 
-### Hex
+### <mark style="color:purple;">Hex</mark>
 
 Create a hex dump of a file in a plain hex format using `xxd`.
 
@@ -52,7 +52,7 @@ The `cut` command is used to trim the output to show only the hex values:
 od -t x1 [file] | cut -c8- 
 ```
 
-### Character Set Conversion
+### <mark style="color:purple;">Character Set Conversion</mark>
 
 Convert the character encoding of a file. `-f` specifies the original encoding, and `-t` specifies the target encoding.
 
@@ -60,7 +60,7 @@ Convert the character encoding of a file. `-f` specifies the original encoding, 
 iconv -f from_encoding -t to_encoding [file]
 ```
 
-### MIME Encoding
+### <mark style="color:purple;">MIME Encoding</mark>
 
 These commands might not be available in all distributions and are part of the mailutils or similar packages
 
@@ -76,7 +76,7 @@ Another tool for MIME base64 encoding. Similar in function to `mimencode`, but a
 mmencode [file]
 ```
 
-### Reverse
+### <mark style="color:purple;">Reverse</mark>
 
 Reverse content
 
@@ -84,9 +84,9 @@ Reverse content
 tac [file] > [newfile]
 ```
 
-## Decode
+## <mark style="color:red;">Decode</mark>
 
-### Base64
+### <mark style="color:purple;">Base64</mark>
 
 Decode a base64-encoded file. The `-d` option specifies decoding (use `-D` on macOS):
 
@@ -94,7 +94,7 @@ Decode a base64-encoded file. The `-d` option specifies decoding (use `-D` on ma
 base64 -d [file]
 ```
 
-### URL
+### <mark style="color:purple;">URL</mark>
 
 Use Perl's URI::Escape module to URL-decode "encoded\_string":
 
@@ -102,7 +102,7 @@ Use Perl's URI::Escape module to URL-decode "encoded\_string":
 perl -MURI::Escape -e 'print uri_unescape($ARGV[0]);' "encoded_string"
 ```
 
-### Hex
+### <mark style="color:purple;">Hex</mark>
 
 Reverse (decode) a plain hex dump back into binary.
 
@@ -112,7 +112,7 @@ Use `-r` with `xxd` to revert a hex dump back to its original binary form:
 xxd -p -r [file]
 ```
 
-### Character Set Conversion
+### <mark style="color:purple;">Character Set Conversion</mark>
 
 Convert the character encoding of a file back to the desired encoding.
 
@@ -122,7 +122,7 @@ The process is the same as encoding, just reverse the `-f` (from) and `-t` (to) 
 iconv -f from_encoding -t to_encoding [file]
 ```
 
-### MIME Encoding
+### <mark style="color:purple;">MIME Encoding</mark>
 
 If you used mimencode or mmencode for MIME base64 encoding, you might need to find an alternative for decoding since direct counterparts for decoding might not be explicitly named or available.
 
@@ -134,7 +134,7 @@ Decode a MIME base64-encoded file, assuming the content is base64 and does not i
 base64 -d [file]
 ```
 
-### Reverse
+### <mark style="color:purple;">Reverse</mark>
 
 Reverse content
 
