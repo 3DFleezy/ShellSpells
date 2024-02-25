@@ -2,9 +2,8 @@
 
 ## <mark style="color:red;">Commands</mark>
 
-| Command | Description |
-| -------------------------- | --------------------------------------------------------------- |
 | <mark style="color:yellow;">`ls -lisa`</mark>                 | File info                                                       |
+| ------------------------------------------------------------- | --------------------------------------------------------------- |
 | <mark style="color:yellow;">`file [file]`</mark>              | Determine File Type.                                            |
 | <mark style="color:yellow;">`stat [file]`</mark>              | Display Detailed File Information.                              |
 | <mark style="color:yellow;">`statvfs [directory_path]`</mark> | Display Filesystem Information.                                 |
@@ -13,11 +12,9 @@
 | <mark style="color:yellow;">`getcap [filepath]`</mark>        | Check a specific file for capabilities                          |
 | <mark style="color:yellow;">`getcap -r [filepath]`</mark>     | Recursive                                                       |
 
-
-
 ### <mark style="color:purple;">Identifying Symlinks and Hard Links</mark>
 
-`ls -l`
+<mark style="color:yellow;">`ls -l`</mark>
 
 Look at the third column:
 
@@ -25,7 +22,7 @@ Hard link: The number in this column represents the number of hard links pointin
 
 Soft link: This column will display a hyphen (-) followed by the file size and filename of the file the link points to.
 
-`file`
+<mark style="color:yellow;">`file`</mark>
 
 The output will tell you the file type.
 
@@ -33,7 +30,7 @@ Hard link: It will say something like "inode link to "
 
 Soft link: It will say "symbolic link to "
 
-`stat`
+<mark style="color:yellow;">`stat`</mark>
 
 Look for the following differences:
 
@@ -41,42 +38,40 @@ Hard link: st\_ino (inode number) will be the same for both the link and the ori
 
 Soft link: st\_ino will be different for the link and the original file.
 
-
-
 ## <mark style="color:red;">ls Options</mark>
 
-`-a` or `--all`
+<mark style="color:yellow;">`-a`</mark> or <mark style="color:yellow;">`--all`</mark>
 
-`-l` or `--long`
+<mark style="color:yellow;">`-l`</mark> or <mark style="color:yellow;">`--long`</mark>
 
-`-h` or `--human-readable`
+<mark style="color:yellow;">`-h`</mark> or <mark style="color:yellow;">`--human-readable`</mark>
 
-`-R` or `--recursive`
+<mark style="color:yellow;">`-R`</mark> or <mark style="color:yellow;">`--recursive`</mark>
 
-`-t` or `--sort=time`
+<mark style="color:yellow;">`-t`</mark> or <mark style="color:yellow;">`--sort=time`</mark>
 
-`-S` or `--sort=size`
+<mark style="color:yellow;">`-S`</mark> or <mark style="color:yellow;">`--sort=size`</mark>
 
-`-r` or `--reverse`
+<mark style="color:yellow;">`-r`</mark> or <mark style="color:yellow;">`--reverse`</mark>
 
-`-i` or `--inode`
+<mark style="color:yellow;">`-i`</mark> or <mark style="color:yellow;">`--inode`</mark>
 
-`-d` or `--directory`
+<mark style="color:yellow;">`-d`</mark> or <mark style="color:yellow;">`--directory`</mark>
 
-`-g` or `--group`
+<mark style="color:yellow;">`-g`</mark> or <mark style="color:yellow;">`--group`</mark>
 
-`-o` or `--owner`
+<mark style="color:yellow;">`-o`</mark> or <mark style="color:yellow;">`--owner`</mark>
 
-`-F` or `--classify`
+<mark style="color:yellow;">`-F`</mark> or <mark style="color:yellow;">`--classify`</mark>
 
-`-p` or `--indicator-style=slash`
+<mark style="color:yellow;">`-p`</mark> or <mark style="color:yellow;">`--indicator-style=slash`</mark>
 
-`--color`&#x20;
+<mark style="color:yellow;">`--color`</mark>
 
-`-c` or `--time=ctime`
+<mark style="color:yellow;">`-c`</mark> or <mark style="color:yellow;">`--time=ctime`</mark>
 
-`-u` or `--time=atime`
+<mark style="color:yellow;">`-u`</mark> or <mark style="color:yellow;">`--time=atime`</mark>
 
-`-1` or `--format=single-column`
+<mark style="color:yellow;">`-1`</mark> or <mark style="color:yellow;">`--format=single-column`</mark>
 
-`--group-directories-first`
+<mark style="color:yellow;">`--group-directories-first`</mark>
