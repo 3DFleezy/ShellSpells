@@ -81,3 +81,18 @@
 * [Terminal Ops](linux/terminal-ops/README.md)
   * [Keyboard Shortcuts](linux/terminal-ops/keyboard-shortcuts.md)
   * [Tmux Shortcuts](linux/terminal-ops/tmux-shortcuts.md)
+
+## 🪟 Windows
+
+* [System Ops](windows/system-ops/README.md)
+  * [Transcripts](windows/system-ops/transcripts.md)
+  * [Help](windows/system-ops/help.md)
+  * [System Info](windows/system-ops/system-info/README.md)
+    * [One-liners](windows/system-ops/system-info/one-liners.md)
+    * [Date/Time](windows/system-ops/system-info/date-time.md)
+    * [System Details](windows/system-ops/system-info/system-details.md)
+    * [Hotfixes](windows/system-ops/system-info/hotfixes.md)
+    * [Domain or Workgroup](windows/system-ops/system-info/domain-or-workgroup.md)
+    * [Data Execution Prevention](windows/system-ops/system-info/data-execution-prevention.md)
+    * [Variables](windows/system-ops/system-info/variables.md)
+    * [Hardware & Resources](windows/system-ops/system-info/hardware-and-resources.md)
