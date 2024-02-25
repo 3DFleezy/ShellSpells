@@ -2,15 +2,16 @@
 
 ## <mark style="color:red;">Commands</mark>
 
-| `ls -lisa`                 | File info                                                       |
+| Command | Description |
 | -------------------------- | --------------------------------------------------------------- |
-| `file [file]`              | Determine File Type.                                            |
-| `stat [file]`              | Display Detailed File Information.                              |
-| `statvfs [directory_path]` | Display Filesystem Information.                                 |
-| `lsattr [filename]`        | Lists the attributes of the specified file.                     |
-| `getfacl [filename]`       | Displays the Access Control Lists (ACLs) of the specified file. |
-| `getcap [filepath]`        | Check a specific file for capabilities                          |
-| `getcap -r [filepath]`     | Recursive                                                       |
+| <mark style="color:yellow;">`ls -lisa`</mark>                 | File info                                                       |
+| <mark style="color:yellow;">`file [file]`</mark>              | Determine File Type.                                            |
+| <mark style="color:yellow;">`stat [file]`</mark>              | Display Detailed File Information.                              |
+| <mark style="color:yellow;">`statvfs [directory_path]`</mark> | Display Filesystem Information.                                 |
+| <mark style="color:yellow;">`lsattr [filename]`</mark>        | Lists the attributes of the specified file.                     |
+| <mark style="color:yellow;">`getfacl [filename]`</mark>       | Displays the Access Control Lists (ACLs) of the specified file. |
+| <mark style="color:yellow;">`getcap [filepath]`</mark>        | Check a specific file for capabilities                          |
+| <mark style="color:yellow;">`getcap -r [filepath]`</mark>     | Recursive                                                       |
 
 
 
