@@ -2,6 +2,7 @@
 
 ## <mark style="color:red;">Rename</mark>
 
+| Command | Description |
 | -------------------------- | ---------------------------------------------- |
 | <mark style="color:yellow;">`mv [old_name] [new_name]`</mark> | Rename                                         |
 | <mark style="color:yellow;">`rename 's/ /_/g' *`</mark>       | Replace spaces with underscores for all files. |
@@ -10,6 +11,7 @@
 
 ## <mark style="color:red;">Timestamps</mark>
 
+| Command | Description |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | <mark style="color:yellow;">`touch`</mark>                            | Updates <mark style="color:orange;">**access**</mark> and <mark style="color:orange;">**modification**</mark> to current datetime.   |
 | <mark style="color:yellow;">`touch -t YYYYMMDDhhmm [file]`</mark>     | `-t` lets you customize the datetime. Without it, it sets to the current datetime.                                                   |
@@ -78,6 +80,7 @@ Note:
 
 ## <mark style="color:red;">Attributes</mark>
 
+| Command | Description |
 | ----------------------------------- | --------------------------------------------- |
 | <mark style="color:yellow;">`chattr [+,-,=][attributes] [file]`</mark> | Modify attributes                             |
 | <mark style="color:yellow;">`chattr =i [file]`</mark>                  | Make file immutable, clears other attributes. |
@@ -120,6 +123,7 @@ Note:
 
 ## <mark style="color:red;">Links</mark>
 
+| Command | Description |
 | ----------------------------------- | --------- |
 | <mark style="color:yellow;">`ln <source_file> <target_file>`</mark>    | Hard link |
 | <mark style="color:yellow;">`ln -s <source_file> <target_file>`</mark>===> ****  | Soft link |
