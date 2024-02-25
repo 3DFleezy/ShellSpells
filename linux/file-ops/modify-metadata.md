@@ -2,21 +2,21 @@
 
 ## <mark style="color:red;">Rename</mark>
 
-| `mv [old_name] [new_name]` | Rename                                         |
 | -------------------------- | ---------------------------------------------- |
-| `rename 's/ /_/g' *`       | Replace spaces with underscores for all files. |
+| <mark style="color:yellow;">`mv [old_name] [new_name]`</mark> | Rename                                         |
+| <mark style="color:yellow;">`rename 's/ /_/g' *`</mark>       | Replace spaces with underscores for all files. |
 
 
 
 ## <mark style="color:red;">Timestamps</mark>
 
-| `touch`                            | Updates <mark style="color:orange;">**access**</mark> and <mark style="color:orange;">**modification**</mark> to current datetime.   |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `touch -t YYYYMMDDhhmm [file]`     | `-t` lets you customize the datetime. Without it, it sets to the current datetime.                                                   |
-| `touch -a -t YYYYMMDDhhmm [file]`  | Updates only <mark style="color:orange;">**access**</mark> to specified datetime.                                                    |
-| `touch -m -t YYYYMMDDhhmm [file]`  | Updates only <mark style="color:orange;">**modification**</mark> to specified datetime.                                              |
-| `touch -d -t YYYYMMDDhhmm [file]`  | Updates <mark style="color:orange;">**access**</mark> and <mark style="color:orange;">**modification**</mark> to specific datetime.  |
-| `touch -r <reference_file> [file]` | Updates <mark style="color:orange;">**access**</mark> and <mark style="color:orange;">**modification**</mark> to match another file. |
+| <mark style="color:yellow;">`touch`</mark>                            | Updates <mark style="color:orange;">**access**</mark> and <mark style="color:orange;">**modification**</mark> to current datetime.   |
+| <mark style="color:yellow;">`touch -t YYYYMMDDhhmm [file]`</mark>     | `-t` lets you customize the datetime. Without it, it sets to the current datetime.                                                   |
+| <mark style="color:yellow;">`touch -a -t YYYYMMDDhhmm [file]`</mark>  | Updates only <mark style="color:orange;">**access**</mark> to specified datetime.                                                    |
+| <mark style="color:yellow;">`touch -m -t YYYYMMDDhhmm [file]`</mark>  | Updates only <mark style="color:orange;">**modification**</mark> to specified datetime.                                              |
+| <mark style="color:yellow;">`touch -d -t YYYYMMDDhhmm [file]`</mark>  | Updates <mark style="color:orange;">**access**</mark> and <mark style="color:orange;">**modification**</mark> to specific datetime.  |
+| <mark style="color:yellow;">`touch -r <reference_file> [file]`</mark> | Updates <mark style="color:orange;">**access**</mark> and <mark style="color:orange;">**modification**</mark> to match another file. |
 
 Updates \*access and \*modification of files found.
 
@@ -52,59 +52,59 @@ It cannot be modified directly by any command.
 
 ## <mark style="color:red;">Ownership</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th width="358">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>chown [owner] [file]</code></td><td>Change owner.</td></tr><tr><td><code>chown [UID] [dir]</code></td><td>Change owner to UID.</td></tr><tr><td><code>chown [owner][:group] [file]</code></td><td>Changes owner and/or group of a file.</td></tr><tr><td><code>chown -R [owner][:group] [dir]</code></td><td>Recursively changes owner and/or group of a directory, sub-directories, and contents.</td></tr><tr><td><code>chgrp [group] [file]</code></td><td>Changes group of a file to the specified group name.</td></tr><tr><td><code>chgrp 100 directory1</code></td><td>Change group to GID.</td></tr><tr><td><code>chgrp -R [group] [dir]</code></td><td>Recursively changes group of a directory, sub-directories, and contents.</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th width="358">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>chown [owner] [file]</code></td><td>Change owner.</td></tr><tr><td><mark style="color:yellow;"><code>chown [UID] [dir]</code></td><td>Change owner to UID.</td></tr><tr><td><mark style="color:yellow;"><code>chown [owner][:group] [file]</code></td><td>Changes owner and/or group of a file.</td></tr><tr><td><mark style="color:yellow;"><code>chown -R [owner][:group] [dir]</code></td><td>Recursively changes owner and/or group of a directory, sub-directories, and contents.</td></tr><tr><td><mark style="color:yellow;"><code>chgrp [group] [file]</code></td><td>Changes group of a file to the specified group name.</td></tr><tr><td><mark style="color:yellow;"><code>chgrp 100 directory1</code></td><td>Change group to GID.</td></tr><tr><td><mark style="color:yellow;"><code>chgrp -R [group] [dir]</code></td><td>Recursively changes group of a directory, sub-directories, and contents.</td></tr></tbody></table>
 
 
 
 ## <mark style="color:red;">Permissions</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th width="419">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>chmod [mode] [file]</code></td><td>Changes permissions. (<code>u+x</code>, <code>g-w</code>, <code>o=r</code>) or (<code>644</code>, <code>755</code>).</td></tr><tr><td><code>chmod +x [file]</code></td><td>Adds execute permission for the owner, group, and others. Shorthand for <code>a+x</code> or <code>ugo+x</code>.</td></tr><tr><td><code>chmod u=rwx,g=rx,o=r [file]</code></td><td>Sets the permissions explicitly.</td></tr><tr><td><code>chmod 755 [file]</code></td><td>Octal notation.</td></tr><tr><td><code>chmod -R mode [dir]</code></td><td>Recursively changes the permissions of a directory and all its contents.</td></tr><tr><td><code>chmod --reference=&#x3C;ref_file> [file]</code></td><td>Match permissions of reference file.</td></tr><tr><td><code>umask</code></td><td>umask = "user file-creation mode mask". Sets the default creation permissions for new files and dirs.</td></tr><tr><td><code>umask 022</code></td><td>New default permissions on created files and dirs is 755.</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th width="419">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>chmod [mode] [file]</code></td><td>Changes permissions. (<mark style="color:yellow;"><code>u+x</code>, <mark style="color:yellow;"><code>g-w</code>, <mark style="color:yellow;"><code>o=r</code>) or (<mark style="color:yellow;"><code>644</code>, <mark style="color:yellow;"><code>755</code>).</td></tr><tr><td><mark style="color:yellow;"><code>chmod +x [file]</code></td><td>Adds execute permission for the owner, group, and others. Shorthand for <mark style="color:yellow;"><code>a+x</code> or <mark style="color:yellow;"><code>ugo+x</code>.</td></tr><tr><td><mark style="color:yellow;"><code>chmod u=rwx,g=rx,o=r [file]</code></td><td>Sets the permissions explicitly.</td></tr><tr><td><mark style="color:yellow;"><code>chmod 755 [file]</code></td><td>Octal notation.</td></tr><tr><td><mark style="color:yellow;"><code>chmod -R mode [dir]</code></td><td>Recursively changes the permissions of a directory and all its contents.</td></tr><tr><td><mark style="color:yellow;"><code>chmod --reference=&#x3C;ref_file> [file]</code></td><td>Match permissions of reference file.</td></tr><tr><td><mark style="color:yellow;"><code>umask</code></td><td>umask = "user file-creation mode mask". Sets the default creation permissions for new files and dirs.</td></tr><tr><td><mark style="color:yellow;"><code>umask 022</code></td><td>New default permissions on created files and dirs is 755.</td></tr></tbody></table>
 
 Note:
 
-4 = read (`r`)
+4 = read (<mark style="color:yellow;">`r`)
 
-2 = write (`w`)
+2 = write (<mark style="color:yellow;">`w`)
 
-1 = execute (`x`)
+1 = execute (<mark style="color:yellow;">`x`)
 
-`+` (add permission)
+<mark style="color:yellow;">`+`</mark> (add permission)
 
-`-` (remove permission)
+<mark style="color:yellow;">`-`</mark> (remove permission)
 
-`=` (set permission exactly)
+<mark style="color:yellow;">`=`</mark> (set permission exactly)
 
 
 
 ## <mark style="color:red;">Attributes</mark>
 
-| `chattr [+,-,=][attributes] [file]` | Modify attributes                             |
 | ----------------------------------- | --------------------------------------------- |
-| `chattr =i [file]`                  | Make file immutable, clears other attributes. |
+| <mark style="color:yellow;">`chattr [+,-,=][attributes] [file]`</mark> | Modify attributes                             |
+| <mark style="color:yellow;">`chattr =i [file]`</mark>                  | Make file immutable, clears other attributes. |
 
-`a` (Append only): Can be added to, but existing data cannot be modified or deleted. This is useful for log files.
+<mark style="color:yellow;">`a`</mark> (Append only): Can be added to, but existing data cannot be modified or deleted. This is useful for log files.
 
-`i` (Immutable): Cannot be modified: it cannot be deleted, renamed, or linked, and no data can be written to it. Only the root user can set or clear this attribute.
+<mark style="color:yellow;">`i`</mark> (Immutable): Cannot be modified: it cannot be deleted, renamed, or linked, and no data can be written to it. Only the root user can set or clear this attribute.
 
-`s` (Secure deletion): When a file with this attribute is deleted, its data is immediately overwritten with zeros. This makes recovering the file's data more difficult.
+<mark style="color:yellow;">`s`</mark> (Secure deletion): When a file with this attribute is deleted, its data is immediately overwritten with zeros. This makes recovering the file's data more difficult.
 
-`S` (Synchronous update): This attribute ensures that modifications to the file are written synchronously to the disk, similar to how the `sync` command works.
+<mark style="color:yellow;">`S`</mark> (Synchronous update): This attribute ensures that modifications to the file are written synchronously to the disk, similar to how the `sync` command works.
 
-`A` (No atime updates): Normally, the access time of a file is updated whenever it's read. Setting this attribute stops those updates, which can improve performance for certain applications.
+<mark style="color:yellow;">`A`</mark> (No atime updates): Normally, the access time of a file is updated whenever it's read. Setting this attribute stops those updates, which can improve performance for certain applications.
 
 
 
 ## <mark style="color:red;">Capabilities</mark>
 
-<table data-header-hidden><thead><tr><th width="432">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>setcap [capabilities] [file]</code></td><td>Set capabilities</td></tr><tr><td><code>setcap 'cap_net_bind_service+ep' [file]</code></td><td>Set capability as <code>e</code>-effectivce and <code>p</code>-permitted</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="432">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>setcap [capabilities] [file]</code></td><td>Set capabilities</td></tr><tr><td><mark style="color:yellow;"><code>setcap 'cap_net_bind_service+ep' [file]</code></td><td>Set capability as <mark style="color:yellow;"><code>e</code>-effectivce and <mark style="color:yellow;"><code>p</code>-permitted</td></tr></tbody></table>
 
 ### <mark style="color:purple;">Operators and Sets</mark>
 
-`+` (Add)
+<mark style="color:yellow;">`+`</mark> (Add)
 
-`-` (Remove)
+<mark style="color:yellow;">`-`</mark> (Remove)
 
-`=` (Set): Explicitly sets capabilities, replacing any existing capabilities.
+<mark style="color:yellow;">`=`</mark> (Set): Explicitly sets capabilities, replacing any existing capabilities.
 
 <mark style="color:orange;">**Effective**</mark> (`e`): Which capabilities are "active" and can be used by the process.
 
@@ -120,9 +120,9 @@ Note:
 
 ## <mark style="color:red;">Links</mark>
 
-| `ln <source_file> <target_file>`    | Hard link |
 | ----------------------------------- | --------- |
-| `ln -s <source_file> <target_file>` | Soft link |
+| <mark style="color:yellow;">`ln <source_file> <target_file>`</mark>    | Hard link |
+| <mark style="color:yellow;">`ln -s <source_file> <target_file>`</mark>===> ****  | Soft link |
 
 ### <mark style="color:purple;">Hard links</mark>
 
