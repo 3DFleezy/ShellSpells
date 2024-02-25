@@ -10,7 +10,7 @@
 
 | <mark style="color:yellow;">`touch`</mark>                            | Updates <mark style="color:orange;">**access**</mark> and <mark style="color:orange;">**modification**</mark> to current datetime.   |
 | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| <mark style="color:yellow;">`touch -t YYYYMMDDhhmm [file]`</mark>     | `-t` lets you customize the datetime. Without it, it sets to the current datetime.                                                   |
+| <mark style="color:yellow;">`touch -t YYYYMMDDhhmm [file]`</mark>     | <mark style="color:yellow;">`-t`</mark> lets you customize the datetime. Without it, it sets to the current datetime.                |
 | <mark style="color:yellow;">`touch -a -t YYYYMMDDhhmm [file]`</mark>  | Updates only <mark style="color:orange;">**access**</mark> to specified datetime.                                                    |
 | <mark style="color:yellow;">`touch -m -t YYYYMMDDhhmm [file]`</mark>  | Updates only <mark style="color:orange;">**modification**</mark> to specified datetime.                                              |
 | <mark style="color:yellow;">`touch -d -t YYYYMMDDhhmm [file]`</mark>  | Updates <mark style="color:orange;">**access**</mark> and <mark style="color:orange;">**modification**</mark> to specific datetime.  |
@@ -52,7 +52,7 @@ It cannot be modified directly by any command.
 
 ## <mark style="color:red;">Permissions</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th width="419">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>chmod [mode] [file]</code></mark></td><td>Changes permissions. (<mark style="color:yellow;"><code>u+x</code>, <code>g-w</code>, <code>o=r</code>) or (<code>644</code>, <code>755</code>).</mark></td></tr><tr><td><mark style="color:yellow;"><code>chmod +x [file]</code></mark></td><td>Adds execute permission for the owner, group, and others. Shorthand for <mark style="color:yellow;"><code>a+x</code> or <code>ugo+x</code>.</mark></td></tr><tr><td><mark style="color:yellow;"><code>chmod u=rwx,g=rx,o=r [file]</code></mark></td><td>Sets the permissions explicitly.</td></tr><tr><td><mark style="color:yellow;"><code>chmod 755 [file]</code></mark></td><td>Octal notation.</td></tr><tr><td><mark style="color:yellow;"><code>chmod -R mode [dir]</code></mark></td><td>Recursively changes the permissions of a directory and all its contents.</td></tr><tr><td><mark style="color:yellow;"><code>chmod --reference=&#x3C;ref_file> [file]</code></mark></td><td>Match permissions of reference file.</td></tr><tr><td><mark style="color:yellow;"><code>umask</code></mark></td><td>umask = "user file-creation mode mask". Sets the default creation permissions for new files and dirs.</td></tr><tr><td><mark style="color:yellow;"><code>umask 022</code></mark></td><td>New default permissions on created files and dirs is 755.</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th width="419">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>chmod [mode] [file]</code></mark></td><td>Changes permissions. (<mark style="color:yellow;"><code>u+x</code></mark>, <mark style="color:yellow;"><code>g-w</code></mark>, <mark style="color:yellow;"><code>o=r</code></mark>) or (<mark style="color:yellow;"><code>644</code></mark>, <mark style="color:yellow;"><code>755</code></mark>).</td></tr><tr><td><mark style="color:yellow;"><code>chmod +x [file]</code></mark></td><td>Adds execute permission for the owner, group, and others. Shorthand for <mark style="color:yellow;"><code>a+x</code></mark> or <mark style="color:yellow;"><code>ugo+x</code></mark>.</td></tr><tr><td><mark style="color:yellow;"><code>chmod u=rwx,g=rx,o=r [file]</code></mark></td><td>Sets the permissions explicitly.</td></tr><tr><td><mark style="color:yellow;"><code>chmod 755 [file]</code></mark></td><td>Octal notation.</td></tr><tr><td><mark style="color:yellow;"><code>chmod -R mode [dir]</code></mark></td><td>Recursively changes the permissions of a directory and all its contents.</td></tr><tr><td><mark style="color:yellow;"><code>chmod --reference=&#x3C;ref_file> [file]</code></mark></td><td>Match permissions of reference file.</td></tr><tr><td><mark style="color:yellow;"><code>umask</code></mark></td><td>umask = "user file-creation mode mask". Sets the default creation permissions for new files and dirs.</td></tr><tr><td><mark style="color:yellow;"><code>umask 022</code></mark></td><td>New default permissions on created files and dirs is 755.</td></tr></tbody></table>
 
 Note:
 
@@ -86,7 +86,7 @@ Note:
 
 ## <mark style="color:red;">Capabilities</mark>
 
-<table data-header-hidden><thead><tr><th width="432">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>setcap [capabilities] [file]</code></mark></td><td>Set capabilities</td></tr><tr><td><mark style="color:yellow;"><code>setcap 'cap_net_bind_service+ep' [file]</code></mark></td><td>Set capability as <mark style="color:yellow;"><code>e</code>-effectivce and <code>p</code>-permitted</mark></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="432">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>setcap [capabilities] [file]</code></mark></td><td>Set capabilities</td></tr><tr><td><mark style="color:yellow;"><code>setcap 'cap_net_bind_service+ep' [file]</code></mark></td><td>Set capability as <mark style="color:yellow;"><code>e</code>-effective</mark> and <mark style="color:yellow;"><code>p</code>-permitted</mark></td></tr></tbody></table>
 
 ### <mark style="color:purple;">Operators and Sets</mark>
 
@@ -108,10 +108,10 @@ Note:
 
 ## <mark style="color:red;">Links</mark>
 
-| Command                                                                             | Description |
-| ----------------------------------------------------------------------------------- | ----------- |
-| <mark style="color:yellow;">`ln <source_file> <target_file>`</mark>                 | Hard link   |
-| <mark style="color:yellow;">`ln -s <source_file> <target_file>`</mark>===> \*\*\*\* | Soft link   |
+| Command                                                                | Description |
+| ---------------------------------------------------------------------- | ----------- |
+| <mark style="color:yellow;">`ln <source_file> <target_file>`</mark>    | Hard link   |
+| <mark style="color:yellow;">`ln -s <source_file> <target_file>`</mark> | Soft link   |
 
 ### <mark style="color:purple;">Hard links</mark>
 

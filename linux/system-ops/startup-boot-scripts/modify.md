@@ -55,28 +55,25 @@ exit 0
 ### <mark style="color:purple;">Step 3: Make the Script Executable</mark>
 
 Save your script in /etc/init.d/myservice (replace myservice with your service's name). Make it executable by running:\
-`sudo chmod +x /etc/init.d/myservice`
+<mark style="color:yellow;">`sudo chmod +x /etc/init.d/myservice`</mark>
 
 ### <mark style="color:purple;">Step 4: Test Your Script</mark>
 
 Test your script to ensure it properly starts, stops, restarts, and reports the status of your service: \
-`sudo /etc/init.d/myservice start`\
-`sudo /etc/init.d/myservice stop`\
-`sudo /etc/init.d/myservice restart`\
-`sudo /etc/init.d/myservice status`
+<mark style="color:yellow;">`sudo /etc/init.d/myservice start`</mark>\ <mark style="color:yellow;">`sudo /etc/init.d/myservice stop`</mark>\ <mark style="color:yellow;">`sudo /etc/init.d/myservice restart`</mark>\ <mark style="color:yellow;">`sudo /etc/init.d/myservice status`</mark>
 
 ### <mark style="color:purple;">Step 5: Enable the Service for Automatic Startup (Optional)</mark>
 
 If you want your service to start automatically at boot, you need to add symbolic links to your script in the appropriate /etc/rc?.d/ directories. You can use the update-rc.d command for this purpose:\
-`sudo update-rc.d myservice defaults`
+<mark style="color:yellow;">`sudo update-rc.d myservice defaults`</mark>
 
 This command will create the necessary links based on the Default-Start and Default-Stop values specified in the init script header.
 
 Note:
 
-The `### BEGIN INIT INFO` section at the top of the script provides metadata for dependency-based boot sequencing. Adjust Required-Start, Required-Stop, Default-Start, and Default-Stop as needed for your service.
+The <mark style="color:yellow;">`### BEGIN INIT INFO`</mark> section at the top of the script provides metadata for dependency-based boot sequencing. Adjust Required-Start, Required-Stop, Default-Start, and Default-Stop as needed for your service.
 
-Remember to replace `/path/to/myservice` with the actual command or script used to start, stop, and check the status of your service. \
+Remember to replace <mark style="color:yellow;">`/path/to/myservice`</mark> with the actual command or script used to start, stop, and check the status of your service. \
 This basic template should be customized to fit the specific needs of the service you're managing.
 
 ## <mark style="color:red;">Writing SystemD Scripts</mark>
@@ -103,17 +100,17 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
-`Description`- gives a human-readable description of the service. \
-`After`- specifies the order in which services are started. network.target is common for services that require network access. \
-`Type`- defines the startup behavior of the service. simple is the default, where systemd considers the service started immediately after the ExecStart process is forked.\
-`ExecStart`- specifies the command to start the service. Replace /path/to/your/application with the actual command. \
-`Restart`- defines the service restart policy. on-failure means the service will be restarted when it exits with a non-zero exit code. \
-`WantedBy`- determines where the service is installed if enabled. multi-user.target is a common target for services that should start in a multi-user system runlevel.
+<mark style="color:yellow;">`Description`</mark>- gives a human-readable description of the service. \
+<mark style="color:yellow;">`After`</mark>- specifies the order in which services are started. network.target is common for services that require network access. \
+<mark style="color:yellow;">`Type`</mark>- defines the startup behavior of the service. simple is the default, where systemd considers the service started immediately after the ExecStart process is forked.\
+<mark style="color:yellow;">`ExecStart`</mark>- specifies the command to start the service. Replace /path/to/your/application with the actual command. \
+<mark style="color:yellow;">`Restart`</mark>- defines the service restart policy. on-failure means the service will be restarted when it exits with a non-zero exit code. \
+<mark style="color:yellow;">`WantedBy`</mark>- determines where the service is installed if enabled. multi-user.target is a common target for services that should start in a multi-user system runlevel.
 
 ### <mark style="color:purple;">Step 2: Save and Store the Unit File</mark>
 
 Save your file with the .service extension. Store the unit file in /etc/systemd/system/. The path for the unit file will be /etc/systemd/system/myservice.service. You might need root permissions to save files in this directory.\
-`sudo cp myservice.service /etc/systemd/system/myservice.service`
+<mark style="color:yellow;">`sudo cp myservice.service /etc/systemd/system/myservice.service`</mark>
 
 ### <mark style="color:purple;">Step 3: Reload systemd, Enable and Start the Service</mark>
 
@@ -153,9 +150,9 @@ Modify the ExecStart, and potentially add ExecStop and ExecReload, to manage how
 
 When writing Upstart job files, you define jobs using stanzas that specify how and when a job should start or stop. These stanzas include:
 
-`start on` Specifies the event that causes the job to start.\
-`stop on` Specifies the event that causes the job to stop. \
-`script ...` end script or exec: Used to define the command or script to run.
+<mark style="color:yellow;">`start on`</mark> Specifies the event that causes the job to start.\
+<mark style="color:yellow;">`stop on`</mark> Specifies the event that causes the job to stop. \
+<mark style="color:yellow;">`script ...`</mark> end script or exec: Used to define the command or script to run.
 
 Example of starting a service:
 

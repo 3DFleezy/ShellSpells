@@ -12,7 +12,7 @@ base64 [file]
 
 Encode in base64 without wrapping lines.
 
-The `-w` option specifies line wrap, and `0` disables it (GNU base64):
+The <mark style="color:yellow;">`-w`</mark> option specifies line wrap, and <mark style="color:yellow;">`0`</mark> disables it (GNU base64):
 
 ```bash
 base64 -w 0 [file]
@@ -26,9 +26,9 @@ Use Perl's URI::Escape module to URL-encode "string":
 perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "string"
 ```
 
-Use `curl` to URL-encode "string".
+Use <mark style="color:yellow;">`curl`</mark> to URL-encode "string".
 
-Sends a dummy request to `curl` and extracts the encoded URL part:
+Sends a dummy request to <mark style="color:yellow;">`curl`</mark> and extracts the encoded URL part:
 
 ```bash
 echo -n "string" | curl -Gso /dev/null -w %{url_effective} --data-urlencode @- "" | cut -c 3-
@@ -36,7 +36,7 @@ echo -n "string" | curl -Gso /dev/null -w %{url_effective} --data-urlencode @- "
 
 ### <mark style="color:purple;">Hex</mark>
 
-Create a hex dump of a file in a plain hex format using `xxd`.
+Create a hex dump of a file in a plain hex format using <mark style="color:yellow;">`xxd`</mark>.
 
 This format is easy to use in scripts for further processing:
 
@@ -44,9 +44,9 @@ This format is easy to use in scripts for further processing:
 xxd -p [file]
 ```
 
-Use `od` (octal dump) to output the file content in hexadecimal.
+Use <mark style="color:yellow;">`od`</mark> (octal dump) to output the file content in hexadecimal.
 
-The `cut` command is used to trim the output to show only the hex values:
+The <mark style="color:yellow;">`cut`</mark> command is used to trim the output to show only the hex values:
 
 ```bash
 od -t x1 [file] | cut -c8- 
@@ -54,7 +54,7 @@ od -t x1 [file] | cut -c8-
 
 ### <mark style="color:purple;">Character Set Conversion</mark>
 
-Convert the character encoding of a file. `-f` specifies the original encoding, and `-t` specifies the target encoding.
+Convert the character encoding of a file. <mark style="color:yellow;">`-f`</mark> specifies the original encoding, and <mark style="color:yellow;">`-t`</mark> specifies the target encoding.
 
 ```bash
 iconv -f from_encoding -t to_encoding [file]
@@ -70,7 +70,7 @@ Encode a file using MIME base64 encoding. This command is part of some older or 
 mimencode [file]
 ```
 
-Another tool for MIME base64 encoding. Similar in function to `mimencode`, but availability varies by system:
+Another tool for MIME base64 encoding. Similar in function to <mark style="color:yellow;">`mimencode`</mark>, but availability varies by system:
 
 ```bash
 mmencode [file]
@@ -88,7 +88,7 @@ tac [file] > [newfile]
 
 ### <mark style="color:purple;">Base64</mark>
 
-Decode a base64-encoded file. The `-d` option specifies decoding (use `-D` on macOS):
+Decode a base64-encoded file. The <mark style="color:yellow;">`-d`</mark> option specifies decoding (use <mark style="color:yellow;">`-D`</mark> on macOS):
 
 ```bash
 base64 -d [file]
@@ -106,7 +106,7 @@ perl -MURI::Escape -e 'print uri_unescape($ARGV[0]);' "encoded_string"
 
 Reverse (decode) a plain hex dump back into binary.
 
-Use `-r` with `xxd` to revert a hex dump back to its original binary form:
+Use <mark style="color:yellow;">`-r`</mark> with <mark style="color:yellow;">`xxd`</mark> to revert a hex dump back to its original binary form:
 
 ```bash
 xxd -p -r [file]
@@ -116,7 +116,7 @@ xxd -p -r [file]
 
 Convert the character encoding of a file back to the desired encoding.
 
-The process is the same as encoding, just reverse the `-f` (from) and `-t` (to) encodings as needed:
+The process is the same as encoding, just reverse the <mark style="color:yellow;">`-f`</mark> (from) and <mark style="color:yellow;">`-t`</mark> (to) encodings as needed:
 
 ```bash
 iconv -f from_encoding -t to_encoding [file]
@@ -126,7 +126,7 @@ iconv -f from_encoding -t to_encoding [file]
 
 If you used mimencode or mmencode for MIME base64 encoding, you might need to find an alternative for decoding since direct counterparts for decoding might not be explicitly named or available.
 
-For MIME base64 decoding, you can use `base64 -d` or consider Perl solutions:
+For MIME base64 decoding, you can use <mark style="color:yellow;">`base64 -d`</mark> or consider Perl solutions:
 
 Decode a MIME base64-encoded file, assuming the content is base64 and does not include MIME headers:
 

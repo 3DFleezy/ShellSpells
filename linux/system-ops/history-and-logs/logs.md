@@ -2,7 +2,7 @@
 
 ## <mark style="color:red;">Enumerate</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>journalctl</code></td><td>Logs from the systemd journal, includes system service logs and kernel messages.</td></tr><tr><td><mark style="color:yellow;"><code>dmesg</code></td><td>System message buffer, containing kernel-related messages from boot time.</td></tr><tr><td><mark style="color:yellow;"><code>ls -ltr /var/log/</code></td><td>Lists all log files in the /var/log directory in reverse chronological order.</td></tr><tr><td><mark style="color:yellow;"><code>grep 'keyword' /var/log/syslog</code></td><td>Searches for 'keyword' in the syslog file.</td></tr><tr><td><mark style="color:yellow;"><code>grep -R &#x3C;service-name> /var/log</code></td><td>Recursive search of all logs for keyword.</td></tr><tr><td><mark style="color:yellow;"><code>awk '/^Sep 10/,/^Sep 12/' /var/log/syslog</code></td><td>Extracts log entries between September 10 and September 12 from the syslog.</td></tr><tr><td><mark style="color:yellow;"><code>find /var/log -type f -mtime -7</code></td><td>Finds log files modified in the last 7 days.</td></tr><tr><td><mark style="color:yellow;"><code>zgrep 'keyword' /var/log/syslog*.gz</code></td><td>Searches for 'keyword' in compressed log files in /var/log.</td></tr><tr><td><mark style="color:yellow;"><code>cat /var/log/messages</code></td><td>Display system messages.</td></tr><tr><td><mark style="color:yellow;"><code>cat /var/log/auth.log</code></td><td>Display authentication logs.</td></tr><tr><td><mark style="color:yellow;"><code>cat /var/log/syslog</code></td><td>Display system log.</td></tr><tr><td><mark style="color:yellow;"><code>strings /var/log/wtmp</code></td><td>Find strings.</td></tr><tr><td><mark style="color:yellow;"><code>head /var/log/secure</code></td><td>Shows top 10 lines.</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>journalctl</code></mark></td><td>Logs from the systemd journal, includes system service logs and kernel messages.</td></tr><tr><td><mark style="color:yellow;"><code>dmesg</code></mark></td><td>System message buffer, containing kernel-related messages from boot time.</td></tr><tr><td><mark style="color:yellow;"><code>ls -ltr /var/log/</code></mark></td><td>Lists all log files in the /var/log directory in reverse chronological order.</td></tr><tr><td><mark style="color:yellow;"><code>grep 'keyword' /var/log/syslog</code></mark></td><td>Searches for 'keyword' in the syslog file.</td></tr><tr><td><mark style="color:yellow;"><code>grep -R &#x3C;service-name> /var/log</code></mark></td><td>Recursive search of all logs for keyword.</td></tr><tr><td><mark style="color:yellow;"><code>awk '/^Sep 10/,/^Sep 12/' /var/log/syslog</code></mark></td><td>Extracts log entries between September 10 and September 12 from the syslog.</td></tr><tr><td><mark style="color:yellow;"><code>find /var/log -type f -mtime -7</code></mark></td><td>Finds log files modified in the last 7 days.</td></tr><tr><td><mark style="color:yellow;"><code>zgrep 'keyword' /var/log/syslog*.gz</code></mark></td><td>Searches for 'keyword' in compressed log files in /var/log.</td></tr><tr><td><mark style="color:yellow;"><code>cat /var/log/messages</code></mark></td><td>Display system messages.</td></tr><tr><td><mark style="color:yellow;"><code>cat /var/log/auth.log</code></mark></td><td>Display authentication logs.</td></tr><tr><td><mark style="color:yellow;"><code>cat /var/log/syslog</code></mark></td><td>Display system log.</td></tr><tr><td><mark style="color:yellow;"><code>strings /var/log/wtmp</code></mark></td><td>Find strings.</td></tr><tr><td><mark style="color:yellow;"><code>head /var/log/secure</code></mark></td><td>Shows top 10 lines.</td></tr></tbody></table>
 
 Check multiple logs for info:
 
@@ -24,7 +24,7 @@ grep "error" /var/log/syslog | awk '$1 " " $2 ]= "2024-01-01 08:00:00" && $1 " "
 ```
 {% endcode %}
 
-Systemd search for keyword in datetime range: &#x20;
+Systemd search for keyword in datetime range:
 
 ```bash
 journalctl --since [start_date] --until [end_date] | grep [keyword]
@@ -36,7 +36,7 @@ journalctl --since "2024-02-07 10:00:00" --until "2024-02-07 12:00:00" | grep [k
 ```
 {% endcode %}
 
-SysV search for keyword in datetime range:&#x20;
+SysV search for keyword in datetime range:
 
 {% code overflow="wrap" %}
 ```bash
@@ -51,8 +51,6 @@ SysV search for keyword in datetime range (Seperate commands):
 cat /var/log/messages | grep -E "[start_date] [start_time]" | grep -E "[end_date] [end_time]" | grep [keyword]
 ```
 {% endcode %}
-
-
 
 ### <mark style="color:purple;">Typical Logs</mark>
 
@@ -94,19 +92,15 @@ Check application documentation or configuration files for their specific log lo
 | /var/log/boot.log                     | System boot messages.                                                              |
 | /var/log/dmesg                        | Kernel ring buffer messages, useful for hardware and driver messages.              |
 
-
-
 ## <mark style="color:red;">Modify</mark>
 
-`sed -i` will modify the original file.
+<mark style="color:yellow;">`sed -i`</mark> will modify the original file.
 
 Look for lines containing pattern in file.txt and replaces oldKeyword with newKeyword on those lines. Could use this to look for timestamps in logs and modify the user of the actions or change the actions to something less suspect.
 
 ```bash
 sed -i '/pattern/s/oldKeyword/newKeyword/' file.txt
 ```
-
-
 
 Replace keyword within datetime range:
 

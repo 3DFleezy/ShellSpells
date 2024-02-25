@@ -30,9 +30,9 @@ void run_custom_script() {
 ## <mark style="color:red;">Compile the source code:</mark>
 
 Use GCC to compile the source code into a shared object. \
-Use the `-shared` flag to specify that you want to create a shared object, and `-fPIC` to generate position-independent code, which is required for shared objects. \
+Use the <mark style="color:yellow;">`-shared`</mark> flag to specify that you want to create a shared object, and <mark style="color:yellow;">`-fPIC`</mark> to generate position-independent code, which is required for shared objects. \
 This command compiles wrapper.c into a shared object named libcustom.so.:\
-`gcc -shared -fPIC -o libcustom.so wrapper.c`
+<mark style="color:yellow;">`gcc -shared -fPIC -o libcustom.so wrapper.c`</mark>
 
 ## <mark style="color:red;">Use the shared object:</mark>&#x20;
 
@@ -71,6 +71,6 @@ int main() {
 
 Compile main.c and link it with libcustom.so:
 
-`gcc -o main main.c -ldl`
+<mark style="color:yellow;">`gcc -o main main.c -ldl`</mark>
 
 Now, when you run the main program, it will execute the custom script encapsulated within the shared object libcustom.so.

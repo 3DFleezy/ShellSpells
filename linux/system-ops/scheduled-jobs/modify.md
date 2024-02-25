@@ -1,24 +1,22 @@
 # Modify
 
-## <mark style="color:red;">Cron Jobs</mark>&#x20;
+## <mark style="color:red;">Cron Jobs</mark>
 
 ### <mark style="color:purple;">Modifying Existing Tasks</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>crontab -e</code></td><td>Opens the current user's crontab for editing.</td></tr><tr><td><mark style="color:yellow;"><code>crontab -e -u &#x3C;username></code></td><td>Opens another user's crontab for editing (requires root privileges).</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>crontab -e</code></mark></td><td>Opens the current user's crontab for editing.</td></tr><tr><td><mark style="color:yellow;"><code>crontab -e -u &#x3C;username></code></mark></td><td>Opens another user's crontab for editing (requires root privileges).</td></tr></tbody></table>
 
 ### <mark style="color:purple;">Deleting Tasks</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>crontab -l</code></td><td>Lists all crontab entries.</td></tr><tr><td><mark style="color:yellow;"><code>crontab -r</code></td><td>Removes all entries from the current user's crontab.</td></tr><tr><td><mark style="color:yellow;"><code>crontab -r -u &#x3C;username></code></td><td>Removes all entries from another user's crontab (requires root privileges).</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>crontab -l</code></mark></td><td>Lists all crontab entries.</td></tr><tr><td><mark style="color:yellow;"><code>crontab -r</code></mark></td><td>Removes all entries from the current user's crontab.</td></tr><tr><td><mark style="color:yellow;"><code>crontab -r -u &#x3C;username></code></mark></td><td>Removes all entries from another user's crontab (requires root privileges).</td></tr></tbody></table>
 
 Edit the crontab file to comment out or remove specific lines.
 
-Examples: \
-Run a script every hour: `0 * * * * /path/to/script.sh` \
-Backup files daily at midnight: `0 0 * * * tar -czf /path/to/backup.tar.gz /path/to/files` \
-Send an email weekly on Sundays: `0 0 * * 0 mail -s "Weekly Report" user@example.com < /path/to/report.txt` \
+Examples:\
+Run a script every hour: `0 * * * * /path/to/script.sh`\
+Backup files daily at midnight: `0 0 * * * tar -czf /path/to/backup.tar.gz /path/to/files`\
+Send an email weekly on Sundays: `0 0 * * 0 mail -s "Weekly Report" user@example.com < /path/to/report.txt`\
 Run a backup script at 3 am every day: `0 3 * * * /path/to/backup_script.sh`
-
-
 
 ```
 * * * * * command to execute
@@ -31,20 +29,18 @@ Run a backup script at 3 am every day: `0 3 * * * /path/to/backup_script.sh`
 +------------ Minute (0 - 59)
 ```
 
-
-
 ## <mark style="color:red;">Systemd Timers</mark>
 
 ### <mark style="color:purple;">Example Workflow</mark>
 
-Create the <mark style="color:orange;">**service**</mark> unit that specifies what command or script to run. \
-Create the <mark style="color:orange;">**timer**</mark> unit that specifies when the service should be triggered. \
-Start and <mark style="color:orange;">**enable**</mark> the timer to ensure it runs as scheduled. \
+Create the <mark style="color:orange;">**service**</mark> unit that specifies what command or script to run.\
+Create the <mark style="color:orange;">**timer**</mark> unit that specifies when the service should be triggered.\
+Start and <mark style="color:orange;">**enable**</mark> the timer to ensure it runs as scheduled.\
 <mark style="color:orange;">**Inspect**</mark> the timer as needed to verify its configuration and status. <==
 
 ### <mark style="color:purple;">Creating a Service Unit</mark>
 
-Create a .service file in /etc/systemd/system/ for your task. \
+Create a .service file in /etc/systemd/system/ for your task.\
 For example, mytask.service:
 
 ```
@@ -58,7 +54,7 @@ ExecStart=/path/to/your/script.sh
 
 ### <mark style="color:purple;">Creating New Timer Unit</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>systemctl edit &#x3C;timer_name>.timer</code></td><td>Opens the new timer unit file for editing in your default text editor.</td></tr><tr><td><mark style="color:yellow;"><code>systemd-run --on-active=&#x3C;time> [command]</code></td><td>Creates a transient timer that executes a command after a specified time (e.g., systemd-run --on-active=30 /bin/touch /tmp/foo).</td></tr><tr><td><mark style="color:yellow;"><code>systemd-analyze timers</code></td><td>Analyzes and reports information about existing timers, helping you understand the system's current timer configuration.</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>systemctl edit &#x3C;timer_name>.timer</code></mark></td><td>Opens the new timer unit file for editing in your default text editor.</td></tr><tr><td><mark style="color:yellow;"><code>systemd-run --on-active=&#x3C;time> [command]</code></mark></td><td>Creates a transient timer that executes a command after a specified time (e.g., systemd-run --on-active=30 /bin/touch /tmp/foo).</td></tr><tr><td><mark style="color:yellow;"><code>systemd-analyze timers</code></mark></td><td>Analyzes and reports information about existing timers, helping you understand the system's current timer configuration.</td></tr></tbody></table>
 
 Create a corresponding .timer file in the same directory. For example, mytask.timer:
 
@@ -79,31 +75,29 @@ WantedBy=timers.target
 
 #### <mark style="color:green;">Editing an existing timer</mark>:
 
-<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>systemctl edit &#x3C;timer_name>.timer</code></td><td>Opens the existing timer unit file for editing in your default text editor.</td></tr><tr><td><mark style="color:yellow;"><code>systemctl reload</code></td><td>Reloads systemd after editing the timer unit file to apply changes.</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>systemctl edit &#x3C;timer_name>.timer</code></mark></td><td>Opens the existing timer unit file for editing in your default text editor.</td></tr><tr><td><mark style="color:yellow;"><code>systemctl reload</code></mark></td><td>Reloads systemd after editing the timer unit file to apply changes.</td></tr></tbody></table>
 
 #### <mark style="color:green;">Enabling/Disabling Timers:</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>systemctl enable &#x3C;timer_name></code></td><td>Enables a timer to start automatically at its scheduled time.</td></tr><tr><td><mark style="color:yellow;"><code>systemctl disable &#x3C;timer_name></code></td><td>Disables a timer from starting automatically.</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>systemctl enable &#x3C;timer_name></code></mark></td><td>Enables a timer to start automatically at its scheduled time.</td></tr><tr><td><mark style="color:yellow;"><code>systemctl disable &#x3C;timer_name></code></mark></td><td>Disables a timer from starting automatically.</td></tr></tbody></table>
 
 #### <mark style="color:green;">Manually Start/Stop:</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>systemctl start &#x3C;timer_name></code></td><td>Starts a timer manually.</td></tr><tr><td><mark style="color:yellow;"><code>systemctl stop &#x3C;timer_name></code></td><td>Stops a timer manually.</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>systemctl start &#x3C;timer_name></code></mark></td><td>Starts a timer manually.</td></tr><tr><td><mark style="color:yellow;"><code>systemctl stop &#x3C;timer_name></code></mark></td><td>Stops a timer manually.</td></tr></tbody></table>
 
 ### <mark style="color:purple;">Inspecting Timers</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>systemctl list-timers</code></td><td>Lists all active timers along with their next scheduled execution time.</td></tr><tr><td><mark style="color:yellow;"><code>systemctl status mytask.timer</code></td><td>Shows the status of the specified timer, including whether it's active and when it last triggered the service.</td></tr><tr><td><mark style="color:yellow;"><code>systemctl cat mytask.timer</code></td><td>Displays the content of the timer unit file.</td></tr><tr><td><mark style="color:yellow;"><code>systemctl cat mytask.service</code></td><td>Displays the content of the service unit file.</td></tr></tbody></table>
-
-
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>systemctl list-timers</code></mark></td><td>Lists all active timers along with their next scheduled execution time.</td></tr><tr><td><mark style="color:yellow;"><code>systemctl status mytask.timer</code></mark></td><td>Shows the status of the specified timer, including whether it's active and when it last triggered the service.</td></tr><tr><td><mark style="color:yellow;"><code>systemctl cat mytask.timer</code></mark></td><td>Displays the content of the timer unit file.</td></tr><tr><td><mark style="color:yellow;"><code>systemctl cat mytask.service</code></mark></td><td>Displays the content of the service unit file.</td></tr></tbody></table>
 
 ## <mark style="color:red;">Anacron</mark>
 
 ### <mark style="color:purple;">Modifying Anacrontab Jobs</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>crontab -e</code></td><td>Opens the user's Anacrontab for editing.</td></tr><tr><td><mark style="color:yellow;"><code>ls -l /var/spool/anacron</code></td><td>User anacron jobs are here.</td></tr><tr><td><mark style="color:yellow;"><code>ls -l /etc/anacrontab</code></td><td>ain anacron configuration file</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>crontab -e</code></mark></td><td>Opens the user's Anacrontab for editing.</td></tr><tr><td><mark style="color:yellow;"><code>ls -l /var/spool/anacron</code></mark></td><td>User anacron jobs are here.</td></tr><tr><td><mark style="color:yellow;"><code>ls -l /etc/anacrontab</code></mark></td><td>ain anacron configuration file</td></tr></tbody></table>
 
 Edit the entries like a standard crontab, but use specific Anacron time specifiers (e.g., "daily", "10d").
 
-Example: \
+Example:\
 `sudo vim /etc/anacrontab`\
 add the following to create a new anacron job that runs a script daily, even if the system is not always on:\
 `1 5 my_daily_script /path/to/script.sh`\
@@ -117,23 +111,23 @@ add the following to create a new anacron job that runs a script daily, even if 
 
 ### <mark style="color:purple;">Creating Anacron Jobs</mark>
 
-Example: \
+Example:\
 Run a script every 3 hours with a random delay of 60 minutes:\
 `360 * /path/to/script.sh`
 
 ### <mark style="color:purple;">Forcing Task Execution:</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th width="350">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>anacron -f</code></td><td>Runs all scheduled tasks immediately, regardless of their scheduled times.</td></tr><tr><td><mark style="color:yellow;"><code>sudo anacron -f -d &#x3C;job_name></code></td><td>Force the execution of a specific Anacron job manually with debug output.</td></tr><tr><td><mark style="color:yellow;"><code>sudo anacron -n</code></td><td>Runs all jobs in the Anacrontab as if anacron had just been started, respecting the delay specified for each job.</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th width="350">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>anacron -f</code></mark></td><td>Runs all scheduled tasks immediately, regardless of their scheduled times.</td></tr><tr><td><mark style="color:yellow;"><code>sudo anacron -f -d &#x3C;job_name></code></mark></td><td>Force the execution of a specific Anacron job manually with debug output.</td></tr><tr><td><mark style="color:yellow;"><code>sudo anacron -n</code></mark></td><td>Runs all jobs in the Anacrontab as if anacron had just been started, respecting the delay specified for each job.</td></tr></tbody></table>
 
 ## <mark style="color:red;">at</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th width="352">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>atrm &#x3C;job_id></code></td><td>Removes a specific job from the queue.</td></tr><tr><td><mark style="color:yellow;"><code>atq</code></td><td>View and manipulate tasks scheduled with the <mark style="color:yellow;"><code>at</code> command.</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th width="352">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>atrm &#x3C;job_id></code></mark></td><td>Removes a specific job from the queue.</td></tr><tr><td><mark style="color:yellow;"><code>atq</code></mark></td><td>View and manipulate tasks scheduled with the <mark style="color:yellow;"><code>at</code></mark> command.</td></tr></tbody></table>
 
 ### <mark style="color:purple;">Creating at Jobs</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th width="351">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>at &#x3C;time></code></td><td>Schedules a job to run at a specific time (e.g., at 10:30AM).</td></tr><tr><td><mark style="color:yellow;"><code>at +&#x3C;duration></code></td><td>Schedules a job to run after a specific duration (e.g., at +30 minutes).</td></tr><tr><td><mark style="color:yellow;"><code>at now + 2 hours</code></td><td>Schedules a one-time job to run at a specific time (e.g., 2 hours from now).</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th width="351">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>at &#x3C;time></code></mark></td><td>Schedules a job to run at a specific time (e.g., at 10:30AM).</td></tr><tr><td><mark style="color:yellow;"><code>at +&#x3C;duration></code></mark></td><td>Schedules a job to run after a specific duration (e.g., at +30 minutes).</td></tr><tr><td><mark style="color:yellow;"><code>at now + 2 hours</code></mark></td><td>Schedules a one-time job to run at a specific time (e.g., 2 hours from now).</td></tr></tbody></table>
 
-Examples: \
+Examples:\
 `at 10:30AM < /path/to/script.sh`
 
 ## <mark style="color:red;">Other Tools</mark>

@@ -13,7 +13,11 @@ The find commands require root!!
 
 ## <mark style="color:red;">Accessed Time</mark>
 
-Today (Starting at 00:00): \` find / -a -daystart -atime -1
+Today (Starting at 00:00):
+
+```bash
+find / -a -daystart -atime -1
+```
 
 ### <mark style="color:purple;">Days</mark>
 
@@ -56,10 +60,10 @@ Step 1: Create Reference Files for Modification Date&#x20;
 First, create reference files to cover the entire day of February 10, 2024, for the modification date:&#x20;
 
 Start of the day: February 10, 2024, 00:00 \
-`touch -t 202402100000 start_day.tmp`
+<mark style="color:yellow;">`touch -t 202402100000 start_day.tmp`</mark>
 
 End of the day: February 11, 2024, 00:00\
-`touch -t 202402110000 end_day.tmp`
+<mark style="color:yellow;">`touch -t 202402110000 end_day.tmp`</mark>
 
 Step 2: Create Reference Files for Access Time&#x20;
 
@@ -71,12 +75,12 @@ find /path/to/search -type f \( -newermt @$(stat -c %Y start_day.tmp) ! -newermt
 ```
 {% endcode %}
 
-The `-a` operator ensures both conditions must be met for a file to match.\
-`stat -c %Y filename.tmp` retrieves the modification time of each reference file in seconds since the epoch, which find then uses for comparison.
+The <mark style="color:yellow;">`-a`</mark> operator ensures both conditions must be met for a file to match.\
+<mark style="color:yellow;">`stat -c %Y filename.tmp`</mark> retrieves the modification time of each reference file in seconds since the epoch, which find then uses for comparison.
 
 ### <mark style="color:purple;">Reference File</mark>
 
-`-newerXY [referencefile]`\
+<mark style="color:yellow;">`-newerXY [referencefile]`</mark>\
 Succeeds if timestamp X of the file being considered is newer than timestamp Y of the file reference. \
 X = The files being compared. \
 Y = Reference File timestamp of choice. \
@@ -92,8 +96,11 @@ The letters X and Y can be any of the following letters:
 
 ## <mark style="color:red;">Modified Time</mark>
 
-Today (Starting at 00:00):\
-<mark style="color:yellow;">`find / -a -daystart -mtime -1`</mark>
+Today (Starting at 00:00):
+
+```bash
+find / -a -daystart -mtime -1
+```
 
 ### <mark style="color:purple;">Days</mark>
 
@@ -160,8 +167,11 @@ The letters X and Y can be any of the following letters:
 
 ## <mark style="color:red;">Change Time (Metadata Change)</mark>
 
-Today (Starting at 00:00):\
-<mark style="color:yellow;">`find / -a -daystart -ctime -1`</mark>
+Today (Starting at 00:00):
+
+```sh
+find / -a -daystart -ctime -1
+```
 
 ### <mark style="color:purple;">Days</mark>
 
