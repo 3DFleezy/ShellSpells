@@ -4,19 +4,19 @@ description: Find files based on size
 
 # Size
 
-`c` bytes\
-`k` kilobytes\
-`M` megabytes\
-`G` gigabytes\
-`w` 2-byte words\
-`b` 512-byte blocks
+<mark style="color:yellow;">`c`</mark> bytes\
+<mark style="color:yellow;">`k`</mark> kilobytes\
+<mark style="color:yellow;">`M`</mark> megabytes\
+<mark style="color:yellow;">`G`</mark> gigabytes\
+<mark style="color:yellow;">`w`</mark> 2-byte words\
+<mark style="color:yellow;">`b`</mark> 512-byte blocks
 
-| `find / -a -size 10c`             | Exactly 10 bytes             |
-| --------------------------------- | ---------------------------- |
-| `find / -a -size +10k`            | More than 10 kilobytes       |
-| `find / -a -size -10M`            | Less than 10 megabytes       |
-| `find / -a -size 0c`              | Empty files (size 0 bytes).  |
-| `find / -a -size +10M -size -50M` | Between 10 and 50 megabytes. |
+| <mark style="color:yellow;">`find / -a -size 10c`</mark>             | Exactly 10 bytes             |
+| -------------------------------------------------------------------- | ---------------------------- |
+| <mark style="color:yellow;">`find / -a -size +10k`</mark>            | More than 10 kilobytes       |
+| <mark style="color:yellow;">`find / -a -size -10M`</mark>            | Less than 10 megabytes       |
+| <mark style="color:yellow;">`find / -a -size 0c`</mark>              | Empty files (size 0 bytes).  |
+| <mark style="color:yellow;">`find / -a -size +10M -size -50M`</mark> | Between 10 and 50 megabytes. |
 
 Find large files:
 
