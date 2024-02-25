@@ -4,16 +4,15 @@ description: Find files based on size
 
 # Size
 
-`c` bytes \
-`k` kilobytes \
-`M` megabytes \
-`G` gigabytes \
-`w` 2-byte words \
+`c` bytes\
+`k` kilobytes\
+`M` megabytes\
+`G` gigabytes\
+`w` 2-byte words\
 `b` 512-byte blocks
 
-| Command | Description |
-| --------------------------------- | ---------------------------- |
 | `find / -a -size 10c`             | Exactly 10 bytes             |
+| --------------------------------- | ---------------------------- |
 | `find / -a -size +10k`            | More than 10 kilobytes       |
 | `find / -a -size -10M`            | Less than 10 megabytes       |
 | `find / -a -size 0c`              | Empty files (size 0 bytes).  |
