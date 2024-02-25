@@ -36,15 +36,16 @@ Today (Starting at 00:00): \` find / -a -daystart -atime -1
 
 ### <mark style="color:purple;">Minutes</mark>
 
-| `find / -a -amin 10`           | Accessed \*EXACTLY 10 minutes ago. Within that 60 seconds of 10 minutes ago. |
-| ------------------------------ | ---------------------------------------------------------------------------- |
-| `find / -a -amin -10`          | Accessed within the last 10 minutes                                          |
-| `find / -a -amin +10`          | Accessed 10 or more minutes ago                                              |
-| `find / -a -amin -10 -amin -5` | Accessed within the last 5-10 minutes                                        |
+| `find / -a -amin -60`              | Accessed within the last hour (60 minutes) |
+| ---------------------------------- | ------------------------------------------ |
+| `find / -a -amin -$((5*60))`       | Accessed within the last 5 hours           |
+| `find / -a -atime 0`               | Accessed within the last 24 hours          |
+| `find / -a -atime 1`               | Accessed between 24 and 48 hours ago       |
+| `find / -a -atime -120 -atime -60` | Accessed within the last 60-120 minutes    |
 
 ### <mark style="color:purple;">Dates / Date Range</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th width="558">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find / -a -newerat "YYYY-MM-DD"</code></td><td>Accessed after date</td></tr><tr><td><code>find / -a ! -newermt "YYYY-MM-DD"</code></td><td>Accessed before date</td></tr><tr><td><code>find / -a -newerat 2017-09-12 ! -newerat 2017-09-14</code></td><td>13 SEP access times only</td></tr><tr><td><code>find / -a -newerat 2017-09-12 ! -newerat 2017-09-19</code></td><td>13 - 18 SEP access times only</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th width="589">Command</th><th>Description</th></tr></thead><tbody><tr><td><code>find / -a -newerat "YYYY-MM-DD"</code></td><td>Accessed after date</td></tr><tr><td><code>find / -a ! -newermt "YYYY-MM-DD"</code></td><td>Accessed before date</td></tr><tr><td><code>find / -a -newerat 2017-09-12 ! -newerat 2017-09-14</code></td><td>13 SEP access times only</td></tr><tr><td><code>find / -a -newerat 2017-09-12 ! -newerat 2017-09-19</code></td><td>13 - 18 SEP access times only</td></tr></tbody></table>
 
 ### <mark style="color:purple;">Specific Hours on a Specific Date</mark>
 
