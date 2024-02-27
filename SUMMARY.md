@@ -188,3 +188,10 @@
   * [Output Formatting / Filtering](windows/file-ops/output-formatting-filtering.md)
   * [File Formatting](windows/file-ops/file-formatting.md)
   * [Operators](windows/file-ops/operators.md)
+
+## ⛓️ Network
+
+* [Traffic Manipulation](network/traffic-manipulation/README.md)
+  * [iptables](network/traffic-manipulation/iptables/README.md)
+    * [Option List](network/traffic-manipulation/iptables/option-list.md)
+    * [General Commands](network/traffic-manipulation/iptables/general-commands.md)
