@@ -1,6 +1,6 @@
 # Replace / Remove
 
-## Replace Strings
+## <mark style="color:red;">Replace Strings</mark>
 
 Replaces text with new text and outputs to new file (From CMD terminal):
 
@@ -18,13 +18,13 @@ Replace a string in the file content
 ```
 {% endcode %}
 
-## Remove Strings
+## <mark style="color:red;">Remove Strings</mark>
 
-## Remove Lines
+## <mark style="color:red;">Remove Lines</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th width="622">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>type C:\file.txt | findstr /v "pattern" > C:\newfile.txt</code></mark></td><td>Lines without "pattern"</td></tr><tr><td><mark style="color:yellow;"><code>type C:\file.txt | more +10 > C:\trimmedfile.txt</code></mark></td><td>First 10 lines</td></tr><tr><td><mark style="color:yellow;"><code>type C:\file.txt | find /v "" > C:\nonemptyfile.txt</code></mark></td><td>Non-empty lines</td></tr></tbody></table>
 
-## Remove Whitespace
+## <mark style="color:red;">Remove Whitespace</mark>
 
 Trim leading and trailing whitespaces from each line:
 

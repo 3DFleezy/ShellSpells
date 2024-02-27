@@ -1,8 +1,8 @@
 # Filename
 
-## Local
+## <mark style="color:red;">Local</mark>
 
-### Filenames
+### <mark style="color:purple;">Filenames</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>where /R C:\Users\ "keyword*"</code></mark></td><td>Recursive search for a keyword (CMD only).</td></tr><tr><td><mark style="color:yellow;"><code>dir /s /b &#x3C;filename></code></mark></td><td>Recursive search for a filename with full path.</td></tr><tr><td><mark style="color:yellow;"><code>dir &#x3C;filename>*</code></mark></td><td>Lists files in the current directory with a name starting with <mark style="color:yellow;"><code>&#x3C;filename></code></mark>.</td></tr><tr><td><mark style="color:yellow;"><code>dir &#x3C;path>\&#x3C;filename>*</code></mark></td><td>Lists files in the specified path with a name starting with <mark style="color:yellow;"><code>&#x3C;filename></code></mark>.</td></tr><tr><td><mark style="color:yellow;"><code>Get-ChildItem C:\Users *readme* -Recurse</code></mark></td><td>Recursive search with PowerShell.</td></tr><tr><td><mark style="color:yellow;"><code>Get-ChildItem -Path &#x3C;path> -Filter &#x3C;filename>*</code></mark></td><td>Lists files in the specified path matching the filter <mark style="color:yellow;"><code>&#x3C;filename>*</code></mark>. More efficient than <code>-Include</code>.</td></tr><tr><td><mark style="color:yellow;"><code>Get-ChildItem -Path &#x3C;path> -Include &#x3C;filename>*</code></mark></td><td>Lists files in the specified path including files matching the pattern <mark style="color:yellow;"><code>&#x3C;filename>*</code></mark>. Allows more complex patterns than <code>-Filter</code>.</td></tr><tr><td><mark style="color:yellow;"><code>Get-ChildItem -Path &#x3C;path> -Exclude &#x3C;filename>*</code></mark></td><td>Lists files in the specified path excluding files matching the pattern <mark style="color:yellow;"><code>&#x3C;filename>*</code></mark>.</td></tr><tr><td><mark style="color:yellow;"><code>findstr /s /i /m "search_string"</code></mark></td><td>Recursive search for a string (CMD only), case-insensitive.</td></tr><tr><td><mark style="color:yellow;"><code>for /R %f in (&#x3C;filename>*) do @echo %f</code></mark></td><td>Recursive for-loop in CMD.</td></tr><tr><td><mark style="color:yellow;"><code>Where-Object { $_.Name -like "&#x3C;filename>*" }</code></mark></td><td>Filters objects by name match in PowerShell.</td></tr></tbody></table>
 
@@ -32,7 +32,7 @@ Get-ChildItem -Path <path> -Recurse | Where-Object { $_.Attributes -match 'Archi
 ```
 {% endcode %}
 
-### File Extensions
+### <mark style="color:purple;">File Extensions</mark>
 
 Multiple extensions:
 
@@ -40,7 +40,7 @@ Multiple extensions:
 Get-ChildItem -Path C:\Documents -Recurse -Include "*.txt", "*.docx"
 ```
 
-### Remote
+### <mark style="color:purple;">Remote</mark>
 
 Find applications that begin with Google:
 
@@ -58,7 +58,7 @@ Uninstall applications that begin with Google:
 ```
 {% endcode %}
 
-## Content
+## <mark style="color:red;">Content</mark>
 
 Go-to Command:
 
@@ -122,7 +122,7 @@ Additional Tips:
 
 Use regular expressions with findstr for advanced pattern matching.
 
-## Users (Owners)
+## <mark style="color:red;">Users (Owners)</mark>
 
 Lists files owned by a specific username, recursively:
 
@@ -170,7 +170,7 @@ Get-ChildItem -Path <path> -Recurse -File | Where-Object { $_.GetAccessControl()
 ```
 {% endcode %}
 
-### Windows Search (GUI)
+### <mark style="color:purple;">Windows Search (GUI)</mark>
 
 Open File Explorer, navigate to the desired directory.
 

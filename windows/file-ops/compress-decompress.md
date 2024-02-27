@@ -66,9 +66,9 @@ Compress-Archive -Path C:\path\to\sourceFolder\* -DestinationPath C:\path\to\out
 ```
 {% endcode %}
 
-makecab: Creates cabinet (.cab) files for software distribution (older format).
+<mark style="color:yellow;">**makecab**</mark>: Creates cabinet (.cab) files for software distribution (older format).
 
-extrac32: Extracts files from .cab files.
+<mark style="color:yellow;">**extrac32**</mark>: Extracts files from .cab files.
 
 Create a CAB file from a single file:
 

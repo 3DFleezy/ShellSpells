@@ -1,6 +1,6 @@
 # Audit Policies
 
-## Enumerate
+## <mark style="color:red;">Enumerate</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>auditpol /get /category:*</code></mark></td><td>Current audit policy settings for all categories.</td></tr><tr><td><mark style="color:yellow;"><code>auditpol /get /User:UserName / Category:*</code></mark></td><td>Current audit policy settings for user, all audit categories.</td></tr><tr><td><mark style="color:yellow;"><code>auditpol /List /User /V</code></mark></td><td>All user-level audit policy settings.</td></tr><tr><td><mark style="color:yellow;"><code>auditpol (auditpol /get /category:*)</code></mark></td><td>Check policies &#x3C;auditusr on xp/2003></td></tr><tr><td><mark style="color:yellow;"><code>Get-AuditPolicy</code></mark></td><td>Gets the audit policy for one or more audit subcategories.</td></tr><tr><td><mark style="color:yellow;"><code>wevtutil gp Microsoft-Windows-Security-Auditing /ge:true</code></mark></td><td>Gets the audit policy settings for the Security log using wevtutil.</td></tr><tr><td><mark style="color:yellow;"><code>secedit /export /cfg C:\auditpolicy.txt</code></mark></td><td>Exports the security settings, including audit policies, to a text file.</td></tr><tr><td><mark style="color:yellow;"><code>Get-GPOReport -All -ReportType Xml -Path C:\GPOAuditReport.xml</code></mark></td><td>Generates a report of all Group Policy Objects, including audit policy settings, in XML.</td></tr><tr><td><mark style="color:yellow;"><code>gpresult /H C:\GPOReport.html /SCOPE COMPUTER</code></mark></td><td>Generates an HTML report that includes the results of Group Policy application, which covers audit policies for the computer.</td></tr></tbody></table>
 
@@ -22,7 +22,7 @@ Retrieves the 50 most recent security events with Event ID 4719, indicating chan
 Get-EventLog -LogName Security -Newest 50 | Where-Object { $_.EventID -eq 4719 }
 ```
 
-## Modify
+## <mark style="color:red;">Modify</mark>
 
 Disables auditing for all subcategories under Logon/Logoff:
 
@@ -72,13 +72,13 @@ Restores audit policy settings from a backup file.
 auditpol /restore /file:C:\audit_policy_backup.txt
 ```
 
-## Audit Policy Categories and Sub-Categories
+## <mark style="color:purple;">Audit Policy Categories and Sub-Categories</mark>
 
 The audit categories and subcategories in Windows are part of the Advanced Audit Policy Configuration, which allows administrators to get more granular with their audit policies.
 
 Here's a summary of the main categories and some of their subcategories as of my last update:
 
-### Account Logon
+### <mark style="color:purple;">Account Logon</mark>
 
 Credential Validation
 
@@ -88,7 +88,7 @@ Kerberos Authentication Service
 
 Other Account Logon Events
 
-### Account Management
+### <mark style="color:purple;">Account Management</mark>
 
 Computer Account Management
 
@@ -102,7 +102,7 @@ Other Account Management Events
 
 User Account Management
 
-### Detailed Tracking
+### <mark style="color:purple;">Detailed Tracking</mark>
 
 DPAPI Activity
 
@@ -112,7 +112,7 @@ Process Termination
 
 RPC Events
 
-### DS Access
+### <mark style="color:purple;">DS Access</mark>
 
 Directory Service Access
 
@@ -122,7 +122,7 @@ Directory Service Replication
 
 Detailed Directory Service Replication
 
-### Logon/Logoff
+### <mark style="color:purple;">Logon/Logoff</mark>
 
 Account Lockout
 
@@ -144,7 +144,7 @@ Other Logon/Logoff Events
 
 User / Device Claims
 
-### Object Access
+### <mark style="color:purple;">Object Access</mark>
 
 Application Generated
 
@@ -170,7 +170,7 @@ Registry
 
 SAM
 
-### Policy Change
+### <mark style="color:purple;">Policy Change</mark>
 
 Audit Policy Change
 
@@ -184,7 +184,7 @@ Filtering Platform Policy Change
 
 Other Policy Change Events
 
-### Privilege Use
+### <mark style="color:purple;">Privilege Use</mark>
 
 Non-Sensitive Privilege Use
 
@@ -192,7 +192,7 @@ Other Privilege Use Events
 
 Sensitive Privilege Use
 
-### System
+### <mark style="color:purple;">System</mark>
 
 IPsec Driver
 
@@ -204,7 +204,7 @@ Security System Extension
 
 System Integrity
 
-### Global Object Access Auditing
+### <mark style="color:purple;">Global Object Access Auditing</mark>
 
 File System
 

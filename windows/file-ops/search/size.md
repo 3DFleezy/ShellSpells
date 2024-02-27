@@ -1,8 +1,7 @@
 # Size
 
-| Command                                                                                                     | Description                                         |
-| ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
 | <mark style="color:yellow;">`dir /O /S`</mark>                                                              | Sort by size, recursive                             |
+| ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
 | <mark style="color:yellow;">`forfiles /M *.docx /C "cmd /c echo @fsize @path"`</mark>                       | Show size by file extension                         |
 | <mark style="color:yellow;">`dir /W /O /S \| findstr ">100000"`</mark>                                      | Greater than 100KB, recursive                       |
 | <mark style="color:yellow;">`forfiles /S /C "cmd /c if @fsize gtr 55 echo @path"`</mark>                    | Greater than 55 bytes, recursive                    |

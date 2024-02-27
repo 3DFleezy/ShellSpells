@@ -1,6 +1,6 @@
 # Logs
 
-## Commands
+## <mark style="color:red;">Commands</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>eventvwr</code></mark></td><td>Opens the Event Viewer (GUI).</td></tr><tr><td><mark style="color:yellow;"><code>wevtutil qe &#x3C;LogName></code></mark></td><td>Retrieves events from a specific event log.</td></tr><tr><td><mark style="color:yellow;"><code>Get-EventLog -LogName &#x3C;LogName></code></mark></td><td>View specified event logs.</td></tr><tr><td><mark style="color:yellow;"><code>Get-WinEvent -LogName &#x3C;LogName></code></mark></td><td>View specified event logs.</td></tr><tr><td><mark style="color:yellow;"><code>Get-WmiObject -Class Win32_NTLogEvent</code></mark></td><td>View specified event logs using WMI.</td></tr><tr><td><mark style="color:yellow;"><code>logman query</code></mark></td><td>Lists the configured performance counter and event trace logs.</td></tr><tr><td><mark style="color:yellow;"><code>tracerpt &#x3C;LogFileName></code></mark></td><td>Converts event trace logs or performance counter logs into a readable format.</td></tr><tr><td><mark style="color:yellow;"><code>type &#x3C;LogFileName></code></mark></td><td>Displays the contents of a text-based log file.</td></tr></tbody></table>
 
@@ -104,7 +104,7 @@ Get-ItemProperty -ea 0 hklm:\system\currentcontrolset\enum\usbstor\*\* | select 
 ```
 {% endcode %}
 
-## Check for PS Logging (PS3+)
+## <mark style="color:red;">Check for PS Logging (PS3+)</mark>
 
 Verify logging:
 
@@ -132,7 +132,7 @@ reg query "HKLM\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\Modul
 ```
 {% endcode %}
 
-## EventID
+## <mark style="color:red;">EventID</mark>
 
 Find all events with EventID 4624 (Logon events) in the Security log
 
@@ -198,7 +198,7 @@ Get-WmiObject -Query "SELECT * FROM Win32_NTLogEvent WHERE Logfile='Security' AN
 ```
 {% endcode %}
 
-## Content/Keywords
+## <mark style="color:red;">Content/Keywords</mark>
 
 Find all events in the Security log that contain the username "JohnDoe"
 
@@ -226,7 +226,7 @@ Find all events in the System log that have the keyword "disk"
 Get-WinEvent -LogName System | Where-Object { $_.Keywords -band 0x4 }
 ```
 
-## Date Range
+## <mark style="color:red;">Date Range</mark>
 
 Retrieve events in the Security log that occurred between two specific dates
 

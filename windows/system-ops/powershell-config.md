@@ -1,6 +1,6 @@
 # PowerShell Config
 
-## Version
+## <mark style="color:red;">Version</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>get-host | select-object Version</code></mark></td><td>Get PowerShell version using <code>get-host</code>.</td></tr><tr><td><mark style="color:yellow;"><code>echo $PSVERSIONTABLE</code></mark></td><td>Shows all version and build information.</td></tr><tr><td><mark style="color:yellow;"><code>$PSVersionTable.PSVersion</code></mark></td><td>Get PowerShell version using <code>$PSVersionTable.PSVersion</code>.</td></tr><tr><td><mark style="color:yellow;"><code>powershell -command "$PSVersionTable.PSVersion"</code></mark></td><td>Get PowerShell version in Command Prompt.</td></tr></tbody></table>
 
@@ -32,17 +32,17 @@ Retrieves the PowerShell version as part of the operating system information usi
 wmic os get PowerShellVersion
 ```
 
-## PowerShell Profiles
+## <mark style="color:red;">PowerShell Profiles</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>$PsHome</code></mark></td><td>Stores the installation directory for PowerShell.</td></tr><tr><td><mark style="color:yellow;"><code>$Home</code></mark></td><td>Stores the current user’s home directory.</td></tr><tr><td><mark style="color:yellow;"><code>$PROFILE</code></mark></td><td>Stores the path to the current user's profile script.</td></tr><tr><td><mark style="color:yellow;"><code>ISE $profile</code></mark></td><td>Opens the user's profile script in the Integrated Scripting Environment (ISE).</td></tr><tr><td><mark style="color:yellow;"><code>$PsHome\\Profile.ps1</code></mark></td><td>Profile script for all users and all hosts.</td></tr><tr><td><mark style="color:yellow;"><code>$PsHome\\Microsoft.PowerShell_profile.ps1</code></mark></td><td>Profile script for all users on the current host.</td></tr><tr><td><mark style="color:yellow;"><code>$Home\\[My]Documents\\Profile.ps1</code></mark></td><td>Profile script for the current user and all hosts.</td></tr><tr><td><mark style="color:yellow;"><code>$Home\\[My]Documents\\WindowsPowerShell\\Profile.ps1</code></mark></td><td>Profile script for the current user on the current host.</td></tr><tr><td><mark style="color:yellow;"><code>$profile | Get-Member -Type NoteProperty</code></mark></td><td>Displays the profile values of Names, MemberType, and Paths.</td></tr><tr><td><mark style="color:yellow;"><code>$Profile | get-member -type noteproperty | ft -wrap</code></mark></td><td>Displays the profile values with wrapped text.</td></tr><tr><td><mark style="color:yellow;"><code>$PROFILE | Get-Member -MemberType noteproperty | select name</code></mark></td><td>Displays only the Names of profile properties.</td></tr><tr><td><mark style="color:yellow;"><code>Test-Path -Path $profile.currentUsercurrentHost</code></mark></td><td>Checks if the profile for the current user and host exists.</td></tr><tr><td><mark style="color:yellow;"><code>Test-Path -Path $profile.currentUserAllHosts</code></mark></td><td>Checks if the profile for the current user and all hosts exists.</td></tr><tr><td><mark style="color:yellow;"><code>Test-Path -Path $profile.AllUsersAllHosts</code></mark></td><td>Checks if the profiles for all users and all hosts exist.</td></tr><tr><td><mark style="color:yellow;"><code>Test-Path -Path $profile.AllUserscurrentHost</code></mark></td><td>Checks if the profiles for all users on the current host exist.</td></tr><tr><td><mark style="color:yellow;"><code>New-Item -ItemType File -Path $profile -Force</code></mark></td><td>Creates a new profile script for the current user, ignoring errors.</td></tr></tbody></table>
 
-## Switch Versions
+## <mark style="color:red;">Switch Versions</mark>
 
 Switch to PSv7:
 
 <mark style="color:yellow;">`pwsh`</mark>
 
-## PowerShell Execution Policy
+## <mark style="color:red;">PowerShell Execution Policy</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>Get-ExecutionPolicy -list</code></mark></td><td>Lists all of the Scopes and ExecutionPolicies on the system.</td></tr><tr><td><mark style="color:yellow;"><code>Get-ExecutionPolicy</code></mark></td><td>Gets the current user's ExecutionPolicy.</td></tr><tr><td><mark style="color:yellow;"><code>powershell.exe Get-ExecutionPolicy</code></mark></td><td>Retrieves the current PowerShell execution policy using CMD.</td></tr></tbody></table>
 
@@ -74,7 +74,7 @@ Generates an HTML report containing the Group Policy settings, including the Pow
 gpresult /h result.html && start result.html
 ```
 
-## Notes
+## <mark style="color:red;">Notes</mark>
 
 <mark style="color:green;">Restricted:</mark>\
 No scripts are allowed to run, offering the highest security level.\

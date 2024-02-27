@@ -1,8 +1,8 @@
 # Output Formatting / Filtering
 
-## Format
+## <mark style="color:red;">Format</mark>
 
-### Table
+### <mark style="color:purple;">Table</mark>
 
 ```powershell
 Get-Process | Format-Table -Property *
@@ -20,7 +20,7 @@ Get-Process | Format-Table *
 Get-Process | ft 
 ```
 
-### -Wrap
+### <mark style="color:purple;">-Wrap</mark>
 
 ```powershell
 Get-Command | Select-Object Name,Source | ft -Wrap
@@ -42,7 +42,7 @@ Formatting Process List to Include Select Fields:
 Get-Process | Format-Table Name,ID,Responding -Wrap
 ```
 
-### List
+### <mark style="color:purple;">List</mark>
 
 Format-List is another way of displaying the properties of an object. Unlike get-member, Format-List (fl) will also display the values for those properties so that you can see what kind of information each property contains
 
@@ -50,7 +50,7 @@ Most parameters are the same as Format-Table.
 
 <table data-header-hidden data-full-width="true"><thead><tr><th width="388">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>gci | Format-List -property name</code></mark></td><td>Formatting output of a command (Format-List)</td></tr><tr><td><mark style="color:yellow;"><code>ls | Format-List -property name</code></mark></td><td>Formatting output of a command (Format-List)</td></tr><tr><td><mark style="color:yellow;"><code>Get-Help Format-List</code></mark></td><td>Formats the help output as a list</td></tr></tbody></table>
 
-### Wide
+### <mark style="color:purple;">Wide</mark>
 
 It’s able to display only the values of a single property, so its -Property parameter accepts only one property name, not a list, and it can’t accept wildcards.
 
@@ -64,7 +64,7 @@ Formats the output to a specified width and writes to a new file.
 Get-Content C:\path\to\file.txt | Out-File C:\path\to\newfile.txt -Width 120
 ```
 
-### GroupBy
+### <mark style="color:purple;">GroupBy</mark>
 
 {% code overflow="wrap" %}
 ```powershell
@@ -72,7 +72,7 @@ Get-AzVM -Status | Sort-Object PowerState | ft -Property Name,Location,ResourceG
 ```
 {% endcode %}
 
-### Paging
+### <mark style="color:purple;">Paging</mark>
 
 Paginating output:
 
@@ -80,7 +80,7 @@ Paginating output:
 gci -recurse | Out-Host -paging
 ```
 
-## Select-Object
+## <mark style="color:red;">Select-Object</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th width="429">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>Select-Object</code></mark>or <mark style="color:yellow;"><code>Select</code></mark></td><td>Selects a specified property from an object.</td></tr><tr><td><mark style="color:yellow;"><code>Get-Process | Select Name,ID,CPU,PM</code></mark></td><td>Selects multiple properties.</td></tr><tr><td><mark style="color:yellow;"><code>Get-Process | Select -First 10</code></mark></td><td>Selects first 10.</td></tr><tr><td><mark style="color:yellow;"><code>Get-Process | Select -Last 10</code></mark></td><td>Selects last 10.</td></tr></tbody></table>
 
@@ -90,11 +90,11 @@ Displays the Get-Process Properties of 'Name, ID, Path' for every process
 Get-Process | Select-Object Name, ID, path
 ```
 
-## Where-Object
+## <mark style="color:red;">Where-Object</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th width="494">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>Where-Object</code></mark></td><td>Filters objects out of the pipeline.</td></tr><tr><td><mark style="color:yellow;"><code>Get-Content C:\path\to\file.txt | Where-Object {$_ -match "pattern"}</code></mark></td><td>Filters lines that match a specific pattern.</td></tr><tr><td><mark style="color:yellow;"><code>Get-Process | Where-Object {$_.name -eq "notepad"}</code></mark></td><td>Where-Object condition (alias where or ?).</td></tr></tbody></table>
 
-## Creating Custom Columns and List Entries
+## <mark style="color:red;">Creating Custom Columns and List Entries</mark>
 
 You can use this to provide a column header that’s different from the property name being displayed:
 

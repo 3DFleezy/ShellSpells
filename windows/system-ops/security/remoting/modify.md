@@ -1,10 +1,10 @@
 # Modify
 
-## Enable/Disable Remoting
+## <mark style="color:red;">Enable/Disable Remoting</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th width="337">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>Enable-PSRemoting -Force</code></mark></td><td>Enables PowerShell remoting on the computer, configuring it to receive remote commands securely.</td></tr><tr><td><mark style="color:yellow;"><code>Disable-PSRemoting -Force</code></mark></td><td>Disables PowerShell remoting, preventing the computer from receiving remote commands.</td></tr><tr><td><mark style="color:yellow;"><code>Set-WSManQuickConfig -Force</code></mark></td><td>Configures the computer to use Windows Remote Management (WinRM) with default settings, including security settings.</td></tr></tbody></table>
 
-## Security Descriptor
+## <mark style="color:red;">Security Descriptor</mark>
 
 Modifies the security descriptor of the default PowerShell session configuration, launching a UI to edit permissions.
 
@@ -12,7 +12,7 @@ Modifies the security descriptor of the default PowerShell session configuration
 Set-PSSessionConfiguration -Name Microsoft.PowerShell -ShowSecurityDescriptorUI
 ```
 
-## Authentication
+## <mark style="color:red;">Authentication</mark>
 
 Enables Basic authentication for the WinRM service.
 
@@ -26,7 +26,7 @@ Enables Credential Security Support Provider (CredSSP) authentication for the Wi
 winrm set winrm/config/client/Auth '@{CredSSP="true"}'
 ```
 
-## Encrypted Traffic
+## <mark style="color:red;">Encrypted Traffic</mark>
 
 Disables the allowance of unencrypted traffic for the WinRM service using PowerShell.
 
@@ -56,7 +56,7 @@ Set-ItemProperty HKLM:\Software\Policies\Microsoft\Windows\WinRM\Service -Name A
 ```
 {% endcode %}
 
-## Firewall
+## <mark style="color:red;">Firewall</mark>
 
 Creates a new firewall rule to allow inbound connections on port 5986 for WinRM over HTTPS, increasing security:
 
@@ -80,7 +80,7 @@ Set-NetFirewallRule -DisplayName "Remote Desktop - User Mode (TCP-In)" -Enabled 
 ```
 {% endcode %}
 
-## TrustedHosts
+## <mark style="color:red;">TrustedHosts</mark>
 
 Adding a single item to TrustedHosts:
 

@@ -1,10 +1,10 @@
 # Read Content
 
-## Commands
+## <mark style="color:red;">Commands</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>type filename.txt</code></mark></td><td>Displays file content in Command Prompt.</td></tr><tr><td><mark style="color:yellow;"><code>Get-Content filename.txt</code></mark></td><td>Retrieves file content in PowerShell.</td></tr><tr><td><mark style="color:yellow;"><code>gc C:\path\to\file.txt</code></mark></td><td>Another PowerShell alias for Get-Content.</td></tr><tr><td><mark style="color:yellow;"><code>more filename.txt</code></mark></td><td>Shows file content page by page.</td></tr><tr><td><mark style="color:yellow;"><code>notepad filename.txt</code></mark></td><td>Opens file in Notepad.</td></tr><tr><td><mark style="color:yellow;"><code>gc filename.txt</code></mark></td><td>PS alias for <mark style="color:yellow;"><code>Get-Content</code></mark>.</td></tr><tr><td><mark style="color:yellow;"><code>cat C:\path\to\file.txt</code></mark></td><td>PS alias.</td></tr><tr><td><mark style="color:yellow;"><code>notepad C:\path\to\file.txt</code></mark></td><td>Opens a file in Notepad for reading (and editing).</td></tr><tr><td><mark style="color:yellow;"><code>notepad++ C:\path\to\file.txt</code></mark></td><td>Opens a file in Notepad++</td></tr><tr><td><mark style="color:yellow;"><code>[System.IO.File]::ReadAllText("C:\path\to\file.txt")</code></mark></td><td>Reads content using .NET</td></tr></tbody></table>
 
-## Alternate Data Streams
+## <mark style="color:red;">Alternate Data Streams</mark>
 
 ADS looks like this:
 

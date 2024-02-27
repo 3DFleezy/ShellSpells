@@ -1,6 +1,6 @@
 # Execute
 
-## Commands
+## <mark style="color:red;">Commands</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th width="537">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>C:\path\to\yourscript.bat</code></mark></td><td>Executes a batch script located at the specified path using CMD.</td></tr><tr><td><mark style="color:yellow;"><code>powershell -File C:\path\to\yourscript.ps1</code></mark></td><td>Executes a PowerShell script (.ps1 file) from CMD.</td></tr><tr><td><mark style="color:yellow;"><code>start C:\path\to\yourprogram.exe</code></mark></td><td>CMD to run an executable program.</td></tr><tr><td><mark style="color:yellow;"><code>&#x26; "C:\path\to\yourscript.ps1"</code></mark></td><td>Executes a PowerShell script from within a PowerShell session.</td></tr><tr><td><mark style="color:yellow;"><code>&#x26; "C:\path\to\yourprogram.exe"</code></mark></td><td>Directly executes an executable program from a PowerShell session.</td></tr><tr><td><mark style="color:yellow;"><code>.\yourscript.ps1</code></mark></td><td>Runs a PowerShell script located in the current directory from a PowerShell session.</td></tr><tr><td><mark style="color:yellow;"><code>Invoke-Expression -Command "C:\path\to\yourscript.ps1"</code></mark></td><td>Executes a PowerShell script using <code>Invoke-Expression</code>in PowerShell.</td></tr><tr><td><mark style="color:yellow;"><code>Start-Process -FilePath "C:\path\to\yourprogram.exe"</code></mark></td><td>Starts an executable program from PowerShell.</td></tr><tr><td><mark style="color:yellow;"><code>cmd /c C:\path\to\yourscript.bat</code></mark></td><td>Executes a batch script from within a PowerShell session using CMD.</td></tr></tbody></table>
 
@@ -10,7 +10,7 @@ Starts a PowerShell script using `Start-Process` in PowerShell.
 Start-Process -FilePath "powershell.exe" -ArgumentList "-File C:\path\to\yourscript.ps1"
 ```
 
-## Command Prompt (CMD)
+## <mark style="color:red;">Command Prompt (CMD)</mark>
 
 Execute a script:
 
@@ -24,7 +24,7 @@ script\_name.ps1 for PowerShell scripts (.ps1), requires enabling script executi
 
 Execute an executable: <mark style="color:yellow;">`executable_name.exe`</mark>
 
-## PowerShell
+## <mark style="color:red;">PowerShell</mark>
 
 Execute a script:
 

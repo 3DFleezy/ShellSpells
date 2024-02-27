@@ -1,6 +1,6 @@
 # Encode/Decode
 
-## certutil
+## <mark style="color:red;">certutil</mark>
 
 Encode/decode files using Base64 or hexadecimal formats.
 
@@ -12,7 +12,7 @@ certutil -encode <input_file> <output_file>
 certutil -decode <input_file> <output_file>
 ```
 
-## cipher
+## <mark style="color:red;">cipher</mark>
 
 Encrypt/decrypt files using built-in Windows encryption.
 
@@ -24,7 +24,7 @@ cipher /e <input_file> [/a] [/s:<password>]
 cipher /d <input_file> [/a] [/s:<password>]
 ```
 
-## System.Text Namespace
+## <mark style="color:red;">System.Text Namespace</mark>
 
 Invoking the System.Text Namespace, Encoding Class, and GetByte:
 
@@ -32,7 +32,7 @@ Invoking the System.Text Namespace, Encoding Class, and GetByte:
 [System.Text.Encoding]::GetBytes()
 ```
 
-## UTF8
+## <mark style="color:red;">UTF8</mark>
 
 Writes output to a file, with options for specifying encoding:
 
@@ -40,7 +40,7 @@ Writes output to a file, with options for specifying encoding:
 Out-File -FilePath C:\path\to\file.txt -InputObject "Text to add" -Encoding UTF8 
 ```
 
-## Base64
+## <mark style="color:red;">Base64</mark>
 
 Decode Base64-encoded strings or files.
 
@@ -88,13 +88,13 @@ Base64 decode a string to a file:
 ```
 {% endcode %}
 
-## Unicode Array
+## <mark style="color:red;">Unicode Array</mark>
 
 Converts the text into a Unicode Array using .NET API:
 
 \`(\[System.Text.Encoding]::Unicode.GetBytes("encoded text"))
 
-## URL Encoding
+## <mark style="color:red;">URL Encoding</mark>
 
 URL encode a string:
 
@@ -108,7 +108,7 @@ URL decode a string:
 [System.Web.HttpUtility]::UrlDecode("encoded text")
 ```
 
-### HTML Encoding
+## <mark style="color:red;">HTML Encoding</mark>
 
 HTML encode a string:
 

@@ -1,6 +1,6 @@
 # Attributes
 
-## Commands
+## <mark style="color:red;">Commands</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>attrib &#x3C;file></code></mark></td><td>Displays file attributes</td></tr><tr><td><mark style="color:yellow;"><code>Get-Item &#x3C;file> | Select-Object Attributes</code></mark></td><td>Displays file attributes</td></tr></tbody></table>
 
@@ -12,7 +12,7 @@ Get-ChildItem <Path> | ForEach-Object { $_.Name + ": " + $_.Attributes.ToString(
 ```
 {% endcode %}
 
-## File Attributes Explained
+## <mark style="color:red;">File Attributes Explained</mark>
 
 <mark style="color:orange;">R</mark> = Read-only. Cannot be written to or deleted.
 

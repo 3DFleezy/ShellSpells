@@ -1,10 +1,10 @@
 # Permissions
 
-## Commands
+## <mark style="color:red;">Commands</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th width="652">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>icacls &#x3C;file></code></mark></td><td>For file or directory</td></tr><tr><td><mark style="color:yellow;"><code>Get-Acl &#x3C;Path\FileName></code></mark></td><td>Detailed permissions</td></tr><tr><td><mark style="color:yellow;"><code>Get-Acl &#x3C;Path\FileName> | Select-Object -ExpandProperty Access</code></mark></td><td>Detailed access rights for each trustee of the file</td></tr></tbody></table>
 
-## Permissions Explained
+## <mark style="color:red;">Permissions Explained</mark>
 
 <mark style="color:orange;">(OI)</mark>: Object Inherit - This ACE (Access Control Entry) is inherited by files.
 

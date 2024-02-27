@@ -1,6 +1,6 @@
 # Timestamps
 
-## Commands
+## <mark style="color:red;">Commands</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th width="507">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>dir /tw &#x3C;file></code></mark></td><td>Last Modified</td></tr><tr><td><mark style="color:yellow;"><code>dir /ta &#x3C;file></code></mark></td><td>Last Access</td></tr><tr><td><mark style="color:yellow;"><code>dir /tc &#x3C;file></code></mark></td><td>Creation</td></tr><tr><td><mark style="color:yellow;"><code>Get-Item &#x3C;file> | Select-Object LastWriteTime</code></mark></td><td>Last Modified</td></tr><tr><td><mark style="color:yellow;"><code>Get-Item &#x3C;file> | Select-Object LastAccessTime</code></mark></td><td>Last Access</td></tr><tr><td><mark style="color:yellow;"><code>Get-Item &#x3C;file> | Select-Object CreationTime</code></mark></td><td>Creation</td></tr></tbody></table>
 
@@ -52,7 +52,7 @@ Get time stamp of malicious exe and search for other files around the same time,
 dir /s /t:c C:\ | find /I "nc.exe" 
 ```
 
-## Remote
+## <mark style="color:red;">Remote</mark>
 
 {% code overflow="wrap" %}
 ```powershell
@@ -60,7 +60,7 @@ wmic /node:xp /user:xp\administrator /password:L33tHax0r datafile where name='c:
 ```
 {% endcode %}
 
-## Timestamp Updates
+## <mark style="color:red;">Timestamp Updates</mark>
 
 <mark style="color:orange;">Create Time</mark>
 
@@ -106,7 +106,7 @@ The difference between a copy and move is that a COPY will create a new file at 
 
 The default action when a Drag and Drop function is performed within the same partition is a MOVE and when performed on a different partition is a COPY.
 
-## Enable/Disable Last Access Update TIme
+## <mark style="color:red;">Enable/Disable Last Access Update TIme</mark>
 
 <mark style="color:blue;">HKEY\_LOCAL\_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem\NtfsDisableLastAccessUpdate</mark>
 
@@ -114,7 +114,7 @@ The default action when a Drag and Drop function is performed within the same pa
 
 \-> value of 0 means enabled (default in XP and earlier -if the key exists)
 
-## Registry Locations
+## <mark style="color:red;">Registry Locations</mark>
 
 <mark style="color:blue;">HKEY\_LOCAL\_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation</mark>
 

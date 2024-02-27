@@ -1,6 +1,6 @@
 # Time
 
-## Accessed Time
+## <mark style="color:red;">Accessed Time</mark>
 
 All accessed times:
 
@@ -50,7 +50,7 @@ $startDate = Get-Date "MM/DD/YYYY"; $endDate = Get-Date "MM/DD/YYYY"; Get-ChildI
 ```
 {% endcode %}
 
-## Modified Time
+## <mark style="color:red;">Modified Time</mark>
 
 All modified times:
 
@@ -118,7 +118,7 @@ $startDate = Get-Date "MM/DD/YYYY"; $endDate = Get-Date "MM/DD/YYYY"; Get-ChildI
 ```
 {% endcode %}
 
-## Creation Time
+## <mark style="color:red;">Creation Time</mark>
 
 All creation times:
 
@@ -168,7 +168,7 @@ $startDate = Get-Date "MM/DD/YYYY"; $endDate = Get-Date "MM/DD/YYYY"; Get-ChildI
 ```
 {% endcode %}
 
-## Metadata Change Time
+## <mark style="color:red;">Metadata Change Time</mark>
 
 Combining FORFILES and PowerShell:
 

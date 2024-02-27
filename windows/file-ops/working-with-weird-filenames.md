@@ -1,6 +1,6 @@
 # Working With Weird Filenames
 
-## Files with "--"
+## <mark style="color:red;">Files with "--"</mark>
 
 Use the <mark style="color:yellow;">`.\`</mark> prefix for relative paths or specify the full path.
 
@@ -14,7 +14,7 @@ Get-Content .\--weirdfilename.txt
 Remove-Item --% --weirdfilename.txt
 ```
 
-## Leading or Trailing Spaces
+## <mark style="color:red;">Leading or Trailing Spaces</mark>
 
 Enclose the filename in quotes and use the backtick (<mark style="color:yellow;">\`</mark>) as the escape character for trailing spaces in PowerShell.
 
@@ -26,7 +26,7 @@ Get-Content "filenameWithTrailingSpace `.txt"
 Remove-Item "filenameWithTrailingSpace `.txt"
 ```
 
-## Wildcard Characters (\*, ?)
+## <mark style="color:red;">Wildcard Characters (\*, ?)</mark>
 
 Directly use them in quotes if they are part of the filename.
 

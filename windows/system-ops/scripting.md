@@ -1,8 +1,8 @@
 # Scripting
 
-## PowerShell
+## <mark style="color:red;">PowerShell</mark>
 
-### ForEach-Object
+### <mark style="color:purple;">ForEach-Object</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>ForEach-Object { $_ }</code></mark></td><td>Takes each item on the pipeline and handles it as $_</td></tr><tr><td><mark style="color:yellow;">`[cmdlet]</mark></td><td>% { [cmdlet] $_ }`</td></tr><tr><td><mark style="color:yellow;"><code>Get-Content C:\path\to\file.txt | ForEach-Object { $_.ToUpper() }</code></mark></td><td>Converts all text in a file to uppercase.</td></tr><tr><td><mark style="color:yellow;"><code>Get-Content C:\path\to\file.txt | ForEach-Object { $_.Trim() }</code></mark></td><td>Trims whitespace from the start and end of each line in a file.</td></tr></tbody></table>
 
@@ -12,7 +12,7 @@ Processes each line in a file and outputs to a new file. Customize the <mark sty
 for /f "tokens=*" %i in (C:\path\to\file.txt) do @echo %i
 ```
 
-### Where-Object
+### <mark style="color:purple;">Where-Object</mark>
 
 Where-Object condition (alias where or ?):
 
@@ -20,9 +20,9 @@ Where-Object condition (alias where or ?):
 Get-Process | Where-Object {$_.name -eq "notepad"}
 ```
 
-### Loops
+### <mark style="color:purple;">Loops</mark>
 
-#### Do Loop
+#### <mark style="color:green;">Do Loop</mark>
 
 Do-While Loop
 
@@ -78,7 +78,7 @@ do {
 } while ($true)
 ```
 
-### For Loop
+#### <mark style="color:green;">For Loop</mark>
 
 Basic For Loop
 
@@ -137,7 +137,7 @@ foreach ($key in $person.Keys) {
 }
 ```
 
-### Foreach Loop
+#### <mark style="color:green;">Foreach Loop</mark>
 
 ```powershell
 $letterArray = "a","b","c","d"
@@ -196,7 +196,7 @@ $colors | ForEach-Object {
 }
 ```
 
-### While Loop
+#### <mark style="color:green;">While Loop</mark>
 
 while (){}
 
@@ -236,7 +236,7 @@ while ($true) {
 }
 ```
 
-### Conditions
+### <mark style="color:purple;">Conditions</mark>
 
 ```powershell
 if (<test1>)
@@ -305,7 +305,7 @@ while ($true) {
 }
 ```
 
-### Generating Ranges
+### <mark style="color:purple;">Generating Ranges</mark>
 
 Echo "Hello!" 10 times.
 
@@ -343,15 +343,15 @@ $range = $start..$end
 $range
 ```
 
-### Properties
+### <mark style="color:purple;">Properties</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>Get-Process | Get-Member</code></mark></td><td>Gives the methods and properties of the object/cmdlet.</td></tr><tr><td><mark style="color:yellow;"><code>(cmdlet).property</code></mark></td><td>Command Structure.</td></tr><tr><td><mark style="color:yellow;"><code>(GetProcess).Name</code></mark></td><td>Returns the single property of 'name' of every process.</td></tr></tbody></table>
 
-### Functions
+### <mark style="color:purple;">Functions</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>Get-Help about_Functions</code></mark></td><td>Displays the help about functions</td></tr><tr><td><mark style="color:yellow;"><code>Get-Help about_Functions_Advanced</code></mark></td><td>Displays some more in-depth help about functions</td></tr><tr><td><mark style="color:yellow;"><code>Function Do-Stuff { Get-Date; Get-Process; Get-Service }</code></mark></td><td>Creates a function</td></tr><tr><td><mark style="color:yellow;"><code>Do-Stuff</code></mark></td><td>Runs the function</td></tr></tbody></table>
 
-### Comments
+### <mark style="color:purple;">Comments</mark>
 
 Creates a comment beside cmdlet:
 
@@ -368,11 +368,11 @@ Multi-line comment:
 comment #>
 ```
 
-### How to find the data type
+### <mark style="color:purple;">How to find the data type</mark>
 
 <table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>$PSHome | Get-Member</code></mark></td><td>Displays System.String with its objects and properties.</td></tr><tr><td><mark style="color:yellow;"><code>$A=12</code></mark></td><td>Creates variable A with an integer value of 12.</td></tr><tr><td><mark style="color:yellow;"><code>$A | Get-Member</code></mark></td><td>Displays System.Int32 with its objects and properties.</td></tr></tbody></table>
 
-## CMD
+## <mark style="color:red;">CMD</mark>
 
 Delete all .txt files in the current directory older than 7 days:
 

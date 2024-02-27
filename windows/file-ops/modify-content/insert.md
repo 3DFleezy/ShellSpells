@@ -1,6 +1,6 @@
 # Insert
 
-## Strings
+## <mark style="color:red;">Strings</mark>
 
 Workaround to insert text (`New Text`) <mark style="color:orange;">before</mark> or <mark style="color:orange;">after</mark> a specific pattern (`Some Text`) by recreating the file.
 
@@ -51,7 +51,7 @@ echo "<string/line>" >> temp.txt
 move temp.txt <filename>
 ```
 
-## Lines
+## <mark style="color:red;">Lines</mark>
 
 Add line numbers:
 
