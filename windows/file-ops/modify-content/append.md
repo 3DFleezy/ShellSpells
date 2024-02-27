@@ -1,0 +1,3 @@
+# Append
+
+<table data-header-hidden data-full-width="true"><thead><tr><th width="500">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>echo New Text >> file.txt</code></mark></td><td>Append to end</td></tr><tr><td><mark style="color:yellow;"><code>Add-Content -Path file.txt -Value "New Text"</code></mark></td><td>Append to end</td></tr><tr><td><mark style="color:yellow;"><code>"Text" | Out-File -FilePath C:\file.txt -Append</code></mark></td><td>Append to end</td></tr><tr><td><mark style="color:yellow;"><code>[System.IO.File]::AppendAllText("C:\file.txt", "Text")</code></mark></td><td>Append to end using .NET</td></tr></tbody></table>

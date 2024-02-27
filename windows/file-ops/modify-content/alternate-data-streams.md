@@ -1,0 +1,5 @@
+# Alternate Data Streams
+
+<table data-header-hidden data-full-width="true"><thead><tr><th width="611">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>echo "text" > &#x3C;file>:&#x3C;StreamName></code></mark></td><td>Create/overwrite ADS</td></tr><tr><td><mark style="color:yellow;"><code>Set-Content &#x3C;file> -Value "text" -Stream &#x3C;StreamName></code></mark></td><td>Create/overwrite ADS</td></tr><tr><td><mark style="color:yellow;"><code>echo "text" >> &#x3C;file>:&#x3C;StreamName></code></mark></td><td>Append data to ADS</td></tr><tr><td><mark style="color:yellow;"><code>Add-Content &#x3C;file> -Value "text" -Stream &#x3C;StreamName></code></mark></td><td>Append data to ADS</td></tr><tr><td><mark style="color:yellow;"><code>echo "text" >> &#x3C;file>:&#x3C;StreamName> "more stuff"</code></mark></td><td>Append "text more stuff" to the stream (note the space)</td></tr><tr><td><mark style="color:yellow;"><code>Clear-Content -Path &#x3C;Path\FileName> -Stream &#x3C;StreamName></code></mark></td><td>Clear ADS</td></tr></tbody></table>
+
+You can add more than one stream to a file.
