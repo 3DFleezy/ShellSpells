@@ -2,7 +2,7 @@
 
 ## 🧙‍♂️ Welcome!
 
-* [System Wizard Guidebook (SWiG)](README.md)
+* [ShellSpells](README.md)
 * [License](welcome/license.md)
 
 ## 🐧 Linux

@@ -1,23 +1,69 @@
----
-description: What is this?
----
+# ShellSpells
 
-# System Wizard Guidebook (SWiG)
+## <mark style="color:red;">What is ShellSpells?</mark>
 
-Just getting started on creating a guidebook that contains useful commands for everything from windows to linux to networking. This guidebook is organized not by command, but by the action you intend to do on the system (windows, linux, network, etc).&#x20;
+ShellSpells was created for three reasons:
 
-Why?&#x20;
+* A command-line toolkit for Linux, Windows, Networking, and more, that categorizes commands by their intended action, rather than by specific commands.
+* A note repository for cybersecurity beginners and professionals to start with, or expand on, while avoiding common pitfalls when it comes to taking notes ([more on that below](./#what-pitfalls)).
+* I wanted to share this resource for free with the community.
 
-I believe that many aspiring cyber security experts, including myself, fall into a couple of the same pitfalls. The first pitfall is that we take a different sets of notes for each class that we take, sometimes storing those notes in different locations. The second pitfall is that we learn new commands and group our notes by each command rather than by the intended outcome or action. The third pitfall is that we take extensive, verbose notes on each topic that we learn, thinking that we will go back and actually read all of that each time we are working something to do with that topic.
+{% hint style="info" %}
+ShellsSpells consists of mostly system administration commands, but does lean a little towards penetration testing and security in some areas. However, this resource is useful to anyone working in the IT/cyber security industry.
+{% endhint %}
 
-This guidebook will address these problems and hopefully help cyber security experts and system admins to avoid these traps. This guidebook is nearly everything I know, but in a compact and easy to digest format. It's grouped by intended action, rather than command. At a glance, you can see a variety of options to execute that action, whether it be something as simple as copying a file to something more advanced or specific.
+{% hint style="info" %}
+If you are looking for pentesting techniques and exploits, make sure to check out [HackTricks](https://book.hacktricks.xyz/).&#x20;
+{% endhint %}
 
-The workflow would look something like this: You want to find information about a process on Linux system. You open the System Wizard Guidebook (SWiG) and go to Unix -> System Ops -> Processes -> Enumerate From here you can see your options on how to move forward. Well-known commands such as ps and maybe some commands you did not know about such as pidof or pgrep.
+A big shoutout to Carlos Polop and the HackTricks team for the spectacular resource, and also for the inspiration to create ShellSpells.
 
-In my opinion, being able to see what my options are allows me to put my energy towards an effective solution, rather than trying to remember all of the random commands I have learned throughout the years. It's easy to forget about a command like <mark style="color:red;">`pgrep`</mark> when I have only used it a handful of times. That's how many things are in the cyber field. You learn a cool trick for a specific problemset and then you do not need it for months, sometimes years. But, when that time comes, you can either relearn that trick each time, or just search it in your notes and execute.
+If you work in penetration testing or cyber security, using ShellSpells along with HackTricks is a strong combo.
 
-After years of falling in to that same pattern, I finally learned how important it is to maintain proper notes. Proper notes being notes that are easy to parse, easy to search through and find what you are looking for, and easy to add more notes to it.
+## <mark style="color:red;">Why Categorize Commands by Intended Action?</mark>
 
-I spent months going through all of my notes scattered in the ether and organized them in one location. Then I reformatted the notes to be easy to read and search through. Then I found a better format, so I did it again. And again. I want to share my notes with everyone, because I do not want other people learn this lesson the hard way.
+When you are in the middle of doing a task, it is easier to search through your notes based on the desired outcome/intended action rather than trying to remember all the available commands and their various switches.&#x20;
 
-I believe the System Wizard Guidebook will give new and aspiring cyber experts a headstart in their career. They will have a knowledge base and a note-taking structure to build from, while avoiding the common pitfalls.
+Think of all the different commands to enumerate a process. How many different sections of your notes would you have to search through if they were categorized by command? ShellSpells provides a different method.
+
+Workflow Example:\
+If you want to enumerate a process on Windows, you would go to\
+\
+Windows -> System Ops -> Processes -> Enumerate\
+\
+At a glance you now have a plethora of commands to accomplish the task, to include CMD, PowerShell, and wmic commands. All in one place, in an easy-to-read format, and easy to locate. On top of that, you will see other options you can use.
+
+* It is efficient.
+* It takes seconds rather than minutes to find what you are looking for.
+* It helps stay on task.
+
+Ultimately, you can spend more brain cycles on developing an effective solution to your problem/task, rather than trying to remember or locate commands.
+
+
+
+## <mark style="color:red;">What pitfalls?</mark>
+
+In summary, these are the pitfalls I see in this industry.
+
+* Taking separate notes for each class (and never moving them to a central note repository)
+* Taking notes in a multiple applications (and never moving them to a central note repository)
+* Taking command line notes categorized by commands rather than by intended action.
+* Taking very verbose notes on everything.
+
+Throughout my career, I personally tested each one of these pitfalls...
+
+By the time I realized my mistakes and started to move my notes to a central location, it took a long time for me to gather everything together. It took longer for me to re-organize my notes in to an effective format.
+
+I created this resource to help others avoid the mistakes that I made while also providing a useful command line toolkit and note repository to the community.
+
+If you are new to the cyber career field, then I believe this resource is a **head start**. If I had this when I was first getting started it would have been a game-changer. I encourage you to fork it and build on it as you grow your skills. Understand the importance of taking effective, organized notes. It is one of those things that separates the pros from the average joes.
+
+## <mark style="color:red;">Work in Progress:</mark>
+
+ShellSpells always has been, and always will be a work in progress.
+
+I'll continue to add new things to this resource as I learn them. \
+I'll continue to make corrections as I find them. \
+\
+If you want to add or correct something, please submit a pull-request on my GitHub:\
+\
