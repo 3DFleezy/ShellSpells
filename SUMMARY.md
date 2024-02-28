@@ -3,7 +3,7 @@
 ## 🧙‍♂️ Welcome!
 
 * [ShellSpells](README.md)
-* [License](welcome/license.md)
+* [License & Disclaimer](welcome/license.md)
 
 ## 🐧 Linux
 
