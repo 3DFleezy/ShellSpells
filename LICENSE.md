@@ -1,4 +1,4 @@
-# License & Disclaimer
+# License
 
 License: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)\
 Deed: [https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/)\
