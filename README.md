@@ -41,7 +41,7 @@ Ultimately, you can spend more brain cycles on developing an effective solution 
 
 
 
-## <mark style="color:red;">What pitfalls?</mark>
+## <mark style="color:red;">What Pitfalls?</mark>
 
 In summary, these are the pitfalls I see in this industry.
 
