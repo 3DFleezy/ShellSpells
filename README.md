@@ -9,7 +9,7 @@ ShellSpells was created for three reasons:
 * I wanted to share this resource for free with the community.
 
 {% hint style="info" %}
-ShellsSpells consists of mostly system administration commands, but does lean a little towards penetration testing and security in some areas. However, this resource is useful to anyone working in the IT/cyber security industry.
+ShellSpells consists of mostly system administration commands, but does lean a little towards penetration testing and security in some areas. However, this resource is useful to anyone working in the IT/cybersecurity industry.
 {% endhint %}
 
 {% hint style="info" %}
@@ -18,7 +18,7 @@ If you are looking for pentesting techniques and exploits, make sure to check ou
 
 A big shoutout to Carlos Polop and the HackTricks team for the spectacular resource, and also for the inspiration to create ShellSpells.
 
-If you work in penetration testing or cyber security, using ShellSpells along with HackTricks is a strong combo.
+If you work in penetration testing or cybersecurity, using ShellSpells along with HackTricks is a strong combo.
 
 ## <mark style="color:red;">Why Categorize Commands by Intended Action?</mark>
 
