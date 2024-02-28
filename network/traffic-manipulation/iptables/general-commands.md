@@ -2,94 +2,49 @@
 
 ## <mark style="color:red;">Options</mark>
 
-| Command                                 | Description                                    |
-| --------------------------------------- | ---------------------------------------------- |
-| <mark style="color:yellow;">`-L`</mark> | List rules                                     |
-| <mark style="color:yellow;">`-S`</mark> | List rules and commands used in the background |
-| <mark style="color:yellow;">`-A`</mark> | Append rule to bottom of list                  |
-| <mark style="color:yellow;">`-I`</mark> | Insert rule above rule specified               |
-| <mark style="color:yellow;">`-R`</mark> | Replace specified rule                         |
-| <mark style="color:yellow;">`-P`</mark> | Policy (change policy)                         |
-| <mark style="color:yellow;">`-D`</mark> | Delete specified rule                          |
-| <mark style="color:yellow;">`-F`</mark> | Flush rules                                    |
+<table data-header-hidden><thead><tr><th width="119">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>-L</code></mark></td><td>List rules</td></tr><tr><td><mark style="color:yellow;"><code>-S</code></mark></td><td>List rules and commands used in the background</td></tr><tr><td><mark style="color:yellow;"><code>-A</code></mark></td><td>Append rule to bottom of list</td></tr><tr><td><mark style="color:yellow;"><code>-I</code></mark></td><td>Insert rule above rule specified</td></tr><tr><td><mark style="color:yellow;"><code>-R</code></mark></td><td>Replace specified rule</td></tr><tr><td><mark style="color:yellow;"><code>-P</code></mark></td><td>Policy (change policy)</td></tr><tr><td><mark style="color:yellow;"><code>-D</code></mark></td><td>Delete specified rule</td></tr><tr><td><mark style="color:yellow;"><code>-F</code></mark></td><td>Flush rules</td></tr></tbody></table>
 
 ## <mark style="color:red;">Match Statement Options</mark>
 
-| Command                                 | Description                                |
-| --------------------------------------- | ------------------------------------------ |
-| <mark style="color:yellow;">`-i`</mark> | Inbound interface                          |
-| <mark style="color:yellow;">`-o`</mark> | Outbound interface                         |
-| <mark style="color:yellow;">`-s`</mark> | Source IP                                  |
-| <mark style="color:yellow;">`-d`</mark> | Destination IP                             |
-| <mark style="color:yellow;">`-p`</mark> | Protocol \<tcp/udp/icmp>                   |
-| <mark style="color:yellow;">`-m`</mark> | Match \<multiport/state/conntrack/iprange> |
+<table data-header-hidden><thead><tr><th width="120">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>-i</code></mark></td><td>Inbound interface</td></tr><tr><td><mark style="color:yellow;"><code>-o</code></mark></td><td>Outbound interface</td></tr><tr><td><mark style="color:yellow;"><code>-s</code></mark></td><td>Source IP</td></tr><tr><td><mark style="color:yellow;"><code>-d</code></mark></td><td>Destination IP</td></tr><tr><td><mark style="color:yellow;"><code>-p</code></mark></td><td>Protocol &#x3C;tcp/udp/icmp></td></tr><tr><td><mark style="color:yellow;"><code>-m</code></mark></td><td>Match &#x3C;multiport/state/conntrack/iprange></td></tr></tbody></table>
 
-## <mark style="color:purple;">List Rules</mark>
+## <mark style="color:red;">List Rules</mark>
 
-| Command                                                                            | Description                                |
-| ---------------------------------------------------------------------------------- | ------------------------------------------ |
-| <mark style="color:yellow;">`iptables -t [table] -L`</mark>                        | List rules in table                        |
-| <mark style="color:yellow;">`iptables -t [table] -L <chain> --line-numbers`</mark> | List rules in with line numbers            |
-| <mark style="color:yellow;">`iptables -t [table] -S`</mark>                        | List rules formatted as input for a script |
+<table data-header-hidden><thead><tr><th width="493">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>iptables -t [table] -L</code></mark></td><td>List rules in table</td></tr><tr><td><mark style="color:yellow;"><code>iptables -t [table] -L &#x3C;chain> --line-numbers</code></mark></td><td>List rules in with line numbers</td></tr><tr><td><mark style="color:yellow;"><code>iptables -t [table] -S</code></mark></td><td>List rules formatted as input for a script</td></tr></tbody></table>
 
-### <mark style="color:purple;">Check Rules</mark>
+## <mark style="color:red;">Check Rules</mark>
 
-| Command                                                                                      | Description                          |
-| -------------------------------------------------------------------------------------------- | ------------------------------------ |
-| <mark style="color:yellow;">`iptables -t [table] -C <chain> <rule>`</mark>                   | Check whether a specific rule exists |
-| <mark style="color:yellow;">`iptables -t filter -C INPUT -p tcp --dport 80 -j ACCEPT`</mark> | Example                              |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="596">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>iptables -t [table] -C &#x3C;chain> &#x3C;rule></code></mark></td><td>Check whether a specific rule exists</td></tr><tr><td><mark style="color:yellow;"><code>iptables -t filter -C INPUT -p tcp --dport 80 -j ACCEPT</code></mark></td><td>Example</td></tr></tbody></table>
 
-### <mark style="color:purple;">Set Default Policy</mark>
+## <mark style="color:red;">Set Default Policy</mark>
 
-| Command                                                                      | Description                       |
-| ---------------------------------------------------------------------------- | --------------------------------- |
-| <mark style="color:yellow;">`iptables -t [table] -P <chain> <action>`</mark> | Set the default policy for the to |
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>iptables -t [table] -P &#x3C;chain> &#x3C;action></code></mark></td><td>Set the default policy for the to</td></tr></tbody></table>
 
-### <mark style="color:purple;">Add/Replace Rules</mark>
+## <mark style="color:red;">Add/Replace Rules</mark>
 
-| Command                                                                               | Description                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------- |
-| <mark style="color:yellow;">`iptables -t [table] -A <chain> <specific rule>`</mark>   | Append rule to bottom of list         |
-| <mark style="color:yellow;">`iptables -t [table] -I <chain> <rule_num> <rule>`</mark> | Insert rule at specified rule number  |
-| <mark style="color:yellow;">`iptables -t [table] -R <chain> <rule_num> <rule>`</mark> | Replace rule at specified rule number |
+<table><thead><tr><th width="437">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>iptables -t [table] -A &#x3C;chain> &#x3C;specific rule></code></mark></td><td>Append rule to bottom of list</td></tr><tr><td><mark style="color:yellow;"><code>iptables -t [table] -I &#x3C;chain> &#x3C;rule_num> &#x3C;rule></code></mark></td><td>Insert rule at specified rule number</td></tr><tr><td><mark style="color:yellow;"><code>iptables -t [table] -R &#x3C;chain> &#x3C;rule_num> &#x3C;rule></code></mark></td><td>Replace rule at specified rule number</td></tr></tbody></table>
 
-### <mark style="color:purple;">Delete Specific Rules</mark>
+## <mark style="color:red;">Delete Specific Rules</mark>
 
-| Command                                                                                      | Description           |
-| -------------------------------------------------------------------------------------------- | --------------------- |
-| <mark style="color:yellow;">`iptables -t [table] -D <chain> [rule_num]`</mark>               | Delete rule by number |
-| <mark style="color:yellow;">`iptables -t filter -D INPUT -p tcp --dport 22 -j ACCEPT`</mark> | Delete specific rule  |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="622">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>iptables -t [table] -D &#x3C;chain> [rule_num]</code></mark></td><td>Delete rule by number</td></tr><tr><td><mark style="color:yellow;"><code>iptables -t filter -D INPUT -p tcp --dport 22 -j ACCEPT</code></mark></td><td>Delete specific rule</td></tr></tbody></table>
 
-### <mark style="color:purple;">Flush Rules</mark>
+## <mark style="color:red;">Flush Rules</mark>
 
-| Command                                                             | Description                    |
-| ------------------------------------------------------------------- | ------------------------------ |
-| <mark style="color:yellow;">`iptables -t [table] -F`</mark>         | Flush all rules in \[table]    |
-| <mark style="color:yellow;">`iptables -t [table] -F <chain>`</mark> | Flush all rules in in \[table] |
+<table data-header-hidden><thead><tr><th width="359">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>iptables -t [table] -F</code></mark></td><td>Flush all rules in [table]</td></tr><tr><td><mark style="color:yellow;"><code>iptables -t [table] -F &#x3C;chain></code></mark></td><td>Flush all rules in in [table]</td></tr></tbody></table>
 
-### <mark style="color:purple;">Zero out the Packet and Byte Counters</mark>
+## <mark style="color:red;">Zero out the Packet and Byte Counters</mark>
 
-| Command                                                             | Description                                                     |
-| ------------------------------------------------------------------- | --------------------------------------------------------------- |
-| <mark style="color:yellow;">`iptables -t [table] -Z`</mark>         | Zero the packet and byte counters in all chains of the \[table] |
-| <mark style="color:yellow;">`iptables -t [table] -Z <chain>`</mark> | Zero the packet and byte counters in of the \[table]            |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="449">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>iptables -t [table] -Z</code></mark></td><td>Zero the packet and byte counters in all chains of the [table]</td></tr><tr><td><mark style="color:yellow;"><code>iptables -t [table] -Z &#x3C;chain></code></mark></td><td>Zero the packet and byte counters in of the [table]</td></tr></tbody></table>
 
-### <mark style="color:purple;">Save/Restore iptables</mark>
+## <mark style="color:red;">Save/Restore iptables</mark>
 
-| Command                                                                               | Description                               |
-| ------------------------------------------------------------------------------------- | ----------------------------------------- |
-| <mark style="color:yellow;">`iptables-save -t [table] > /[table]_rules_backup`</mark> | Save the current iptables rules to a file |
-| <mark style="color:yellow;">`iptables-restore < /[table]_rules_backup`</mark>         | Restore iptables rules from a file        |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="529">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>iptables-save -t [table] > /[table]_rules_backup</code></mark></td><td>Save the current iptables rules to a file</td></tr><tr><td><mark style="color:yellow;"><code>iptables-restore &#x3C; /[table]_rules_backup</code></mark></td><td>Restore iptables rules from a file</td></tr></tbody></table>
 
-### <mark style="color:purple;">Custom Chains</mark>
+## <mark style="color:red;">Custom Chains</mark>
 
-| Command                                                                       | Description                                         |
-| ----------------------------------------------------------------------------- | --------------------------------------------------- |
-| <mark style="color:yellow;">`iptables -t [table] -N MYCHAIN`</mark>           | Create custom chain MYCHAIN                         |
-| <mark style="color:yellow;">`iptables -t [table] -X MYCHAIN`</mark>           | Delete custom chain MYCHAIN (only if no references) |
-| <mark style="color:yellow;">`iptables -t [table] -E OLDCHAIN NEWCHAIN`</mark> | Rename chain from OLDCHAIN to NEWCHAIN              |
+<table data-header-hidden data-full-width="true"><thead><tr><th width="445">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>iptables -t [table] -N MYCHAIN</code></mark></td><td>Create custom chain MYCHAIN</td></tr><tr><td><mark style="color:yellow;"><code>iptables -t [table] -X MYCHAIN</code></mark></td><td>Delete custom chain MYCHAIN (only if no references)</td></tr><tr><td><mark style="color:yellow;"><code>iptables -t [table] -E OLDCHAIN NEWCHAIN</code></mark></td><td>Rename chain from OLDCHAIN to NEWCHAIN</td></tr></tbody></table>
 
-### <mark style="color:purple;">RETURN Action</mark>
+## <mark style="color:red;">RETURN Action</mark>
 
 Exiting a user-defined chain and returning to the default processing flow.
 
