@@ -205,3 +205,10 @@
   * [TCPDump Examples](network/packet-capture/tcpdump-examples.md)
 * [Packet Analysis](network/packet-analysis/README.md)
   * [Wireshark](network/packet-analysis/wireshark.md)
+
+## 🚗 Maneuver
+
+* [SSH](maneuver/ssh.md)
+* [Control Sockets](maneuver/control-sockets.md)
+* [RDP](maneuver/rdp.md)
+* [Windows Port Proxy](maneuver/windows-port-proxy.md)
