@@ -2,11 +2,13 @@
 
 ## <mark style="color:red;">What is ShellSpells?</mark>
 
-ShellSpells was created for three reasons:
+### ShellSpells was created for three reasons:
 
 * A command-line toolkit for Linux, Windows, Networking, and more, that categorizes commands by their intended action, rather than by specific commands.
 * A note repository for cybersecurity beginners and professionals to start with, or expand on, while avoiding common pitfalls when it comes to taking notes ([more on that below](./#what-pitfalls)).
 * I wanted to share this resource for free with the community.
+
+
 
 {% hint style="info" %}
 ShellSpells consists of mostly system administration commands, but does lean a little towards penetration testing and security in some areas. However, this resource is useful to anyone working in the IT/cybersecurity industry.
@@ -16,9 +18,13 @@ ShellSpells consists of mostly system administration commands, but does lean a l
 If you are looking for pentesting techniques and exploits, make sure to check out [HackTricks](https://book.hacktricks.xyz/).&#x20;
 {% endhint %}
 
-A big shoutout to Carlos Polop and the HackTricks team for the spectacular resource, and also for the inspiration to create ShellSpells.
 
-If you work in penetration testing or cybersecurity, using ShellSpells along with HackTricks is a strong combo.
+
+A big shoutout to Carlos Polop and the [HackTricks](https://book.hacktricks.xyz/) team for the spectacular resource, and also for the inspiration to create ShellSpells.
+
+If you work in penetration testing or cybersecurity, using ShellSpells along with [HackTricks](https://book.hacktricks.xyz/) is a strong combo.
+
+
 
 ## <mark style="color:red;">Why Categorize Commands by Intended Action?</mark>
 
@@ -58,12 +64,21 @@ I created this resource to help others avoid the mistakes that I made while also
 
 If you are new to the cyber career field, then I believe this resource is a **head start**. If I had this when I was first getting started it would have been a game-changer. I encourage you to fork it and build on it as you grow your skills. Understand the importance of taking effective, organized notes. It is one of those things that separates the pros from the average joes.
 
-## <mark style="color:red;">Work in Progress:</mark>
+
+
+## <mark style="color:red;">Work in Progress</mark>
 
 ShellSpells always has been, and always will be a work in progress.
 
 I'll continue to add new things to this resource as I learn them. \
 I'll continue to make corrections as I find them. \
 \
-If you want to add or correct something, please submit a pull-request on my GitHub:\
+If you want to add or correct something, please submit a pull-request on my GitHub:
+
+[https://github.com/3DFleezy/ShellSpells](https://github.com/3DFleezy/ShellSpells)\
 \
+
+
+## <mark style="color:red;">Copyright</mark>
+
+© ShellSpells 2024. Except where otherwise specified.
