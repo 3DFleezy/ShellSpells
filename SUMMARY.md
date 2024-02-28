@@ -212,3 +212,16 @@
 * [Control Sockets](maneuver/control-sockets.md)
 * [RDP](maneuver/rdp.md)
 * [Windows Port Proxy](maneuver/windows-port-proxy.md)
+
+## 🛩️ Data Transfer
+
+* [SCP](data-transfer/scp.md)
+* [FTP](data-transfer/ftp.md)
+* [Netcat](data-transfer/netcat/README.md)
+  * [Netcat Relays](data-transfer/netcat/netcat-relays.md)
+* [Server Interactions](data-transfer/server-interactions.md)
+* [Alternate Methods](data-transfer/alternate-methods.md)
+
+## 🪄 REGEX
+
+* [Examples](regex/examples.md)
