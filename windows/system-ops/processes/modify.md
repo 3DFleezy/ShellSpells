@@ -16,6 +16,12 @@ Quietly start your malicious installer:
 msiexec /quiet /qn /i C:\sus.msi
 ```
 
+
+
+## <mark style="color:red;">Sysinternals</mark>
+
+<table data-header-hidden><thead><tr><th width="244">Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>psexec</code></mark></td><td>Execute remote processes</td></tr></tbody></table>
+
 ## <mark style="color:red;">DLLs</mark>
 
 Registers a DLL file with the system.

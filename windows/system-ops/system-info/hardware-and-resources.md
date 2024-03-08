@@ -36,6 +36,15 @@ BIOS all information:
 wmic bios get /format:list
 ```
 
+
+
+## <mark style="color:red;">Sysinternals</mark>
+
+| <mark style="color:yellow;">`coreinfo`</mark> | CPU hardware information |
+| --------------------------------------------- | ------------------------ |
+
+
+
 ## <mark style="color:red;">Registry Locations</mark>
 
 <mark style="color:orange;">HKEY\_LOCAL\_MACHINE\HARDWARE\DESCRIPTION\System</mark>

@@ -134,6 +134,12 @@ reg query "HKLM\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\Modul
 
 ## <mark style="color:red;">EventID</mark>
 
+View logs by Event ID. This command is case-sensitive and has to be like this:
+
+```powershell
+wevtutil qe Security "/q:*[System[(EventID=4624)]]" /f:text
+```
+
 Find all events with EventID 4624 (Logon events) in the Security log
 
 ```powershell

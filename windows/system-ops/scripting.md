@@ -345,7 +345,7 @@ $range
 
 ### <mark style="color:purple;">Properties</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>Get-Process | Get-Member</code></mark></td><td>Gives the methods and properties of the object/cmdlet.</td></tr><tr><td><mark style="color:yellow;"><code>(cmdlet).property</code></mark></td><td>Command Structure.</td></tr><tr><td><mark style="color:yellow;"><code>(GetProcess).Name</code></mark></td><td>Returns the single property of 'name' of every process.</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>Get-Process | Get-Member</code></mark></td><td>Gives the methods and properties of the object/cmdlet.</td></tr><tr><td><mark style="color:yellow;"><code>(cmdlet).property</code></mark></td><td>Command Structure.</td></tr><tr><td><mark style="color:yellow;"><code>(GetProcess).Name</code></mark></td><td>Returns the single property of 'name' of every process.</td></tr><tr><td><mark style="color:yellow;"><code>-ExpandProperty</code></mark></td><td>Extracts values from properties.</td></tr></tbody></table>
 
 ### <mark style="color:purple;">Functions</mark>
 

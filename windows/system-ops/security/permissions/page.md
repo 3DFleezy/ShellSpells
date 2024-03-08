@@ -6,15 +6,19 @@
 
 Grant permissions:
 
+{% code overflow="wrap" %}
 ```powershell
 Set-Acl <file_or_folder> -AclObject (Get-Acl <file_or_folder>).Access | Add-AclEntry <username>:(R,W,X)
 ```
+{% endcode %}
 
 Revoke permissions:
 
+{% code overflow="wrap" %}
 ```powershell
 Set-Acl <file_or_folder> -AclObject (Get-Acl <file_or_folder>).Access | Remove-AclEntry <username>
 ```
+{% endcode %}
 
 Change owner:
 

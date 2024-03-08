@@ -10,6 +10,10 @@ You can traverse the Registry like a filesystem thanks to PSProviders.
 | <mark style="color:yellow;">`set-location -Path software`</mark>       | Change to the Software Key                    |
 | <mark style="color:yellow;">`dir /tc /od c:\\windows\\system32`</mark> | List all order by date and list creation time |
 | <mark style="color:yellow;">`dir /q`</mark>                            | Shows file owners                             |
+| <mark style="color:yellow;">`dir /a:h`</mark>                          | Shows only hidden files                       |
+| <mark style="color:yellow;">`dir /t:a`</mark>                          | Last access time                              |
+| <mark style="color:yellow;">`dir /o:`</mark>                           | Filter's by extension, date, etc.             |
+| <mark style="color:yellow;">`dir /s > dir.txt`</mark>                  | Recursive dir to text file                    |
 
 Recursively list the paths of all files in a directory and its subdirectories:
 
@@ -48,3 +52,9 @@ Show shell, default domain name, default user name, legal notice, etc.:
 reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon"
 ```
 {% endcode %}
+
+Shows relevant timestamps:
+
+```powershell
+gci | select name,lastwritetime,creationtime,lastaccesstime
+```

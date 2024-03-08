@@ -92,5 +92,4 @@ Get-CimInstance -ClassName Win32_LogicalShareSecuritySetting | Where-Object {$_.
 
 ## <mark style="color:red;">Sysinternals</mark>
 
-<mark style="color:yellow;">`AccessChk`</mark> A command-line tool for viewing effective permissions on files, registry keys, services, processes, and more
-
+<table data-header-hidden><thead><tr><th width="365"></th><th></th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>accesschk</code></mark></td><td>Shows file/dir permissions for the user.</td></tr></tbody></table>

@@ -6,6 +6,20 @@
 
 
 
+Shows pertinent process info:
+
+{% code overflow="wrap" %}
+```powershell
+get-ciminstance win32_process | select-object name,processID,parentprocessID,exeutablepath,commandline | format-table
+```
+{% endcode %}
+
+{% code overflow="wrap" %}
+```powershell
+gcim win32_process | select name,processID,parentprocessID,executablepath,commandline | ft
+```
+{% endcode %}
+
 Retrieves detailed information about a specific process using CIM:
 
 ```powershell
@@ -120,4 +134,4 @@ reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Windows"
 
 ## <mark style="color:red;">SysInternals</mark>
 
-<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>listdlls -accepteula | find "Command"</code></mark></td><td>Lists all DLLs being used</td></tr><tr><td><mark style="color:yellow;"><code>listdlls -accepteula | find /I "Command"</code></mark></td><td></td></tr><tr><td><mark style="color:yellow;"><code>listdlls -accepteula &#x3C;processname</code></mark></td><td>Lists DLLs of a process</td></tr><tr><td><mark style="color:yellow;"><code>pslist</code></mark></td><td>Tasklist alternative, sysinternals (use -x, -t)</td></tr><tr><td><mark style="color:yellow;"><code>autorunsc -s | find /I "nc.exe"</code></mark></td><td>Checks autostart services and non-disabled drivers</td></tr><tr><td><mark style="color:yellow;"><code>autorunsc -w | find /I "nc.exe"</code></mark></td><td>Checks winlogon entries</td></tr><tr><td><mark style="color:yellow;"><code>autorunsc -l | find /I "nc.exe"</code></mark></td><td>Checks logon startups (default)</td></tr><tr><td><mark style="color:yellow;"><code>autorunsc -> autodump.txt</code></mark></td><td>Output to txt</td></tr><tr><td><mark style="color:yellow;"><code>more autodump.txt | find /N /I "nc.exe"</code></mark></td><td>Search contents</td></tr><tr><td><mark style="color:yellow;"><code>more /E autodump.txt</code></mark></td><td>Press "=" to show line numbers</td></tr><tr><td><mark style="color:yellow;"><code>accesschk.exe /accepteula -uwcqv &#x3C;user> &#x3C;service></code></mark></td><td>Show permissions on a service/exe</td></tr></tbody></table>
+<table data-header-hidden data-full-width="true"><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><mark style="color:yellow;"><code>listdlls -accepteula | find "Command"</code></mark></td><td>Lists all DLLs being used</td></tr><tr><td><mark style="color:yellow;"><code>listdlls -accepteula | find /I "Command"</code></mark></td><td></td></tr><tr><td><mark style="color:yellow;"><code>listdlls -accepteula &#x3C;processname</code></mark></td><td>Lists DLLs of a process</td></tr><tr><td><mark style="color:yellow;"><code>pslist</code></mark></td><td>Tasklist alternative, sysinternals (use -x, -t)</td></tr><tr><td><mark style="color:yellow;"><code>pslist -t</code></mark></td><td>Find parent processes</td></tr><tr><td><mark style="color:yellow;"><code>autorunsc -s | find /I "nc.exe"</code></mark></td><td>Checks autostart services and non-disabled drivers</td></tr><tr><td><mark style="color:yellow;"><code>autorunsc -w | find /I "nc.exe"</code></mark></td><td>Checks winlogon entries</td></tr><tr><td><mark style="color:yellow;"><code>autorunsc -l | find /I "nc.exe"</code></mark></td><td>Checks logon startups (default)</td></tr><tr><td><mark style="color:yellow;"><code>autorunsc -> autodump.txt</code></mark></td><td>Output to txt</td></tr><tr><td><mark style="color:yellow;"><code>more autodump.txt | find /N /I "nc.exe"</code></mark></td><td>Search contents</td></tr><tr><td><mark style="color:yellow;"><code>more /E autodump.txt</code></mark></td><td>Press "=" to show line numbers</td></tr><tr><td><mark style="color:yellow;"><code>accesschk.exe /accepteula -uwcqv &#x3C;user> &#x3C;service></code></mark></td><td>Show permissions on a service/exe</td></tr></tbody></table>
