@@ -10,11 +10,15 @@ Check services for exe:
 reg query "HKLM\System\CurrentControlSet\Services" /s | find /I "nc.exe"
 ```
 
+
+
 Get all services that the Display Name starts with Windows\*. This is not the actual name of the service. The Display (Human Readable) name.
 
 ```powershell
 Get-Service -DisplayName 'Windows*' 
 ```
+
+
 
 Allows you to access extended properties such as Description of the service.
 
@@ -22,11 +26,15 @@ Allows you to access extended properties such as Description of the service.
 Get-Service -Name wuauserv | Select-Object -ExpandProperty Description
 ```
 
+
+
 Finds the description of a service "wuauserv" if -ExpandedProperty does not work.
 
 ```powershell
 Get-CimInstance win32_service | ?{$_.NAME -match "wuauserv"} | select Description 
 ```
+
+
 
 Get cmdline of service or Verbose (/s):
 
@@ -38,11 +46,67 @@ reg query "HKLM\System\CurrentControlSet\Services\<Name>" /v "ImagePath"
 reg query "HKLM\System\CurrentControlSet\Services\<Name> /s
 ```
 
+
+
 Query service by name and show the cmdline:
 
 ```powershell
 $service = get-wmiobject -query 'select * from win32_service where name="Name"'; echo $service.pathname
 ```
+
+
+
+Shows what processes are linked to services:
+
+{% code overflow="wrap" %}
+```powershell
+get-ciminstance -namespace root/cimv2 -classname Win32_service | select-object displayname,state,processid
+```
+{% endcode %}
+
+Filter off of service state:
+
+{% code overflow="wrap" %}
+```powershell
+get-ciminstance -namespace root/cimv2 -classname Win32_service | where-object {$_.state -eq "running"} | select-object displayname,state,processid
+```
+{% endcode %}
+
+
+
+Shows services set to <mark style="color:orange;">bootstart</mark> <mark style="color:orange;">(</mark><mark style="color:orange;">**1**</mark><mark style="color:orange;">)</mark>.
+
+<mark style="color:orange;">**1**</mark> = <mark style="color:orange;">**bootstart**</mark>, these will be unfamiliar services most likely.
+
+<mark style="color:orange;">**2**</mark> = <mark style="color:orange;">**autostart (delayed)**</mark>, which will be services you are more familiar with.
+
+{% code overflow="wrap" %}
+```powershell
+get-itemproperty HKML:\system\currentcontrolset\services* | where-object {$_.start -eq 1} | select description,imagepath,pschildname | format-list
+```
+{% endcode %}
+
+This is a good command to run to make sure that services are running the correct processes.
+
+This is how to list DLLs that specific programs are loading. Only works on running programs.
+
+By Name (use the name used in the process list):
+
+{% code overflow="wrap" %}
+```powershell
+get-process | where-object {$_.name -eq "cmd"} | select-object -ExpandProperty modules | select-object filename
+```
+{% endcode %}
+
+By Process ID:
+
+{% code overflow="wrap" %}
+```powershell
+get-process | where-object {$_.id -eq 5648} | select-object -ExpandProperty modules | select-object filename
+```
+{% endcode %}
+
+
 
 ## <mark style="color:red;">Remote</mark>
 
