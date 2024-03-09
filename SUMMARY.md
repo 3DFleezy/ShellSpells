@@ -146,6 +146,7 @@
     * [Logs](windows/system-ops/history-and-logs/logs.md)
   * [PowerShell Config](windows/system-ops/powershell-config.md)
   * [Scripting](windows/system-ops/scripting.md)
+  * [WMIC Notes](windows/system-ops/wmic-notes.md)
 * [File Ops](windows/file-ops/README.md)
   * [Search](windows/file-ops/search/README.md)
     * [Filename](windows/file-ops/search/filename.md)
