@@ -132,6 +132,12 @@ reg query "HKLM\SOFTWARE\Wow6432Node\Policies\Microsoft\Windows\PowerShell\Modul
 ```
 {% endcode %}
 
+Log location:
+
+```powershell
+C:\Windows\system32\winevt\logs\Microsoft-Windows-powershell%4operational.evtx
+```
+
 ## <mark style="color:red;">EventID</mark>
 
 View logs by Event ID. This command is case-sensitive and has to be like this:
