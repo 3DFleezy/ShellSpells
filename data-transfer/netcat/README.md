@@ -10,10 +10,10 @@ nc 10.0.0.2 1234 ------> nc -lp 1234
 ## <mark style="color:red;">File Content Transfer</mark>
 
 ```bash
-Client (sending)					Listener (receiving)
+Client (sending)		    Listener (receiving)
 nc 10.0.0.2 1234 < file.txt ------> nc -lp 1234 > file.txt
 
-Listener (sending)			Client (receiving)
+Listener (sending)	       Client (receiving)
 nc -lp 1234 < file.txt ------> nc 10.0.0.1 1234 > file.txt
 ```
 
