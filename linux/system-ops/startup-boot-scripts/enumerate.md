@@ -7,11 +7,18 @@ It prints file path if it exists. \
 It checks file permissions to see if current user can edit. \
 If so, it colors it red.
 
-```
-#!/bin/bash
+{% hint style="danger" %}
+This script is AI generated, NOT TESTED, and probably does not work.&#x20;
 
-Define an array of potential autostart script locations
-autostart_locations=(
+I only included it because it has potentially useful sections that you can build from.
+{% endhint %}
+
+<pre class="language-bash"><code class="lang-bash">#!/bin/bash
+
+
+
+<strong># Define an array of potential autostart script locations
+</strong>autostart_locations=(
     "/etc/rc.local"
     "/etc/rc.d/rc.local"
     "/etc/init.d"
@@ -24,34 +31,34 @@ autostart_locations=(
     "/home/$USER/.config/autostart"
 )
 
-Function to check file/directory and print details
-check_and_print() {
+<strong># Function to check file/directory and print details
+</strong>check_and_print() {
     local path="$1"
     if [ -e "$path" ]; then
-        Check if the current user has write permission
+        # Check if the current user has write permission
         if [ -w "$path" ]; then
-            Print path in red with permissions
+            # Print path in red with permissions
             echo -e "\033[31m$(ls -ld "$path")\033[0m"
         else
-            Print path with permissions
+            # Print path with permissions
             echo "$(ls -ld "$path")"
         fi
     fi
 }
 
-Iterate over locations and check each
+# Iterate over locations and check each
 for location in "${autostart_locations[@]}"; do
     if [ -d "$location" ]; then
-        If it's a directory, check each file in it
+        # If it's a directory, check each file in it
         for file in "$location"/*; do
             check_and_print "$file"
         done
     else
-        If it's a file, just check the file
+        # If it's a file, just check the file
         check_and_print "$location"
     fi
 done
-```
+</code></pre>
 
 ## <mark style="color:red;">System-wide Startup Files</mark>
 

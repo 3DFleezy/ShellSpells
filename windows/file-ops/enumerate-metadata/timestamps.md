@@ -56,7 +56,7 @@ dir /s /t:c C:\ | find /I "nc.exe"
 
 {% code overflow="wrap" %}
 ```powershell
-wmic /node:xp /user:xp\administrator /password:L33tHax0r datafile where name='c:\\windows\\system32\\logon.scr' list full
+wmic /node:xp /user:xp\administrator /password:[password] datafile where name='c:\\windows\\system32\\[name]' list full
 ```
 {% endcode %}
 
