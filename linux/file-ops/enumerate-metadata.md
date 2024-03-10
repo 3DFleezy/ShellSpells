@@ -11,6 +11,8 @@
 | <mark style="color:yellow;">`getfacl [filename]`</mark>       | Displays the Access Control Lists (ACLs) of the specified file. |
 | <mark style="color:yellow;">`getcap [filepath]`</mark>        | Check a specific file for capabilities                          |
 | <mark style="color:yellow;">`getcap -r [filepath]`</mark>     | Recursive                                                       |
+| <mark style="color:yellow;">`namei /sbin/init`</mark>         | Shows available links to the file. D = dir, F = File, L = Link  |
+| <mark style="color:yellow;">`namei -mo /sbin/init`</mark>     | Better, shows file permissions and owners                       |
 
 ### <mark style="color:purple;">Identifying Symlinks and Hard Links</mark>
 
