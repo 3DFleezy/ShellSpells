@@ -14,7 +14,7 @@ Checks for a systemd-specific directory:
 test -d /run/systemd/system && echo "systemd"
 ```
 
-Shows location of systemd files. (/usr/lib/systemd/systemd):
+Shows location of init files (SysV, SystemD, Upstart, etc):
 
 ```bash
 sudo ls -latr /proc/1/exe
