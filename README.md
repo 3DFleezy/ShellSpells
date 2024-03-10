@@ -15,14 +15,8 @@ ShellSpells consists of mostly system administration commands, but does lean a l
 {% endhint %}
 
 {% hint style="info" %}
-If you are looking for pentesting techniques and exploits, make sure to check out [HackTricks](https://book.hacktricks.xyz/).&#x20;
+If you are specifically looking for pentesting techniques and exploits, make sure to check out [HackTricks](https://book.hacktricks.xyz/).
 {% endhint %}
-
-
-
-A big shoutout to Carlos Polop and the [HackTricks](https://book.hacktricks.xyz/) team for the spectacular resource, and also for the inspiration to create ShellSpells.
-
-If you work in penetration testing or cybersecurity, using ShellSpells along with [HackTricks](https://book.hacktricks.xyz/) is a strong combo.
 
 
 
