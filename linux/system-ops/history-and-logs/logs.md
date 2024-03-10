@@ -92,6 +92,82 @@ Check application documentation or configuration files for their specific log lo
 | /var/log/boot.log                     | System boot messages.                                                              |
 | /var/log/dmesg                        | Kernel ring buffer messages, useful for hardware and driver messages.              |
 
+
+
+### <mark style="color:purple;">Syslog</mark>
+
+Potential Log Locations: \
+/etc/syslog
+
+/etc/syslog.conf
+
+/etc/syslog/syslog/syslog.conf
+
+
+
+#### <mark style="color:green;">Faculties: What is being logged</mark>
+
+<mark style="color:orange;">**Auth (or Authpriv)**</mark>: User logins/failed logins. Any security logs will probably be stored here.
+
+<mark style="color:orange;">**Kern**</mark>: Basically system logs. System crashes. System on/off.
+
+<mark style="color:orange;">**Mail**</mark>: Any logs from the mail daemon.
+
+<mark style="color:orange;">**Cron**</mark>: Any logs from the crond. Typically these are debug messages. Job completions.
+
+<mark style="color:orange;">**News**</mark>: Network news subsystem (not usually seen)
+
+<mark style="color:orange;">**LPR**</mark>: Printer logs.
+
+<mark style="color:orange;">**User**</mark>: User applications
+
+<mark style="color:orange;">**Local 0-7**</mark>: Reserved for local system use. They are custom logs so they can be customized to log whatever you want.
+
+
+
+#### <mark style="color:green;">Priority: At what level it is being logged</mark>
+
+<mark style="color:orange;">**7**</mark> - <mark style="color:orange;">**Debug**</mark>: Debug info
+
+<mark style="color:orange;">**6**</mark> - <mark style="color:orange;">**Info**</mark>: Just info
+
+<mark style="color:orange;">**5**</mark> - <mark style="color:orange;">**Notice**</mark>: Normal but significant info
+
+<mark style="color:orange;">**4**</mark> - <mark style="color:orange;">**Warning**</mark>: Significant info
+
+<mark style="color:orange;">**3**</mark> - <mark style="color:orange;">**Error**</mark>: Something can't run
+
+<mark style="color:orange;">**2**</mark> - <mark style="color:orange;">**Critical**</mark>: Very significant info
+
+<mark style="color:orange;">**1**</mark> - <mark style="color:orange;">**Alert**</mark>: Something is happening
+
+<mark style="color:orange;">**0**</mark> - <mark style="color:orange;">**Emergency**</mark>: System crash
+
+Examples:
+
+Kern.0 /var/log/kern
+
+This means log kernel emergency messages to /var/log/kern
+
+
+
+\*.0 /var/log/emrg
+
+This means log every faculty emergency message to /var/log/emrg
+
+
+
+### <mark style="color:purple;">Rsyslog</mark>
+
+Potential Log Locations:\
+/etc/rsyslog
+
+/etc/rsyslog.conf
+
+/etc/rsyslog/rsyslog/rsyslog.conf
+
+
+
 ## <mark style="color:red;">Modify</mark>
 
 <mark style="color:yellow;">`sed -i`</mark> will modify the original file.

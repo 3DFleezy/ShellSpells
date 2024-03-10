@@ -38,6 +38,101 @@ Hard link: st\_ino (inode number) will be the same for both the link and the ori
 
 Soft link: st\_ino will be different for the link and the original file.
 
+
+
+## <mark style="color:red;">Permission Notes</mark>
+
+```bash
++------------------------+
+| Owner	| Group | Others |
+| R W E	| R W E | R W E	 |
+| 4 2 1	| 4 2 1 | 4 2 1	 |
++------------------------+
+```
+
+SUID (4): \
+Execute with owner's permissions.
+
+SGID (2):\
+Execute with owning group's permissions.
+
+Sticky Bit (1): \
+Can't delete these files. Often root owned dirs. Only for dirs.
+
+
+
+### <mark style="color:purple;">Necessary Permissions by Action</mark>
+
+```bash
+Actions			    Dir	    File
+----------------------------------------
+Read File		    X	    R
+Modify File		    X	    W
+Create File		    WX	
+Delete File		    WX	
+Move File		    WX	    WX
+Dir Listing		    R	
+Dir Listing w/ Metadata	    RX
+Execute Binary		    X	    X
+Execute Script		    X	    RX
+```
+
+
+
+## <mark style="color:red;">Timestamp Notes</mark>
+
+<mark style="color:orange;">ctime</mark> = Inode change
+
+<mark style="color:orange;">mtime</mark> = Content change
+
+<mark style="color:orange;">atime</mark> = Access time
+
+<mark style="color:yellow;">`stat`</mark> - View inode info and timestamps of a file
+
+Inode: Metadata about a file. Has pointers to the data that the file holds. Keeps track of file meteadata.&#x20;
+
+Changing the owner of a file changes <mark style="color:orange;">`ctime`</mark> Creating a file changes ctime
+
+Anytime the content is changed, the <mark style="color:orange;">`ctime`</mark> is also changed, because the size of the file changes
+
+Anytime file is moved or copied the path changes so the <mark style="color:orange;">`ctime`</mark> also changes.
+
+Anytime file is opened or executed, <mark style="color:orange;">`atime`</mark> is changed.
+
+
+
+#### <mark style="color:green;">Testing:</mark>
+
+
+
+If you...
+
+Create a dir
+
+Go in to that dir
+
+Create a subdir
+
+Run stat on the original dir
+
+The <mark style="color:orange;">`atime`</mark> and <mark style="color:orange;">`ctime`</mark> does NOT change.
+
+
+
+If you...
+
+Create a dir
+
+Do NOT go in to that dir
+
+Create a subdir
+
+Run stat on the original dir
+
+ALL times change. Except <mark style="color:orange;">`birth`</mark> time.
+
+
+
 ## <mark style="color:red;">ls Options</mark>
 
 <mark style="color:yellow;">`-a`</mark> or <mark style="color:yellow;">`--all`</mark>
